@@ -7,9 +7,11 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
   <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <style>
+
     * {
       margin: 0;
       padding: 0;
@@ -29,6 +31,11 @@
 
     h1, h2, h3, .menu-item {
       font-family: 'Special Elite', serif;
+      font-weight: normal;
+    }
+
+    a {
+      color: inherit;
     }
 
     nav {
@@ -49,17 +56,19 @@
       display: flex;
       align-items: center;
       gap: 12px;
+      text-decoration: none;
     }
 
     .nav-left img {
-      width: 36px;
-      height: 36px;
+      width: 38px;
+      height: 38px;
       object-fit: contain;
     }
 
     .nav-links {
       display: flex;
       gap: 28px;
+      align-items: center;
     }
 
     .nav-links a {
@@ -75,15 +84,22 @@
       overflow: hidden;
     }
 
+    /* HERO */
+
     .hero {
       min-height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
+
       background:
-        linear-gradient(rgba(243,240,234,0.84), rgba(243,240,234,0.88)),
+        linear-gradient(
+          rgba(243,240,234,0.84),
+          rgba(243,240,234,0.88)
+        ),
         url('assets/rekdi2ndfloor.jpg') center/cover no-repeat;
+
       padding: 140px 24px 100px;
     }
 
@@ -92,16 +108,15 @@
     }
 
     .hero-logo {
-      width: 180px;
-      margin-bottom: 40px;
-      opacity: 0.95;
+      width: 190px;
+      margin-bottom: 42px;
+      opacity: 0.96;
     }
 
     .hero h1 {
       font-size: 1.2rem;
       margin-bottom: 48px;
       letter-spacing: 1px;
-      font-weight: normal;
     }
 
     .hero p {
@@ -110,10 +125,16 @@
       font-family: 'Special Elite', serif;
     }
 
+    /* MENU */
+
     .menu-section {
       padding: 120px 8vw;
+
       background:
-        linear-gradient(rgba(255,255,255,0.94), rgba(255,255,255,0.94)),
+        linear-gradient(
+          rgba(255,255,255,0.95),
+          rgba(255,255,255,0.95)
+        ),
         url('assets/rekdirestoceiling.jpg') center/cover fixed;
     }
 
@@ -126,14 +147,14 @@
     }
 
     .menu-column h2 {
-      margin-bottom: 40px;
+      margin-bottom: 42px;
       font-size: 2rem;
-      font-weight: normal;
     }
 
     .menu-item {
       margin-bottom: 26px;
       font-size: 0.95rem;
+      line-height: 1.8;
     }
 
     .menu-item strong {
@@ -141,6 +162,35 @@
       margin-bottom: 4px;
       font-weight: normal;
     }
+
+    /* TRANSITION */
+
+    .transition-bar {
+      height: 55vh;
+      min-height: 420px;
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      padding: 60px;
+
+      background:
+        linear-gradient(
+          to bottom,
+          rgba(18,16,21,0.45),
+          rgba(18,16,21,0.92)
+        ),
+        url('assets/rekdibarceiling.jpg') center/cover no-repeat;
+    }
+
+    .transition-copy {
+      font-family: 'Special Elite', serif;
+      font-size: 1rem;
+      color: #f3eee7;
+      letter-spacing: 1px;
+      opacity: 0.9;
+    }
+
+    /* BAR INTRO */
 
     .bar-intro {
       background: #121015;
@@ -160,7 +210,6 @@
     .bar-copy h2 {
       font-size: 3rem;
       margin-bottom: 30px;
-      font-weight: normal;
     }
 
     .bar-copy p {
@@ -176,13 +225,19 @@
       opacity: 0.95;
     }
 
+    /* BAR MENU */
+
     .bar-menu {
       background: #17131d;
       color: #f2ece6;
       padding: 120px 8vw;
     }
 
-    .story, .careers, .find {
+    /* GENERAL SECTIONS */
+
+    .story,
+    .careers,
+    .find {
       padding: 120px 8vw;
       max-width: 1100px;
       margin: auto;
@@ -193,7 +248,6 @@
     .find h2 {
       font-size: 2rem;
       margin-bottom: 30px;
-      font-weight: normal;
     }
 
     .story p,
@@ -201,11 +255,20 @@
     .find p {
       max-width: 700px;
       font-size: 1rem;
+      line-height: 1.9;
     }
 
-    .find {
-      padding-bottom: 160px;
+    /* FIND */
+
+    .find-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 60px;
+      align-items: start;
+      margin-top: 50px;
     }
+
+    /* FLOATING BUTTON */
 
     .reserve-btn {
       position: fixed;
@@ -222,15 +285,24 @@
       z-index: 999;
     }
 
+    /* MOBILE */
+
     @media (max-width: 900px) {
+
+      nav {
+        padding: 16px 20px;
+      }
+
       .menu-grid,
-      .bar-layout {
+      .bar-layout,
+      .find-layout {
         grid-template-columns: 1fr;
       }
 
       .nav-links {
         gap: 16px;
-        font-size: 12px;
+        flex-wrap: wrap;
+        justify-content: flex-end;
       }
 
       .hero p {
@@ -240,303 +312,389 @@
       .bar-copy h2 {
         font-size: 2.1rem;
       }
+
+      .transition-bar {
+        padding: 36px;
+      }
+
     }
+
   </style>
 </head>
-<body>
 
-<nav>
-  <a href="#top" class="nav-left">
-    <img src="assets/rekdilogo.png" alt="Rekdi Logo">
-  </a>
-  <body id="top">
+<body id="top">
 
-  <div class="nav-links">
-    <a href="#menu">Menu</a>
-    <a href="#bar">Bar</a>
-    <a href="#story">Our Story</a>
-    <a href="#careers">Careers</a>
-    <a href="#find">Find Rekdi</a>
-  </div>
-</nav>
+  <!-- NAV -->
 
-<section class="hero">
-  <div class="hero-content">
-    <img src="assets/rekdilogo.png" alt="Rekdi" class="hero-logo">
+  <nav>
 
-    <h1>Modern Karinderya</h1>
-
-    <p>Everything grilled.</p>
-    <p>Built around rice, noodles, or bread.</p>
-    <p>Best with drinks.</p>
-  </div>
-</section>
-
-<section class="menu-section" id="menu">
-  <div class="menu-grid">
-
-    <div class="menu-column">
-      <h2>Food</h2>
-
-      <div class="menu-item"><strong>Grilled Chicken Thigh — ₱380</strong>Pineapple-cashew chili crunch, shrimp bisque, crispy alamang, grilled leeks</div>
-
-      <div class="menu-item"><strong>Grilled Pork Jowl — ₱420</strong>Green mango-apple compote, yellow lentils risotto, roasted seaweed</div>
-
-      <div class="menu-item"><strong>REKDI BBQ — ₱580</strong>Grilled pork and beef belly, anchovy-mushroom-caper crumble, kansi onion soup, torched fontal cheese</div>
-
-      <div class="menu-item"><strong>Grilled Baby Mackerel — ₱400</strong>Orange, pickled cucumber, kimchi</div>
-
-      <div class="menu-item"><strong>Grilled Shrimp — ₱520</strong>Ginger XO sauce, black sesame eggplant salad</div>
-
-      <div class="menu-item"><strong>Honey Ginger Miso Blue Marlin — ₱560</strong>Carrot-squash-kamote rosti okoy, curried carrot squash puree</div>
-
-      <div class="menu-item"><strong>Black Sesame Dandan Noodles — ₱540</strong>Scallion-ginger oil, house chili crunch, furikake</div>
-
-      <div class="menu-item"><strong>Butter Fried Rice — ₱280</strong>Salted fish, mushroom, crumbled uga</div>
-
-      <div class="menu-item"><strong>Sinuglaw — ₱520</strong>Shrimp, clams, singkamas, pineapple, red-eye gravy</div>
-
-      <div class="menu-item"><strong>Grilled Baby Squid — ₱520</strong>Stracciatella, taba ng talangka caviar, pickled bell pepper</div>
-
-      <div class="menu-item"><strong>Desserts — ₱360</strong>By Crumb Next Door</div>
-    </div>
-
-    <div class="menu-column">
-      <h2>Drinks</h2>
-
-      <div class="menu-item"><strong>Mocktails — ₱320</strong>Add ₱120 to turn it into a cocktail</div>
-
-      <div class="menu-item"><strong>French Press Coffee — ₱120</strong></div>
-
-      <div class="menu-item"><strong>San Mig Light — ₱120</strong></div>
-
-      <div class="menu-item"><strong>San Miguel Pale Pilsen — ₱120</strong></div>
-
-      <div class="menu-item"><strong>All Malt — ₱120</strong></div>
-
-      <div class="menu-item"><strong>Cerveza Negra — ₱180</strong></div>
-
-      <div class="menu-item"><strong>Boondocks Brewing Strong Ale — ₱280</strong></div>
-
-      <div class="menu-item"><strong>Hoppyside Aurora Sunrise Hazy Pale Ale — ₱340</strong></div>
-
-      <div class="menu-item"><strong>Elias Hop Boi IPA — ₱410</strong></div>
-
-      <div class="menu-item"><strong>Palm Tree Abbey Saison — ₱420</strong></div>
-    </div>
-
-  </div>
-</section>
-
-.transition-bar{
-  height:55vh;
-  min-height:420px;
-  position:relative;
-  display:flex;
-  align-items:flex-end;
-  padding:60px;
-  background:
-    linear-gradient(
-      to bottom,
-      rgba(18,16,21,0.45),
-      rgba(18,16,21,0.92)
-    ),
-    url('assets/rekdibarceiling.jpg') center/cover;
-}
-
-.transition-copy{
-  font-family:'Special Elite', serif;
-  font-size:1rem;
-  color:#f3eee7;
-  letter-spacing:1px;
-  opacity:.9;
-}
-
-<section class="bar-intro" id="bar">
-  <div class="bar-layout">
-
-    <div class="bar-copy">
-      <h2>Cocktails first.<br>Food if you stay.</h2>
-
-      <p>A darker room for drinking, talking,</p>
-      <p>and starting the night properly.</p>
-    </div>
-
-    <div class="bar-image">
-      <img src="assets/rekdibarmenupic.jpg" alt="Rekdi Bar">
-    </div>
-
-  </div>
-</section>
-
-<section class="bar-menu">
-  <div class="menu-grid">
-
-    <div class="menu-column">
-      <h2>Cocktails</h2>
-
-      <div class="menu-item"><strong>Bourdain Negroni — ₱550</strong>Mezcal, campari, vermouth, orange peel</div>
-
-      <div class="menu-item"><strong>Cuaron Paloma — ₱550</strong>Mezcal, grapefruit soda, lemon, balut salt</div>
-
-      <div class="menu-item"><strong>Tornatorre Gin Basil — ₱550</strong>Tanqueray, cucumber syrup, basil leaves</div>
-
-      <div class="menu-item"><strong>Friedkin Boulevardier — ₱550</strong>Bourbon, campari, vermouth</div>
-
-      <div class="menu-item"><strong>Melville Whiskey Sour — ₱550</strong>Bourbon, lemon juice, egg foam</div>
-
-      <div class="menu-item"><strong>Yimou — ₱550</strong>Sous vide white rum, black sesame, tapuy rice wine</div>
-
-      <div class="menu-item"><strong>Del Toro — ₱550</strong>Whiskey, corn, chili liqueur</div>
-    </div>
-
-    <div class="menu-column">
-      <h2>Wine & Spirits</h2>
-
-      <div class="menu-item"><strong>De Chanceny Cremant De Loire Brut NV — ₱2,800</strong></div>
-
-      <div class="menu-item"><strong>Familia Oliveda Brut Jove NV — ₱2,200</strong></div>
-
-      <div class="menu-item"><strong>Pascal Jolivet Attitude Rosé 2021 — ₱450 / ₱3,000</strong></div>
-
-      <div class="menu-item"><strong>Map Maker Pinot Noir NZ — ₱400 / ₱2,500</strong></div>
-
-      <div class="menu-item"><strong>Clos Triguedina French Malbec 2021 — ₱420 / ₱2,800</strong></div>
-
-      <div class="menu-item"><strong>Villafonte Seriously Old Dirt Cabernet Sauvignon — ₱450 / ₱3,200</strong></div>
-
-      <div class="menu-item"><strong>Gerard Bertrand Cigalus Cabernet & Merlot — ₱650 / ₱4,500</strong></div>
-    </div>
-
-  </div>
-</section>
-
-<section class="story" id="story">
-  <h2>Our Story</h2>
-
-  <p>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-  </p>
-</section>
-
-<section class="careers" id="careers">
-
-  <h2>Careers</h2>
-
-  <p style="
-    max-width:700px;
-    line-height:1.8;
-  ">
-    Interested in working with Rekdi?<br><br>
-
-    Email CV at
-
-    <a
-      href="mailto:rekdiph@gmail.com"
-      style="
-        color:#111;
-        text-decoration:none;
-        border-bottom:1px solid rgba(0,0,0,0.2);
-      "
-    >
-      rekdiph@gmail.com
+    <a href="#top" class="nav-left">
+      <img src="assets/rekdilogo.png" alt="Rekdi Logo">
     </a>
-  </p>
 
-</section>
+    <div class="nav-links">
+      <a href="#menu">Menu</a>
+      <a href="#bar">Bar</a>
+      <a href="#story">Our Story</a>
+      <a href="#careers">Careers</a>
+      <a href="#find">Find Rekdi</a>
+    </div>
 
-<section class="find" id="find">
+  </nav>
 
-  <h2>Find Rekdi</h2>
+  <!-- HERO -->
 
-  <div style="
-    display:grid;
-    grid-template-columns:1fr 1.2fr;
-    gap:60px;
-    align-items:start;
-    margin-top:50px;
-  ">
+  <section class="hero">
 
-    <!-- LEFT INFO -->
+    <div class="hero-content">
 
-    <div style="line-height:2;">
+      <img
+        src="assets/rekdilogo.png"
+        alt="Rekdi"
+        class="hero-logo"
+      >
 
-      <p style="margin-bottom:30px;">
+      <h1>Modern Karinderya</h1>
 
-        5713 Pagulayan,<br>
-        Poblacion, Makati City,<br>
-        1210 Metro Manila
-
-      </p>
-
-      <p style="margin-bottom:30px;">
-
-        Open Wednesday to Sunday<br>
-        6PM – 1AM
-
-      </p>
-
-      <p style="margin-bottom:30px;">
-
-        Reservations via text only<br>
-
-        <a
-          href="sms:+639170000000"
-          style="
-            color:#111;
-            text-decoration:none;
-            border-bottom:1px solid rgba(0,0,0,0.2);
-          "
-        >
-          +63 917 000 0000
-        </a>
-
-      </p>
-
-      <p>
-
-        Instagram<br>
-
-        <a
-          href="https://instagram.com/rekdi.ph"
-          target="_blank"
-          style="
-            color:#111;
-            text-decoration:none;
-            border-bottom:1px solid rgba(0,0,0,0.2);
-          "
-        >
-          @rekdi.ph
-        </a>
-
-      </p>
+      <p>Everything grilled.</p>
+      <p>Built around rice, noodles, or bread.</p>
+      <p>Best with drinks.</p>
 
     </div>
 
-    <!-- MAP -->
+  </section>
 
-    <div style="
-      border-radius:6px;
-      overflow:hidden;
-      border:1px solid rgba(0,0,0,0.08);
-    ">
+  <!-- MENU -->
 
-      <iframe
-        src="https://maps.google.com/maps?q=5713%20Pagulayan%20Poblacion%20Makati%20City&t=&z=15&ie=UTF8&iwloc=&output=embed"
-        width="100%"
-        height="420"
-        style="border:0;"
-        allowfullscreen=""
-        loading="lazy">
-      </iframe>
+  <section class="menu-section" id="menu">
+
+    <div class="menu-grid">
+
+      <!-- FOOD -->
+
+      <div class="menu-column">
+
+        <h2>Food</h2>
+
+        <div class="menu-item">
+          <strong>Grilled Chicken Thigh — ₱380</strong>
+          Pineapple-cashew chili crunch, shrimp bisque, crispy alamang, grilled leeks
+        </div>
+
+        <div class="menu-item">
+          <strong>Grilled Pork Jowl — ₱420</strong>
+          Green mango-apple compote, yellow lentils risotto, roasted seaweed
+        </div>
+
+        <div class="menu-item">
+          <strong>REKDI BBQ — ₱580</strong>
+          Grilled pork and beef belly, anchovy-mushroom-caper crumble, kansi onion soup
+        </div>
+
+        <div class="menu-item">
+          <strong>Grilled Baby Mackerel — ₱400</strong>
+          Orange, pickled cucumber, kimchi
+        </div>
+
+        <div class="menu-item">
+          <strong>Grilled Shrimp — ₱520</strong>
+          Ginger XO sauce, black sesame eggplant salad
+        </div>
+
+        <div class="menu-item">
+          <strong>Black Sesame Dandan Noodles — ₱540</strong>
+          Scallion-ginger oil, house chili crunch, furikake
+        </div>
+
+        <div class="menu-item">
+          <strong>Butter Fried Rice — ₱280</strong>
+          Salted fish, mushroom, crumbled uga
+        </div>
+
+        <div class="menu-item">
+          <strong>Sinuglaw — ₱520</strong>
+          Shrimp, clams, singkamas, pineapple
+        </div>
+
+      </div>
+
+      <!-- DRINKS -->
+
+      <div class="menu-column">
+
+        <h2>Drinks</h2>
+
+        <div class="menu-item">
+          <strong>Mocktails — ₱320</strong>
+          Add ₱120 to turn it into a cocktail
+        </div>
+
+        <div class="menu-item">
+          <strong>French Press Coffee — ₱120</strong>
+        </div>
+
+        <div class="menu-item">
+          <strong>San Mig Light — ₱120</strong>
+        </div>
+
+        <div class="menu-item">
+          <strong>San Miguel Pale Pilsen — ₱120</strong>
+        </div>
+
+        <div class="menu-item">
+          <strong>Cerveza Negra — ₱180</strong>
+        </div>
+
+        <div class="menu-item">
+          <strong>Boondocks Brewing Strong Ale — ₱280</strong>
+        </div>
+
+        <div class="menu-item">
+          <strong>Elias Hop Boi IPA — ₱410</strong>
+        </div>
+
+      </div>
 
     </div>
 
-  </div>
+  </section>
 
-</section>
+  <!-- TRANSITION -->
 
-<a href="sms:+639170000000" class="reserve-btn">Reserve via Text</a>
+  <section class="transition-bar">
+
+    <div class="transition-copy">
+      Still early.
+    </div>
+
+  </section>
+
+  <!-- BAR INTRO -->
+
+  <section class="bar-intro" id="bar">
+
+    <div class="bar-layout">
+
+      <div class="bar-copy">
+
+        <h2>
+          Cocktails first.<br>
+          Food if you stay.
+        </h2>
+
+        <p>
+          A darker room for drinking, talking,
+        </p>
+
+        <p>
+          and starting the night properly.
+        </p>
+
+      </div>
+
+      <div class="bar-image">
+
+        <img
+          src="assets/rekdibarmenupic.jpg"
+          alt="Rekdi Bar"
+        >
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- BAR MENU -->
+
+  <section class="bar-menu">
+
+    <div class="menu-grid">
+
+      <div class="menu-column">
+
+        <h2>Cocktails</h2>
+
+        <div class="menu-item">
+          <strong>Bourdain Negroni — ₱550</strong>
+          Mezcal, campari, vermouth, orange peel
+        </div>
+
+        <div class="menu-item">
+          <strong>Cuaron Paloma — ₱550</strong>
+          Mezcal, grapefruit soda, lemon
+        </div>
+
+        <div class="menu-item">
+          <strong>Friedkin Boulevardier — ₱550</strong>
+          Bourbon, campari, vermouth
+        </div>
+
+        <div class="menu-item">
+          <strong>Melville Whiskey Sour — ₱550</strong>
+          Bourbon, lemon juice, egg foam
+        </div>
+
+      </div>
+
+      <div class="menu-column">
+
+        <h2>Wine & Spirits</h2>
+
+        <div class="menu-item">
+          <strong>De Chanceny Cremant De Loire Brut NV — ₱2,800</strong>
+        </div>
+
+        <div class="menu-item">
+          <strong>Familia Oliveda Brut Jove NV — ₱2,200</strong>
+        </div>
+
+        <div class="menu-item">
+          <strong>Map Maker Pinot Noir NZ — ₱2,500</strong>
+        </div>
+
+        <div class="menu-item">
+          <strong>French Malbec 2021 — ₱2,800</strong>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- STORY -->
+
+  <section class="story" id="story">
+
+    <h2>Our Story</h2>
+
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      Ut enim ad minim veniam.
+    </p>
+
+  </section>
+
+  <!-- CAREERS -->
+
+  <section class="careers" id="careers">
+
+    <h2>Careers</h2>
+
+    <p>
+      Interested in working with Rekdi?<br><br>
+
+      Email CV at
+
+      <a
+        href="mailto:rekdiph@gmail.com"
+        style="
+          text-decoration:none;
+          border-bottom:1px solid rgba(0,0,0,0.2);
+        "
+      >
+        rekdiph@gmail.com
+      </a>
+
+    </p>
+
+  </section>
+
+  <!-- FIND -->
+
+  <section class="find" id="find">
+
+    <h2>Find Rekdi</h2>
+
+    <div class="find-layout">
+
+      <!-- LEFT -->
+
+      <div>
+
+        <p style="margin-bottom:30px;">
+
+          5713 Pagulayan,<br>
+          Poblacion, Makati City,<br>
+          1210 Metro Manila
+
+        </p>
+
+        <p style="margin-bottom:30px;">
+
+          Open Wednesday to Sunday<br>
+          6PM – 1AM
+
+        </p>
+
+        <p style="margin-bottom:30px;">
+
+          Reservations via text only<br>
+
+          <a
+            href="sms:+639170000000"
+            style="
+              text-decoration:none;
+              border-bottom:1px solid rgba(0,0,0,0.2);
+            "
+          >
+            +63 917 000 0000
+          </a>
+
+        </p>
+
+        <p>
+
+          Instagram<br>
+
+          <a
+            href="https://instagram.com/rekdi.ph"
+            target="_blank"
+            style="
+              text-decoration:none;
+              border-bottom:1px solid rgba(0,0,0,0.2);
+            "
+          >
+            @rekdi.ph
+          </a>
+
+        </p>
+
+      </div>
+
+      <!-- MAP -->
+
+      <div style="
+        border-radius:6px;
+        overflow:hidden;
+        border:1px solid rgba(0,0,0,0.08);
+      ">
+
+        <iframe
+          src="https://maps.google.com/maps?q=5713%20Pagulayan%20Poblacion%20Makati%20City&t=&z=15&ie=UTF8&iwloc=&output=embed"
+          width="100%"
+          height="420"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy">
+        </iframe>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- FLOATING BUTTON -->
+
+  <a
+    href="sms:+639170000000"
+    class="reserve-btn"
+  >
+    Reserve via Text
+  </a>
 
 </body>
 </html>
