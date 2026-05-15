@@ -287,12 +287,38 @@
 }
 
     .story,
-    .careers,
-    .find {
-      padding: 120px 8vw;
-      max-width: 1100px;
-      margin: auto;
-    }
+.find {
+  padding: 120px 8vw;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.careers {
+  position: relative;
+  color: #f3eee7;
+  padding: 120px 8vw;
+  overflow: hidden;
+}
+
+.careers::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      rgba(12,10,14,0.74),
+      rgba(12,10,14,0.82)
+    ),
+    url('assets/rekdi3rdfloor.jpg') center/cover no-repeat;
+
+  z-index: 0;
+}
+
+.careers > * {
+  position: relative;
+  z-index: 1;
+}
 
     .story h2,
     .careers h2,
@@ -804,22 +830,60 @@
     </p>
   </section>
 
-  <section class="careers" id="careers">
-    <h2>Careers</h2>
+ <section class="careers" id="careers">
+  <h2>Careers</h2>
 
-    <p>
-      Interested in working with Rekdi?<br><br>
+  <p>
+    We are looking for people who move well, think fast, and care about service.
+  </p>
 
-      Email CV at
+  <div style="
+    display:grid;
+    gap:28px;
+    margin-top:50px;
+    max-width:850px;
+  ">
 
-      <a
-        href="mailto:rekdiph@gmail.com"
-        style="text-decoration:none; border-bottom:1px solid rgba(0,0,0,0.2);"
-      >
-        rekdiph@gmail.com
-      </a>
-    </p>
-  </section>
+    <div style="border-top:1px solid rgba(0,0,0,0.18); padding-top:22px;">
+      <h3>Wait Staff</h3>
+      <p>
+        For dining room service, guest assistance, table management, and day-to-day floor operations.
+      </p>
+    </div>
+
+    <div style="border-top:1px solid rgba(0,0,0,0.15); padding-top:22px;">
+      <h3>Bar Staff</h3>
+      <p>
+        For bar service, drink preparation support, stock handling, and keeping the bar organized during service.
+      </p>
+    </div>
+
+    <div style="border-top:1px solid rgba(0,0,0,0.15); padding-top:22px;">
+      <h3>Kitchen Staff</h3>
+      <p>
+        For prep work, line support, cleaning, organizing, and assisting the kitchen team during service.
+      </p>
+    </div>
+
+    <div style="border-top:1px solid rgba(0,0,0,0.15); padding-top:22px;">
+      <h3>Dishwasher / Utility</h3>
+      <p>
+        For dishwashing, cleaning, kitchen support, and maintaining order in the back of house.
+      </p>
+    </div>
+
+  </div>
+
+  <p style="margin-top:50px;">
+    To apply, email your CV to
+    <a
+      href="mailto:rekdiph@gmail.com"
+      style="text-decoration:none; border-bottom:1px solid rgba(255,255,255,0.25);"
+    >
+      rekdiph@gmail.com
+    </a>
+  </p>
+</section>
 
   <section class="find" id="find">
     <h2>Find Rekdi</h2>
