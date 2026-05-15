@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Rekdi — Modern Karinderya</title>
+
+  <meta
+    name="description"
+    content="Rekdi is a modern karinderya with ground floor cocktails and upstairs food, drinks, and conversations."
+  />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Courier+Prime:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --black: #11100f;
+      --black-soft: #181615;
+      --cream: #e8ded0;
+      --cream-soft: #cfc2b5;
+      --concrete: #514b46;
+      --orange: #c96a32;
+      --rust: #8f312b;
+      --violet: #7c37d8;
+      --magenta: #d43b91;
+      --line: rgba(232, 222, 208, 0.15);
+      --max: 1180px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background: var(--black);
+    }
+
+    body {
+      background: var(--black);
+      color: var(--cream);
+      font-family: Inter, sans-serif;
+      line-height: 1.55;
+      overflow-x: hidden;
+    }
+
+    img {
+      width: 100%;
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* NAV */
+
+    .nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 100;
+      padding: 24px 32px;
+      background: linear-gradient(
+        to bottom,
+        rgba(17,16,15,.9),
+        rgba(17,16,15,0)
+      );
+    }
+
+    .nav-inner {
+      max-width: var(--max);
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .brand {
+      font-family: Anton, sans-serif;
+      font-size: 1.3rem;
+      letter-spacing: .08em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 22px;
+      align-items: center;
+      font-size: .72rem;
+      text-transform: uppercase;
+      letter-spacing: .15em;
+      color: var(--cream-soft);
+    }
+
+    .nav-links a:hover {
+      color: var(--cream);
+    }
+
+    .reserve-pill {
+      border: 1px solid var(--line);
+      padding: 10px 14px;
+      background: rgba(17,16,15,.4);
+      color: var(--cream);
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 100svh;
+      position: relative;
+      display: flex;
+      align-items: end;
+      padding: 140px 32px 90px;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(
+          to bottom,
+          rgba(17,16,15,.15),
+          rgba(17,16,15,.92)
+        ),
+        linear-gradient(
+          to right,
+          rgba(17,16,15,.75),
+          rgba(17,16,15,.2)
+        );
+      z-index: 1;
+    }
+
+    .hero-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: .82;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: var(--max);
+      margin: auto;
+      width: 100%;
+    }
+
+    h1, h2, h3 {
+      font-family: Anton, sans-serif;
+      text-transform: uppercase;
+      line-height: .95;
+      font-weight: 400;
+    }
+
+    h1 {
+      font-size: clamp(4.5rem, 15vw, 13rem);
+      letter-spacing: .04em;
+    }
+
+    .subtitle {
+      margin-top: 10px;
+      font-family: "Courier Prime", monospace;
+      font-size: clamp(1rem, 2vw, 1.5rem);
+    }
+
+    .hero-copy {
+      margin-top: 36px;
+      font-family: "Courier Prime", monospace;
+      font-size: 1rem;
+      color: var(--cream-soft);
+      max-width: 500px;
+      line-height: 1.8;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 34px;
+    }
+
+    .btn {
+      min-height: 46px;
+      padding: 12px 18px;
+      border: 1px solid var(--line);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: .72rem;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      font-weight: 700;
+      background: rgba(17,16,15,.45);
+    }
+
+    .btn.primary {
+      background: var(--cream);
+      color: var(--black);
+      border-color: var(--cream);
+    }
+
+    .btn:hover {
+      border-color: var(--cream);
+    }
+
+    /* SECTIONS */
+
+    section {
+      padding: 110px 32px;
+    }
+
+    .container {
+      max-width: var(--max);
+      margin: auto;
+    }
+
+    .eyebrow {
+      color: var(--orange);
+      font-size: .72rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+      font-weight: 700;
+    }
+
+    .section-title {
+      font-size: clamp(3rem, 8vw, 7rem);
+      margin-bottom: 26px;
+    }
+
+    .lead {
+      max-width: 760px;
+      font-size: clamp(1.05rem, 1.7vw, 1.3rem);
+      color: var(--cream-soft);
+      font-family: "Courier Prime", monospace;
+      line-height: 1.7;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 56px;
+      align-items: center;
+    }
+
+    .photo-frame {
+      border: 1px solid var(--line);
+      padding: 10px;
+      background: var(--black-soft);
+    }
+
+    .photo-frame img {
+      height: 100%;
+      min-height: 520px;
+      object-fit: cover;
+    }
+
+    /* DARK PANEL */
+
+    .dark-panel {
+      background: #0b0a0a;
+      position: relative;
+    }
+
+    .dark-panel::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 75% 20%, rgba(124,55,216,.18), transparent 30%),
+        radial-gradient(circle at 20% 80%, rgba(212,59,145,.14), transparent 25%);
+      pointer-events: none;
+    }
+
+    .dark-panel .container {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* MANIFESTO */
+
+    .manifesto {
+      max-width: 760px;
+      font-family: "Courier Prime", monospace;
+      font-size: clamp(1.05rem, 1.8vw, 1.35rem);
+      color: var(--cream-soft);
+      line-height: 1.8;
+    }
+
+    .manifesto strong {
+      color: var(--cream);
+    }
+
+    /* MENU */
+
+    .menu {
+      margin-top: 60px;
+      border-top: 1px solid var(--line);
+    }
+
+    .menu-category {
+      padding: 42px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .menu-category h3 {
+      font-size: clamp(2rem, 4vw, 3.4rem);
+      margin-bottom: 26px;
+    }
+
+    .menu-item {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 24px;
+      padding: 18px 0;
+    }
+
+    .menu-item + .menu-item {
+      border-top: 1px solid rgba(232,222,208,.07);
+    }
+
+    .menu-item h4 {
+      margin-bottom: 4px;
+      font-size: 1.05rem;
+    }
+
+    .menu-item p {
+      color: var(--cream-soft);
+      font-family: "Courier Prime", monospace;
+      font-size: .96rem;
+    }
+
+    .price {
+      font-family: "Courier Prime", monospace;
+      white-space: nowrap;
+    }
+
+    /* GALLERY */
+
+    .gallery {
+      margin-top: 54px;
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 16px;
+    }
+
+    .gallery img {
+      border: 1px solid var(--line);
+      height: 100%;
+      min-height: 340px;
+      object-fit: cover;
+    }
+
+    .gallery-stack {
+      display: grid;
+      gap: 16px;
+    }
+
+    /* INFO */
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      margin-top: 48px;
+    }
+
+    .info-card {
+      border-top: 1px solid var(--line);
+      padding-top: 18px;
+    }
+
+    .info-card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+
+    .info-card p,
+    .info-card a {
+      color: var(--cream-soft);
+      font-family: "Courier Prime", monospace;
+    }
+
+    /* MAP */
+
+    .map-box {
+      margin-top: 42px;
+      border: 1px solid var(--line);
+      overflow: hidden;
+    }
+
+    .map-box iframe {
+      width: 100%;
+      height: 380px;
+      border: 0;
+      filter: grayscale(1) invert(.92) contrast(.9);
+    }
+
+    /* CAREERS */
+
+    .careers-list {
+      margin-top: 42px;
+      display: grid;
+      gap: 16px;
+    }
+
+    .career-row {
+      border-top: 1px solid var(--line);
+      padding: 22px 0;
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      color: var(--cream-soft);
+    }
+
+    /* FOOTER */
+
+    footer {
+      padding: 48px 32px;
+      border-top: 1px solid var(--line);
+      color: var(--cream-soft);
+      font-family: "Courier Prime", monospace;
+    }
+
+    .footer-inner {
+      max-width: var(--max);
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    /* FLOATING BUTTON */
+
+    .floating-reserve {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      z-index: 100;
+      background: var(--cream);
+      color: var(--black);
+      padding: 13px 16px;
+      font-size: .72rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      box-shadow: 0 18px 40px rgba(0,0,0,.35);
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 850px) {
+
+      .nav {
+        padding: 18px;
+      }
+
+      .nav-inner {
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        gap: 10px;
+        font-size: .64rem;
+      }
+
+      .reserve-pill {
+        display: none;
+      }
+
+      .hero,
+      section {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      .split,
+      .gallery,
+      .info-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .photo-frame img {
+        min-height: 420px;
+      }
+
+      .menu-item {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+
+      .career-row {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAV -->
+
+  <nav class="nav">
+    <div class="nav-inner">
+
+      <a href="#home" class="brand">REKDI</a>
+
+      <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#rekdi-bar">Rekdi Bar</a>
+        <a href="#our-story">Our Story</a>
+        <a href="#careers">Careers</a>
+
+        <a
+          class="reserve-pill"
+          href="sms:+639000000000">
+          Reserve via Text
+        </a>
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- FLOATING BUTTON -->
+
+  <a
+    class="floating-reserve"
+    href="sms:+639000000000">
+    Reserve via Text
+  </a>
+
+  <!-- HERO -->
+
+  <header id="home" class="hero">
+
+    <img
+      class="hero-img"
+      src="assets/rekdirestoceiling.jpg"
+      alt="Rekdi interior"
+    >
+
+    <div class="hero-content">
+
+      <h1>Rekdi</h1>
+
+      <div class="subtitle">
+        Modern Karinderya
+      </div>
+
+      <div class="hero-copy">
+        Everything grilled.<br>
+        Built around rice, noodles, or bread.<br>
+        Best with drinks.
+      </div>
+
+      <div class="buttons">
+        <a class="btn primary" href="#rekdi-menu">
+          View Menu
+        </a>
+
+        <a class="btn" href="#rekdi-bar">
+          Rekdi Bar
+        </a>
+
+        <a class="btn" href="sms:+639000000000">
+          Reserve via Text
+        </a>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- BAR -->
+
+  <section id="rekdi-bar" class="dark-panel">
+
+    <div class="container split">
+
+      <div>
+
+        <div class="eyebrow">
+          Ground Floor
+        </div>
+
+        <h2 class="section-title">
+          Rekdi Bar
+        </h2>
+
+        <p class="lead">
+          Cocktails first. Food if you stay.
+          A darker room for drinking,
+          talking, and starting the night properly.
+        </p>
+
+      </div>
+
+      <div class="photo-frame">
+        <img
+          src="assets/rekdibarmenupic.jpg"
+          alt="Rekdi Bar"
+        >
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- BAR MENU -->
+
+  <section class="dark-panel">
+
+    <div class="container">
+
+      <div class="eyebrow">
+        Cocktails
+      </div>
+
+      <h2 class="section-title">
+        Bar Menu
+      </h2>
+
+      <div class="menu">
+
+        <div class="menu-category">
+
+          <h3>Signatures</h3>
+
+          <div class="menu-item">
+            <div>
+              <h4>Bourdain Negroni</h4>
+              <p>gin, bitter, vermouth, orange</p>
+            </div>
+            <div class="price">₱550</div>
+          </div>
+
+          <div class="menu-item">
+            <div>
+              <h4>Friedkin Boulevardier</h4>
+              <p>bourbon, vermouth, dark citrus</p>
+            </div>
+            <div class="price">₱550</div>
+          </div>
+
+          <div class="menu-item">
+            <div>
+              <h4>Melville Whisky Sour</h4>
+              <p>whisky, citrus, foam</p>
+            </div>
+            <div class="price">₱520</div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ASCEND -->
+
+  <section>
+
+    <div class="container split">
+
+      <div class="photo-frame">
+        <img
+          src="assets/rekdibarceiling.jpg"
+          alt="Rekdi stairs and ceiling"
+        >
+      </div>
+
+      <div>
+
+        <div class="eyebrow">
+          Second & Third Floor
+        </div>
+
+        <h2 class="section-title">
+          Upstairs, Rekdi Opens Up.
+        </h2>
+
+        <p class="lead">
+          The modern karinderya lives on the second and third floor —
+          food, bottles, long tables,
+          and conversations that keep going.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- REKDI MENU -->
+
+  <section id="rekdi-menu">
+
+    <div class="container">
+
+      <div class="eyebrow">
+        Modern Karinderya
+      </div>
+
+      <h2 class="section-title">
+        Rekdi Menu
+      </h2>
+
+      <div class="manifesto">
+
+        <strong>Everything grilled</strong><br>
+        Built around rice, noodles, or bread<br>
+        Or taken straight<br><br>
+
+        <strong>Best with drinks</strong><br>
+        Paired with buckets of conversation.<br><br>
+
+        <strong>No olive oil.</strong><br>
+        Butter. Chicken oil. Lard. Tallow<br>
+        Cooked in fat that tastes like something<br><br>
+
+        Pinoy high-low food<br>
+        Home-pantry umami cooking<br>
+        Seasoned by travel and bad ideas<br><br>
+
+        <em>If it works, it stays</em>
+
+      </div>
+
+      <div class="menu">
+
+        <div class="menu-category">
+
+          <h3>Grilled</h3>
+
+          <div class="menu-item">
+            <div>
+              <h4>Sample Dish</h4>
+              <p>replace with actual description</p>
+            </div>
+            <div class="price">₱---</div>
+          </div>
+
+          <div class="menu-item">
+            <div>
+              <h4>Sample Dish</h4>
+              <p>replace with actual description</p>
+            </div>
+            <div class="price">₱---</div>
+          </div>
+
+        </div>
+
+        <div class="menu-category">
+
+          <h3>Rice, Noodles, Bread</h3>
+
+          <div class="menu-item">
+            <div>
+              <h4>Sample Dish</h4>
+              <p>replace with actual description</p>
+            </div>
+            <div class="price">₱---</div>
+          </div>
+
+          <div class="menu-item">
+            <div>
+              <h4>Sample Dish</h4>
+              <p>replace with actual description</p>
+            </div>
+            <div class="price">₱---</div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- THIRD FLOOR -->
+
+  <section>
+
+    <div class="container split">
+
+      <div>
+
+        <div class="eyebrow">
+          Third Floor
+        </div>
+
+        <h2 class="section-title">
+          Bar Seating
+        </h2>
+
+        <p class="lead">
+          A quieter room above the noise.
+          Long dinners, shared bottles,
+          and enough space to let the night stretch.
+        </p>
+
+      </div>
+
+      <div class="photo-frame">
+        <img
+          src="assets/rekdi3rdfloor.jpg"
+          alt="Rekdi third floor"
+        >
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- STORY -->
+
+  <section id="our-story">
+
+    <div class="container">
+
+      <div class="eyebrow">
+        Our Story
+      </div>
+
+      <h2 class="section-title">
+        If It Works, It Stays.
+      </h2>
+
+      <p class="lead">
+        Rekdi is a modern karinderya built around food that tastes like something —
+        grilled, fatty, salty, familiar,
+        and a little wrong in the right way.
+      </p>
+
+      <div class="gallery">
+
+        <img
+          src="assets/rekdi2ndfloor.jpg"
+          alt="Rekdi interiors"
+        >
+
+        <div class="gallery-stack">
+
+          <img
+            src="assets/rekdibarwallart.jpg"
+            alt="Rekdi wall art"
+          >
+
+          <img
+            src="assets/rekdirestoceiling.jpg"
+            alt="Rekdi ceiling"
+          >
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- CAREERS -->
+
+  <section id="careers" class="dark-panel">
+
+    <div class="container">
+
+      <div class="eyebrow">
+        Careers
+      </div>
+
+      <h2 class="section-title">
+        Work With Us
+      </h2>
+
+      <p class="lead">
+        We like people with taste,
+        speed, curiosity, and common sense.
+      </p>
+
+      <div class="careers-list">
+
+        <div class="career-row">
+          <strong>Kitchen Team</strong>
+          <span>Send CV via email</span>
+        </div>
+
+        <div class="career-row">
+          <strong>Bar Team</strong>
+          <span>Send CV via email</span>
+        </div>
+
+        <div class="career-row">
+          <strong>Floor Staff</strong>
+          <span>Send CV via email</span>
+        </div>
+
+      </div>
+
+      <div class="buttons">
+        <a class="btn primary" href="mailto:hello@rekdi.com">
+          Apply via Email
+        </a>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- VISIT -->
+
+  <section>
+
+    <div class="container">
+
+      <div class="eyebrow">
+        Visit
+      </div>
+
+      <h2 class="section-title">
+        Find Rekdi
+      </h2>
+
+      <div class="info-grid">
+
+        <div class="info-card">
+          <h3>Reservations</h3>
+          <p>
+            <a href="sms:+639000000000">
+              +63 900 000 0000
+            </a>
+          </p>
+        </div>
+
+        <div class="info-card">
+          <h3>Instagram</h3>
+          <p>
+            <a
+              href="https://instagram.com/rekdi"
+              target="_blank">
+              @rekdi
+            </a>
+          </p>
+        </div>
+
+        <div class="info-card">
+          <h3>Address</h3>
+          <p>Replace with actual address</p>
+        </div>
+
+        <div class="info-card">
+          <h3>Hours</h3>
+          <p>Replace with operating hours</p>
+        </div>
+
+      </div>
+
+      <div class="map-box">
+
+        <!-- Replace with your real Google Maps embed -->
+
+        <iframe
+          src="https://www.google.com/maps/embed?pb="
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div class="footer-inner">
+
+      <div>
+        REKDI — Modern Karinderya
+      </div>
+
+      <div>
+        Reservations via text only.
+      </div>
+
+    </div>
+
+  </footer>
+
+</body>
+</html>
