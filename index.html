@@ -89,8 +89,8 @@
       text-align: center;
       background:
         linear-gradient(
-          rgba(243,240,234,0.84),
-          rgba(243,240,234,0.88)
+          rgba(243,240,234,0.62),
+          rgba(243,240,234,0.68)
         ),
         url('assets/rekdi2ndfloor.jpg') center/cover no-repeat;
       padding: 140px 24px 100px;
@@ -125,18 +125,20 @@
     }
 
     .menu-section::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(
-          rgba(255,255,255,0.88),
-          rgba(255,255,255,0.9)
-        ),
-        url('assets/rekdirestoceiling.jpg') center/cover fixed;
-      opacity: 0.55;
-      pointer-events: none;
-    }
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      rgba(255,255,255,0.72),
+      rgba(255,255,255,0.78)
+    ),
+    url('assets/rekdirestoceiling.jpg') center/cover fixed;
+
+  opacity: 0.82;
+  pointer-events: none;
+}
 
     .menu-grid {
       position: relative;
