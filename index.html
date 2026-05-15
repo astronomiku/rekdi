@@ -328,38 +328,29 @@
   </div>
 </section>
 
-<section style="
-  background:#141218;
-  padding:140px 24px;
-  text-align:center;
+.transition-bar{
+  height:55vh;
+  min-height:420px;
   position:relative;
-  overflow:hidden;
-">
+  display:flex;
+  align-items:flex-end;
+  padding:60px;
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(18,16,21,0.45),
+      rgba(18,16,21,0.92)
+    ),
+    url('assets/rekdibarceiling.jpg') center/cover;
+}
 
-  <img
-    src="assets/rekdilogo.png"
-    style="
-      width:320px;
-      opacity:0.05;
-      position:absolute;
-      inset:0;
-      margin:auto;
-      pointer-events:none;
-    "
-  >
-
-  <p style="
-    position:relative;
-    z-index:2;
-    font-family:'Special Elite', serif;
-    font-size:1.4rem;
-    color:#d7d0c7;
-    letter-spacing:1px;
-  ">
-    Best with drinks.
-  </p>
-
-</section>
+.transition-copy{
+  font-family:'Special Elite', serif;
+  font-size:1rem;
+  color:#f3eee7;
+  letter-spacing:1px;
+  opacity:.9;
+}
 
 <section class="bar-intro" id="bar">
   <div class="bar-layout">
