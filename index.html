@@ -259,10 +259,32 @@
     }
 
     .bar-menu {
-      background: #17131d;
-      color: #f2ece6;
-      padding: 120px 8vw;
-    }
+  position: relative;
+  color: #f2ece6;
+  padding: 120px 8vw;
+  overflow: hidden;
+}
+
+.bar-menu::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      rgba(15,12,18,0.82),
+      rgba(15,12,18,0.88)
+    ),
+    url('assets/rekdicomicswall.jpg') center/cover fixed no-repeat;
+
+  opacity: 1;
+  z-index: 0;
+}
+
+.bar-menu .menu-grid {
+  position: relative;
+  z-index: 1;
+}
 
     .story,
     .careers,
