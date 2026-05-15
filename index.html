@@ -327,6 +327,31 @@
       margin-bottom: 30px;
     }
 
+    .story-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 70px;
+  align-items: center;
+}
+
+.story-copy p {
+  margin-bottom: 22px;
+}
+
+.story-image img {
+  width: 100%;
+  display: block;
+  border-radius: 6px;
+}
+
+@media (max-width: 900px) {
+
+  .story-layout {
+    grid-template-columns: 1fr;
+  }
+
+}
+
     .story p,
     .careers p,
     .find p {
@@ -820,31 +845,66 @@
 
 </section>
 
-  <section class="story" id="story">
-    <h2>Our Story</h2>
+  <!-- STORY -->
 
-    <p>
-Rekdi opened in February 2026 in Poblacion, Makati.
+<section class="story" id="story">
 
-Built around grilling, drinking, and long conversations.
+  <div class="story-layout">
 
-The food starts with Filipino pantry cooking —
-rice, noodles, bread, skewers, seafood,
-things eaten with your hands,
-things best shared over drinks.
+    <!-- LEFT -->
 
-Some dishes stay close to memory.
-Others wander through travel, cravings,
-street food, and bad decisions.
+    <div class="story-copy">
 
-We cook with smoke, butter, chicken oil,
-lard, stock, acid, sweetness, char,
-and anything that tastes like something.
+      <h2>Our Story</h2>
 
-Nothing here tries to be perfect.
-Only worth coming back for.
-</p>
-  </section>
+      <p>
+        Rekdi opened in February 2026 in Poblacion, Makati.
+      </p>
+
+      <p>
+        Built around grilling, drinking, and long conversations.
+      </p>
+
+      <p>
+        The food starts with Filipino pantry cooking —
+        rice, noodles, bread, skewers, seafood,
+        things eaten with your hands,
+        things best shared over drinks.
+      </p>
+
+      <p>
+        Some dishes stay close to memory.
+        Others wander through travel, cravings,
+        street food, and bad decisions.
+      </p>
+
+      <p>
+        We cook with smoke, butter, chicken oil,
+        lard, stock, acid, sweetness, char,
+        and anything that tastes like something.
+      </p>
+
+      <p>
+        Nothing here tries to be perfect.
+        Only worth coming back for.
+      </p>
+
+    </div>
+
+    <!-- RIGHT -->
+
+    <div class="story-image">
+
+      <img
+        src="assets/rekdifront.jpeg"
+        alt="Rekdi Front"
+      >
+
+    </div>
+
+  </div>
+
+</section>
 
  <section class="careers" id="careers">
   <h2>Careers</h2>
