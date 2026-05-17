@@ -73,8 +73,8 @@ nav{
   justify-content:space-between;
   align-items:center;
 
-  background:rgba(245,234,219,0.9);
-  backdrop-filter:blur(12px);
+  background:rgba(245,234,219,0.92);
+  backdrop-filter:blur(10px);
 
   border-bottom:3px solid #111;
 }
@@ -90,46 +90,74 @@ nav{
   justify-content:flex-end;
 }
 
-/* ---------------- NAV BUTTONS ---------------- */
+/* ---------------- COMIC BUTTONS ---------------- */
 
-.nav-links a{
+.nav-links a,
+.reserve-btn{
 
   position:relative;
 
-  padding:10px 18px;
+  padding:13px 22px;
 
   font-family:"Baloo 2",sans-serif;
-  font-weight:800;
+  font-weight:900;
   font-size:12px;
 
   text-transform:uppercase;
   letter-spacing:0.08em;
 
+  border:4px solid #111;
+
+  transition:0.15s ease;
+}
+
+.nav-links a{
+
+  background:#fffdf6;
   color:#111;
 
-  background:#ffe34d;
-
-  border:3px solid #111;
-
   clip-path:polygon(
-    0 8%,
-    8% 0,
-    100% 0,
-    100% 85%,
-    92% 100%,
-    0 100%
+    8% 18%,
+    20% 10%,
+    26% 2%,
+    38% 12%,
+    52% 6%,
+    62% 15%,
+    78% 10%,
+    88% 22%,
+    98% 30%,
+    90% 45%,
+    98% 62%,
+    84% 70%,
+    88% 88%,
+    68% 80%,
+    58% 96%,
+    45% 82%,
+    30% 90%,
+    26% 75%,
+    8% 78%,
+    16% 60%,
+    2% 48%,
+    16% 36%
   );
+}
 
-  box-shadow:
-    5px 5px 0 #e8345b;
+.nav-links a:nth-child(2n){
+  background:#ffe34d;
+}
 
-  transition:0.18s ease;
+.nav-links a:nth-child(3n){
+  background:#e8345b;
+  color:#fff;
+}
+
+.nav-links a:nth-child(4n){
+  background:#2433a3;
+  color:#fff;
 }
 
 .nav-links a:hover{
-  transform:translate(-2px,-2px);
-  box-shadow:
-    8px 8px 0 #2433a3;
+  transform:rotate(-2deg) scale(1.04);
 }
 
 /* ---------------- FLOAT BUTTON ---------------- */
@@ -142,31 +170,40 @@ nav{
 
   z-index:9999;
 
-  padding:14px 18px;
-
   background:#111;
   color:#fff;
 
-  border:3px solid #fff7cf;
-
-  font-family:"Baloo 2",sans-serif;
-  font-weight:800;
+  border-color:#ffe34d;
 
   clip-path:polygon(
-    0 10%,
-    10% 0,
-    100% 0,
-    100% 90%,
-    90% 100%,
-    0 100%
+    8% 18%,
+    20% 10%,
+    26% 2%,
+    38% 12%,
+    52% 6%,
+    62% 15%,
+    78% 10%,
+    88% 22%,
+    98% 30%,
+    90% 45%,
+    98% 62%,
+    84% 70%,
+    88% 88%,
+    68% 80%,
+    58% 96%,
+    45% 82%,
+    30% 90%,
+    26% 75%,
+    8% 78%,
+    16% 60%,
+    2% 48%,
+    16% 36%
   );
 }
 
 /* ---------------- HERO ---------------- */
 
 .hero{
-
-  min-height:auto;
 
   padding:
     120px
@@ -180,7 +217,7 @@ nav{
 
   background:
     linear-gradient(
-      rgba(245,234,219,0.45),
+      rgba(245,234,219,0.4),
       rgba(245,234,219,0.65)
     ),
     url("assets/rekdi2ndfloor.jpg")
@@ -203,11 +240,10 @@ nav{
 
   padding:10px 14px;
 
-  border:3px solid #111;
+  border:4px solid #111;
 
   font-family:"Archivo Black",sans-serif;
   font-size:12px;
-  letter-spacing:0.08em;
 
   margin-bottom:20px;
 
@@ -223,45 +259,43 @@ nav{
 
   font-family:"Shrikhand",cursive;
 
-  font-size:clamp(3.2rem,9vw,7rem);
+  font-size:clamp(3.5rem,9vw,7rem);
 
-  line-height:0.9;
+  line-height:0.88;
 
-  margin-bottom:24px;
-
-  color:#111;
+  margin-bottom:22px;
 
   text-shadow:
     5px 5px 0 #e8345b,
-    -3px -3px 0 #fff7cf;
+    -2px -2px 0 #fff7cf;
 }
 
 .hero-board{
 
-  max-width:620px;
-
   background:#fff7cf;
 
-  border:4px solid #111;
+  border:6px solid #ffe34d;
 
   padding:24px;
 
-  transform:rotate(-1deg);
-
-  box-shadow:
-    12px 12px 0 #2433a3;
+  clip-path:polygon(
+    0 4%,
+    98% 0,
+    100% 94%,
+    4% 100%
+  );
 }
 
 .hero-board p{
 
   font-size:1rem;
-  line-height:1.6;
+  line-height:1.7;
   font-weight:700;
 }
 
 .hero-side{
   position:relative;
-  min-height:520px;
+  min-height:480px;
 }
 
 .hero-side .blue{
@@ -273,9 +307,9 @@ nav{
   right:0;
   top:0;
 
-  opacity:0.7;
+  opacity:0.72;
 
-  transform:rotate(10deg);
+  transform:rotate(12deg);
 }
 
 .hero-side .pink{
@@ -284,10 +318,10 @@ nav{
 
   width:78%;
 
-  left:-10%;
+  left:-8%;
   bottom:0;
 
-  opacity:0.8;
+  opacity:0.78;
 
   transform:rotate(-8deg);
 }
@@ -296,24 +330,32 @@ nav{
 
   position:absolute;
 
-  bottom:12%;
   right:8%;
+  bottom:10%;
 
-  width:320px;
+  width:300px;
 
   background:#111;
   color:#fff;
 
   padding:20px;
 
-  border:4px solid #ffe34d;
+  border:5px solid #ffe34d;
 
   font-family:"Baloo 2",sans-serif;
   font-weight:700;
-
   line-height:1.5;
 
   transform:rotate(3deg);
+
+  clip-path:polygon(
+    0 10%,
+    10% 0,
+    100% 0,
+    100% 90%,
+    90% 100%,
+    0 100%
+  );
 }
 
 /* ---------------- TITLES ---------------- */
@@ -326,9 +368,7 @@ nav{
 
   line-height:0.88;
 
-  color:#111;
-
-  margin-bottom:18px;
+  margin-bottom:16px;
 
   text-shadow:
     4px 4px 0 #2433a3,
@@ -341,7 +381,7 @@ nav{
 
   background:#ffe34d;
 
-  border:3px solid #111;
+  border:4px solid #111;
 
   padding:12px 18px;
 
@@ -350,8 +390,13 @@ nav{
 
   transform:rotate(-1deg);
 
-  box-shadow:
-    6px 6px 0 #e8345b;
+  clip-path:polygon(
+    0 10%,
+    10% 0,
+    100% 0,
+    94% 100%,
+    0 90%
+  );
 }
 
 /* ---------------- MENU ---------------- */
@@ -369,7 +414,7 @@ nav{
 
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:24px;
+  gap:26px;
 
   position:relative;
 }
@@ -378,22 +423,51 @@ nav{
 
   background:#fffdf6;
 
-  border:5px solid #ffe34d;
+  border:9px solid #ffe34d;
 
-  padding:24px;
+  padding:26px;
 
   position:relative;
-
-  box-shadow:
-    10px 10px 0 #111;
 }
 
-.menu-panel:nth-child(2n){
-  transform:rotate(1deg);
+.menu-panel:nth-child(1){
+
+  clip-path:polygon(
+    3% 0,
+    100% 0,
+    97% 100%,
+    0 96%
+  );
 }
 
-.menu-panel:nth-child(2n+1){
-  transform:rotate(-1deg);
+.menu-panel:nth-child(2){
+
+  clip-path:polygon(
+    0 4%,
+    96% 0,
+    100% 96%,
+    3% 100%
+  );
+}
+
+.menu-panel:nth-child(3){
+
+  clip-path:polygon(
+    4% 0,
+    100% 5%,
+    96% 100%,
+    0 94%
+  );
+}
+
+.menu-panel:nth-child(4){
+
+  clip-path:polygon(
+    0 0,
+    97% 3%,
+    100% 100%,
+    4% 96%
+  );
 }
 
 .menu-panel h2{
@@ -408,9 +482,17 @@ nav{
   margin-bottom:24px;
 
   font-family:"Archivo Black",sans-serif;
-  font-size:1.3rem;
+  font-size:1.2rem;
 
   text-transform:uppercase;
+
+  clip-path:polygon(
+    0 10%,
+    8% 0,
+    100% 0,
+    94% 100%,
+    0 90%
+  );
 }
 
 .menu-item{
@@ -477,120 +559,6 @@ nav{
   transform:rotate(-14deg);
 }
 
-/* ---------------- TRANSITION ---------------- */
-
-.transition-section{
-
-  padding:70px 5vw;
-
-  background:#e8345b;
-  color:#fff;
-
-  text-align:center;
-
-  border-bottom:4px solid #111;
-}
-
-.transition-content h2{
-
-  font-family:"Shrikhand",cursive;
-
-  font-size:clamp(2.8rem,8vw,5rem);
-
-  line-height:0.9;
-
-  margin-bottom:16px;
-}
-
-.transition-content p{
-
-  font-size:1.1rem;
-
-  font-weight:700;
-}
-
-/* ---------------- BAR ---------------- */
-
-.bar-section{
-
-  padding:80px 5vw;
-
-  background:
-    linear-gradient(
-      rgba(0,0,0,0.55),
-      rgba(0,0,0,0.7)
-    ),
-    url("assets/rekdibarceiling.jpg")
-    center/cover no-repeat;
-
-  color:#fff;
-
-  border-bottom:4px solid #111;
-}
-
-.bar-grid{
-
-  display:grid;
-  grid-template-columns:0.7fr 1.3fr;
-  gap:30px;
-}
-
-.bar-poster{
-
-  background:#2433a3;
-
-  padding:30px;
-
-  border:4px solid #fff7cf;
-
-  transform:rotate(-2deg);
-
-  height:max-content;
-}
-
-.bar-poster h2{
-
-  font-family:"Shrikhand",cursive;
-
-  font-size:clamp(3rem,7vw,5rem);
-
-  line-height:0.9;
-}
-
-.bar-menu{
-
-  background:rgba(255,255,255,0.08);
-
-  backdrop-filter:blur(10px);
-
-  border:4px solid #ffe34d;
-
-  padding:28px;
-}
-
-.bar-menu-grid{
-
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:26px;
-}
-
-.bar-menu h3{
-
-  display:inline-block;
-
-  background:#ffe34d;
-  color:#111;
-
-  padding:10px 14px;
-
-  margin-bottom:24px;
-
-  font-family:"Archivo Black",sans-serif;
-
-  transform:rotate(-1deg);
-}
-
 /* ---------------- STORY ---------------- */
 
 .story{
@@ -613,8 +581,9 @@ nav{
   width:360px;
   height:360px;
 
-  background:url("assets/rekdipinkbg.png")
-  center/contain no-repeat;
+  background:
+    url("assets/rekdipinkbg.png")
+    center/contain no-repeat;
 
   opacity:0.08;
 
@@ -640,20 +609,22 @@ nav{
 
 .story-image img{
 
-  border:5px solid #111;
+  border:6px solid #ffe34d;
 
   transform:rotate(-2deg);
 
-  box-shadow:
-    14px 14px 0 #2433a3;
+  clip-path:polygon(
+    0 4%,
+    98% 0,
+    100% 94%,
+    4% 100%
+  );
 }
 
 .story-copy{
 
   display:grid;
   gap:18px;
-
-  position:relative;
 }
 
 .story-copy h2{
@@ -664,24 +635,20 @@ nav{
 
   line-height:0.88;
 
-  margin-bottom:10px;
+  margin-bottom:12px;
 
   transform:rotate(-2deg);
 }
 
 .story-copy p{
 
-  max-width:720px;
-
   padding:18px 22px;
+
+  border:5px solid #111;
 
   font-size:1rem;
   line-height:1.7;
   font-weight:700;
-
-  border:3px solid #111;
-
-  position:relative;
 }
 
 .story-copy p:nth-child(2){
@@ -689,6 +656,13 @@ nav{
   background:#fff7cf;
 
   transform:rotate(-1deg);
+
+  clip-path:polygon(
+    0 8%,
+    100% 0,
+    94% 100%,
+    4% 94%
+  );
 }
 
 .story-copy p:nth-child(3){
@@ -698,6 +672,13 @@ nav{
   transform:rotate(1deg);
 
   margin-left:30px;
+
+  clip-path:polygon(
+    0 0,
+    96% 6%,
+    100% 100%,
+    4% 92%
+  );
 }
 
 .story-copy p:nth-child(4){
@@ -706,7 +687,12 @@ nav{
 
   transform:rotate(-2deg);
 
-  margin-left:12px;
+  clip-path:polygon(
+    4% 0,
+    100% 0,
+    96% 100%,
+    0 94%
+  );
 }
 
 .story-copy p:nth-child(5){
@@ -716,6 +702,13 @@ nav{
   transform:rotate(2deg);
 
   width:90%;
+
+  clip-path:polygon(
+    0 4%,
+    100% 0,
+    96% 96%,
+    2% 100%
+  );
 }
 
 .story-copy p:nth-child(6){
@@ -726,6 +719,116 @@ nav{
   transform:rotate(-1deg);
 
   width:85%;
+
+  border-color:#ffe34d;
+
+  clip-path:polygon(
+    0 10%,
+    10% 0,
+    100% 0,
+    94% 100%,
+    0 90%
+  );
+}
+
+/* ---------------- BAR ---------------- */
+
+.bar-section{
+
+  padding:80px 5vw;
+
+  background:
+    linear-gradient(
+      rgba(0,0,0,0.55),
+      rgba(0,0,0,0.72)
+    ),
+    url("assets/rekdibarceiling.jpg")
+    center/cover no-repeat;
+
+  color:#fff;
+
+  border-bottom:4px solid #111;
+}
+
+.bar-grid{
+
+  display:grid;
+  grid-template-columns:0.7fr 1.3fr;
+  gap:30px;
+}
+
+.bar-poster{
+
+  background:#2433a3;
+
+  padding:30px;
+
+  border:8px solid #ffe34d;
+
+  clip-path:polygon(
+    0 4%,
+    98% 0,
+    100% 94%,
+    4% 100%
+  );
+}
+
+.bar-poster h2{
+
+  font-family:"Shrikhand",cursive;
+
+  font-size:clamp(3rem,7vw,5rem);
+
+  line-height:0.9;
+}
+
+.bar-menu{
+
+  background:rgba(255,255,255,0.08);
+
+  backdrop-filter:blur(10px);
+
+  border:8px solid #ffe34d;
+
+  padding:28px;
+
+  clip-path:polygon(
+    0 4%,
+    98% 0,
+    100% 94%,
+    4% 100%
+  );
+}
+
+.bar-menu-grid{
+
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:26px;
+}
+
+.bar-menu h3{
+
+  display:inline-block;
+
+  background:#ffe34d;
+  color:#111;
+
+  padding:10px 14px;
+
+  margin-bottom:24px;
+
+  font-family:"Archivo Black",sans-serif;
+
+  transform:rotate(-1deg);
+
+  clip-path:polygon(
+    0 10%,
+    10% 0,
+    100% 0,
+    94% 100%,
+    0 90%
+  );
 }
 
 /* ---------------- CAREERS ---------------- */
@@ -767,17 +870,49 @@ nav{
 
   padding:24px;
 
-  border:4px solid #111;
+  border:8px solid #ffe34d;
 
   min-height:220px;
 }
 
-.career-card:nth-child(odd){
-  transform:rotate(-1deg);
+.career-card:nth-child(1){
+
+  clip-path:polygon(
+    0 4%,
+    98% 0,
+    100% 94%,
+    4% 100%
+  );
 }
 
-.career-card:nth-child(even){
-  transform:rotate(1deg);
+.career-card:nth-child(2){
+
+  clip-path:polygon(
+    4% 0,
+    100% 5%,
+    96% 100%,
+    0 94%
+  );
+}
+
+.career-card:nth-child(3){
+
+  clip-path:polygon(
+    0 0,
+    97% 3%,
+    100% 100%,
+    4% 96%
+  );
+}
+
+.career-card:nth-child(4){
+
+  clip-path:polygon(
+    3% 0,
+    100% 0,
+    97% 100%,
+    0 96%
+  );
 }
 
 .career-card h3{
@@ -821,7 +956,7 @@ nav{
 
   background:#fff7cf;
 
-  border:4px solid #111;
+  border:8px solid #ffe34d;
 
   padding:26px;
 
@@ -829,17 +964,20 @@ nav{
 
   line-height:1.8;
 
-  box-shadow:
-    12px 12px 0 #e8345b;
+  clip-path:polygon(
+    0 4%,
+    98% 0,
+    100% 94%,
+    4% 100%
+  );
 }
 
 .find iframe{
 
   width:100%;
-  height:100%;
   min-height:420px;
 
-  border:4px solid #111;
+  border:8px solid #ffe34d;
 }
 
 /* ---------------- MOBILE ---------------- */
