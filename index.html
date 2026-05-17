@@ -31,8 +31,8 @@ body{
 }
 
 a{
-  text-decoration:none;
   color:inherit;
+  text-decoration:none;
 }
 
 img{
@@ -67,13 +67,13 @@ nav{
   width:100%;
   z-index:9999;
 
+  padding:14px 18px;
+
   display:flex;
   justify-content:space-between;
   align-items:center;
 
-  padding:14px 18px;
-
-  background:rgba(245,234,219,0.94);
+  background:rgba(245,234,219,0.92);
   backdrop-filter:blur(10px);
 
   border-bottom:3px solid #111;
@@ -87,15 +87,17 @@ nav{
   display:flex;
   flex-wrap:wrap;
   gap:10px;
+  justify-content:flex-end;
 }
 
-/* comic nav buttons */
+/* ---------------- COMIC BUTTONS ---------------- */
 
-.nav-links a{
+.nav-links a,
+.reserve-btn{
 
   position:relative;
 
-  padding:12px 20px;
+  padding:13px 22px;
 
   font-family:"Baloo 2",sans-serif;
   font-weight:900;
@@ -107,8 +109,12 @@ nav{
   border:4px solid #111;
 
   transition:0.15s ease;
+}
+
+.nav-links a{
 
   background:#fffdf6;
+  color:#111;
 
   clip-path:polygon(
     8% 18%,
@@ -154,6 +160,47 @@ nav{
   transform:rotate(-2deg) scale(1.04);
 }
 
+/* ---------------- FLOAT BUTTON ---------------- */
+
+.reserve-btn{
+
+  position:fixed;
+  right:16px;
+  bottom:16px;
+
+  z-index:9999;
+
+  background:#111;
+  color:#fff;
+
+  border-color:#ffe34d;
+
+  clip-path:polygon(
+    8% 18%,
+    20% 10%,
+    26% 2%,
+    38% 12%,
+    52% 6%,
+    62% 15%,
+    78% 10%,
+    88% 22%,
+    98% 30%,
+    90% 45%,
+    98% 62%,
+    84% 70%,
+    88% 88%,
+    68% 80%,
+    58% 96%,
+    45% 82%,
+    30% 90%,
+    26% 75%,
+    8% 78%,
+    16% 60%,
+    2% 48%,
+    16% 36%
+  );
+}
+
 /* ---------------- HERO ---------------- */
 
 .hero{
@@ -163,8 +210,6 @@ nav{
     5vw
     70px;
 
-  min-height:100vh;
-
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:40px;
@@ -172,8 +217,8 @@ nav{
 
   background:
     linear-gradient(
-      rgba(245,234,219,0.45),
-      rgba(245,234,219,0.72)
+      rgba(245,234,219,0.4),
+      rgba(245,234,219,0.65)
     ),
     url("assets/rekdi2ndfloor.jpg")
     center/cover no-repeat;
@@ -193,9 +238,9 @@ nav{
   background:#2433a3;
   color:#fff;
 
-  border:4px solid #111;
-
   padding:10px 14px;
+
+  border:4px solid #111;
 
   font-family:"Archivo Black",sans-serif;
   font-size:12px;
@@ -206,8 +251,8 @@ nav{
 }
 
 .hero-logo-text{
-  width:min(540px,90vw);
-  margin-bottom:20px;
+  width:min(520px,90vw);
+  margin-bottom:18px;
 }
 
 .hero h1{
@@ -218,7 +263,7 @@ nav{
 
   line-height:0.88;
 
-  margin-bottom:24px;
+  margin-bottom:22px;
 
   text-shadow:
     5px 5px 0 #e8345b,
@@ -229,7 +274,7 @@ nav{
 
   background:#fff7cf;
 
-  border:8px solid #ffe34d;
+  border:6px solid #ffe34d;
 
   padding:24px;
 
@@ -250,7 +295,7 @@ nav{
 
 .hero-side{
   position:relative;
-  min-height:500px;
+  min-height:480px;
 }
 
 .hero-side .blue{
@@ -262,7 +307,7 @@ nav{
   right:0;
   top:0;
 
-  opacity:0.7;
+  opacity:0.72;
 
   transform:rotate(12deg);
 }
@@ -271,9 +316,9 @@ nav{
 
   position:absolute;
 
-  width:76%;
+  width:78%;
 
-  left:-6%;
+  left:-8%;
   bottom:0;
 
   opacity:0.78;
@@ -285,7 +330,7 @@ nav{
 
   position:absolute;
 
-  right:6%;
+  right:8%;
   bottom:10%;
 
   width:300px;
@@ -293,9 +338,9 @@ nav{
   background:#111;
   color:#fff;
 
-  border:6px solid #ffe34d;
-
   padding:20px;
+
+  border:5px solid #ffe34d;
 
   font-family:"Baloo 2",sans-serif;
   font-weight:700;
@@ -307,8 +352,9 @@ nav{
     0 10%,
     10% 0,
     100% 0,
-    94% 100%,
-    0 90%
+    100% 90%,
+    90% 100%,
+    0 100%
   );
 }
 
@@ -318,14 +364,14 @@ nav{
 
   font-family:"Shrikhand",cursive;
 
-  font-size:clamp(3rem,8vw,5.8rem);
+  font-size:clamp(3rem,8vw,6rem);
 
   line-height:0.88;
 
   margin-bottom:16px;
 
   text-shadow:
-    4px 4px 0 #ffe34d,
+    4px 4px 0 #2433a3,
     -2px -2px 0 #fff7cf;
 }
 
@@ -333,207 +379,184 @@ nav{
 
   display:inline-block;
 
-  background:#fffdf6;
+  background:#ffe34d;
 
   border:4px solid #111;
-  border-left:16px solid #e8345b;
 
   padding:12px 18px;
 
   font-family:"Baloo 2",sans-serif;
-  font-weight:900;
-
-  text-transform:uppercase;
+  font-weight:800;
 
   transform:rotate(-1deg);
+
+  clip-path:polygon(
+    0 10%,
+    10% 0,
+    100% 0,
+    94% 100%,
+    0 90%
+  );
 }
 
 /* ---------------- MENU ---------------- */
 
 .menu-section{
 
-  padding:70px 5vw;
+  padding:80px 5vw;
 
-  background:
-    linear-gradient(
-      rgba(255,244,214,0.78),
-      rgba(255,244,214,0.88)
-    ),
-    url("assets/rekdirestoceiling.jpg")
-    center/cover no-repeat;
+  background:#fff4d6;
 
   border-bottom:4px solid #111;
 }
 
-.menu-section .section-title-wrap{
-  margin-bottom:28px;
-}
-
-/* main menu board */
-
 .menu-wall{
-
-  position:relative;
 
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:0;
+  gap:26px;
 
-  max-width:1180px;
-  margin:0 auto;
-
-  background:#fffdf6;
-
-  border:18px solid #ffcc18;
-  outline:4px solid #111;
-
-  padding:24px;
+  position:relative;
 }
-
-.menu-wall::before,
-.menu-wall::after{
-
-  content:"";
-
-  position:absolute;
-
-  width:10px;
-  height:10px;
-
-  background:#111;
-
-  border-radius:50%;
-
-  top:10px;
-}
-
-.menu-wall::before{
-  left:12px;
-}
-
-.menu-wall::after{
-  right:12px;
-}
-
-/* panels */
 
 .menu-panel{
 
   background:#fffdf6;
 
-  border:2px solid #111;
+  border:9px solid #ffe34d;
 
-  padding:18px 20px;
+  padding:26px;
 
   position:relative;
-
-  clip-path:none;
-  transform:none;
 }
 
 .menu-panel:nth-child(1){
-  border-right:none;
-  border-bottom:none;
+
+  clip-path:polygon(
+    3% 0,
+    100% 0,
+    97% 100%,
+    0 96%
+  );
 }
 
 .menu-panel:nth-child(2){
-  border-bottom:none;
+
+  clip-path:polygon(
+    0 4%,
+    96% 0,
+    100% 96%,
+    3% 100%
+  );
 }
 
 .menu-panel:nth-child(3){
-  border-right:none;
+
+  clip-path:polygon(
+    4% 0,
+    100% 5%,
+    96% 100%,
+    0 94%
+  );
 }
 
-/* menu labels */
+.menu-panel:nth-child(4){
+
+  clip-path:polygon(
+    0 0,
+    97% 3%,
+    100% 100%,
+    4% 96%
+  );
+}
 
 .menu-panel h2{
 
-  display:block;
+  display:inline-block;
 
-  background:#fffdf6;
-  color:#e8345b;
+  background:#111;
+  color:#ffe34d;
 
-  border:2px solid #111;
-  border-left:12px solid #2433a3;
+  padding:10px 16px;
 
-  padding:7px 10px;
-
-  margin-bottom:14px;
+  margin-bottom:24px;
 
   font-family:"Archivo Black",sans-serif;
-  font-size:1rem;
+  font-size:1.2rem;
 
   text-transform:uppercase;
-}
 
-.menu-panel:nth-child(2) h2{
-  color:#2433a3;
-  border-left-color:#e8345b;
+  clip-path:polygon(
+    0 10%,
+    8% 0,
+    100% 0,
+    94% 100%,
+    0 90%
+  );
 }
-
-.menu-panel:nth-child(3) h2{
-  color:#111;
-  border-left-color:#ffcc18;
-}
-
-.menu-panel:nth-child(4) h2{
-  color:#e8345b;
-  border-left-color:#111;
-}
-
-/* menu items */
 
 .menu-item{
 
+  padding:14px 0;
+
+  border-bottom:2px dashed #111;
+
   display:grid;
   grid-template-columns:1fr auto;
-  gap:14px;
-
-  padding:8px 0 7px;
-
-  border-bottom:1px solid rgba(0,0,0,0.22);
+  gap:12px;
 }
 
 .menu-name{
 
   font-family:"Baloo 2",sans-serif;
-
-  font-size:0.98rem;
-  font-weight:900;
-
+  font-size:1rem;
+  font-weight:800;
   text-transform:uppercase;
-
-  line-height:1.08;
-}
-
-.price{
-
-  font-family:"Archivo Black",sans-serif;
-
-  font-size:0.88rem;
-
-  white-space:nowrap;
-
-  color:#2433a3;
 }
 
 .menu-desc{
 
   grid-column:1/-1;
 
-  font-size:0.74rem;
-  line-height:1.25;
+  opacity:0.82;
 
-  opacity:0.72;
+  line-height:1.5;
 
-  margin-top:-2px;
-
-  font-weight:700;
+  font-size:0.9rem;
 }
 
-.texture-red,
+.price{
+
+  font-family:"Archivo Black",sans-serif;
+  font-size:0.9rem;
+}
+
+.texture-red{
+
+  position:absolute;
+
+  width:260px;
+
+  right:-80px;
+  top:80px;
+
+  opacity:0.12;
+
+  transform:rotate(20deg);
+}
+
 .texture-blue{
-  display:none;
+
+  position:absolute;
+
+  width:300px;
+
+  left:-120px;
+  bottom:40px;
+
+  opacity:0.12;
+
+  transform:rotate(-14deg);
 }
 
 /* ---------------- STORY ---------------- */
@@ -545,6 +568,29 @@ nav{
   background:#f5eadb;
 
   border-bottom:4px solid #111;
+
+  position:relative;
+}
+
+.story::before{
+
+  content:"";
+
+  position:absolute;
+
+  width:360px;
+  height:360px;
+
+  background:
+    url("assets/rekdipinkbg.png")
+    center/contain no-repeat;
+
+  opacity:0.08;
+
+  right:-80px;
+  top:40px;
+
+  transform:rotate(20deg);
 }
 
 .story-layout{
@@ -563,7 +609,7 @@ nav{
 
 .story-image img{
 
-  border:8px solid #ffe34d;
+  border:6px solid #ffe34d;
 
   transform:rotate(-2deg);
 
@@ -610,6 +656,13 @@ nav{
   background:#fff7cf;
 
   transform:rotate(-1deg);
+
+  clip-path:polygon(
+    0 8%,
+    100% 0,
+    94% 100%,
+    4% 94%
+  );
 }
 
 .story-copy p:nth-child(3){
@@ -619,6 +672,13 @@ nav{
   transform:rotate(1deg);
 
   margin-left:30px;
+
+  clip-path:polygon(
+    0 0,
+    96% 6%,
+    100% 100%,
+    4% 92%
+  );
 }
 
 .story-copy p:nth-child(4){
@@ -626,6 +686,13 @@ nav{
   background:#dbe0ff;
 
   transform:rotate(-2deg);
+
+  clip-path:polygon(
+    4% 0,
+    100% 0,
+    96% 100%,
+    0 94%
+  );
 }
 
 .story-copy p:nth-child(5){
@@ -635,6 +702,13 @@ nav{
   transform:rotate(2deg);
 
   width:90%;
+
+  clip-path:polygon(
+    0 4%,
+    100% 0,
+    96% 96%,
+    2% 100%
+  );
 }
 
 .story-copy p:nth-child(6){
@@ -642,11 +716,19 @@ nav{
   background:#111;
   color:#fff;
 
-  border-color:#ffe34d;
-
   transform:rotate(-1deg);
 
   width:85%;
+
+  border-color:#ffe34d;
+
+  clip-path:polygon(
+    0 10%,
+    10% 0,
+    100% 0,
+    94% 100%,
+    0 90%
+  );
 }
 
 /* ---------------- BAR ---------------- */
@@ -679,9 +761,16 @@ nav{
 
   background:#2433a3;
 
+  padding:30px;
+
   border:8px solid #ffe34d;
 
-  padding:30px;
+  clip-path:polygon(
+    0 4%,
+    98% 0,
+    100% 94%,
+    4% 100%
+  );
 }
 
 .bar-poster h2{
@@ -702,6 +791,13 @@ nav{
   border:8px solid #ffe34d;
 
   padding:28px;
+
+  clip-path:polygon(
+    0 4%,
+    98% 0,
+    100% 94%,
+    4% 100%
+  );
 }
 
 .bar-menu-grid{
@@ -725,6 +821,14 @@ nav{
   font-family:"Archivo Black",sans-serif;
 
   transform:rotate(-1deg);
+
+  clip-path:polygon(
+    0 10%,
+    10% 0,
+    100% 0,
+    94% 100%,
+    0 90%
+  );
 }
 
 /* ---------------- CAREERS ---------------- */
@@ -764,9 +868,51 @@ nav{
 
   color:#111;
 
+  padding:24px;
+
   border:8px solid #ffe34d;
 
-  padding:24px;
+  min-height:220px;
+}
+
+.career-card:nth-child(1){
+
+  clip-path:polygon(
+    0 4%,
+    98% 0,
+    100% 94%,
+    4% 100%
+  );
+}
+
+.career-card:nth-child(2){
+
+  clip-path:polygon(
+    4% 0,
+    100% 5%,
+    96% 100%,
+    0 94%
+  );
+}
+
+.career-card:nth-child(3){
+
+  clip-path:polygon(
+    0 0,
+    97% 3%,
+    100% 100%,
+    4% 96%
+  );
+}
+
+.career-card:nth-child(4){
+
+  clip-path:polygon(
+    3% 0,
+    100% 0,
+    97% 100%,
+    0 96%
+  );
 }
 
 .career-card h3{
@@ -814,9 +960,16 @@ nav{
 
   padding:26px;
 
+  font-weight:700;
+
   line-height:1.8;
 
-  font-weight:700;
+  clip-path:polygon(
+    0 4%,
+    98% 0,
+    100% 94%,
+    4% 100%
+  );
 }
 
 .find iframe{
@@ -843,7 +996,6 @@ nav{
   }
 
   .hero{
-    min-height:auto;
     padding-top:110px;
   }
 
@@ -861,6 +1013,10 @@ nav{
     margin-left:0 !important;
   }
 
+  .career-card{
+    min-height:auto;
+  }
+
   .nav-links{
     gap:8px;
   }
@@ -868,13 +1024,6 @@ nav{
   .nav-links a{
     font-size:10px;
     padding:8px 12px;
-  }
-
-  .menu-panel:nth-child(1),
-  .menu-panel:nth-child(2),
-  .menu-panel:nth-child(3){
-    border-right:2px solid #111;
-    border-bottom:2px solid #111;
   }
 
 }
