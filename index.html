@@ -45,6 +45,94 @@ section{
   overflow:hidden;
 }
 
+  /* ---------------- OPENING SCREEN ---------------- */
+
+.opening-screen{
+
+  position:relative;
+
+  min-height:100vh;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  padding:40px;
+
+  background:#f5eadb;
+
+  overflow:hidden;
+
+  border-bottom:4px solid #111;
+}
+
+.opening-inner{
+
+  position:relative;
+  z-index:2;
+
+  text-align:center;
+}
+
+.opening-logo{
+
+  width:min(760px,88vw);
+
+  margin:0 auto 20px;
+}
+
+.opening-subtitle{
+
+  font-family:"Baloo 2",sans-serif;
+
+  font-size:clamp(1.1rem,2vw,1.5rem);
+
+  font-weight:800;
+
+  letter-spacing:0.08em;
+
+  text-transform:uppercase;
+
+  opacity:0.78;
+}
+
+.opening-bg{
+
+  position:absolute;
+
+  background-repeat:no-repeat;
+  background-size:contain;
+
+  pointer-events:none;
+
+  opacity:0.06;
+}
+
+.opening-blue{
+
+  width:420px;
+  height:420px;
+
+  right:-80px;
+  top:-60px;
+
+  background-image:url("assets/rekdibluebg.png");
+
+  transform:rotate(18deg);
+}
+
+.opening-pink{
+
+  width:520px;
+  height:520px;
+
+  left:-120px;
+  bottom:-120px;
+
+  background-image:url("assets/rekdipinkbg.png");
+
+  transform:rotate(-14deg);
+}
 /* ---------------- NAV ---------------- */
 
 nav{
@@ -1195,6 +1283,26 @@ nav{
 
 <body id="top">
 
+  <section class="opening-screen">
+
+  <div class="opening-bg opening-blue"></div>
+  <div class="opening-bg opening-pink"></div>
+
+  <div class="opening-inner">
+
+    <img
+      src="assets/Rekditext.png"
+      alt="Rekdi"
+      class="opening-logo"
+    >
+
+    <div class="opening-subtitle">
+      Modern Karinderya
+    </div>
+
+  </div>
+
+</section>
   <nav>
     <a href="#top" class="nav-left">
       <img src="assets/rekdilogo.png" alt="Rekdi Logo">
