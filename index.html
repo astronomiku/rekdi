@@ -35,12 +35,17 @@ a{
   text-decoration:none;
 }
 
+img{
+  max-width:100%;
+  display:block;
+}
+
 section{
   position:relative;
   overflow:hidden;
 }
 
-/* ---------- TYPE ---------- */
+/* ---------------- TYPE ---------------- */
 
 .display-font{
   font-family:"Shrikhand",cursive;
@@ -54,7 +59,7 @@ section{
   font-family:"Archivo Black",sans-serif;
 }
 
-/* ---------- NAV ---------- */
+/* ---------------- NAV ---------------- */
 
 nav{
   position:fixed;
@@ -62,393 +67,368 @@ nav{
   width:100%;
   z-index:9999;
 
-  padding:18px 22px;
+  padding:14px 18px;
 
   display:flex;
   justify-content:space-between;
   align-items:center;
 
-  background:rgba(245,234,219,0.88);
-  backdrop-filter:blur(10px);
+  background:rgba(245,234,219,0.9);
+  backdrop-filter:blur(12px);
 
   border-bottom:3px solid #111;
 }
 
 .nav-left img{
-  width:48px;
-  display:block;
+  width:42px;
 }
 
 .nav-links{
   display:flex;
   flex-wrap:wrap;
-  gap:14px;
+  gap:10px;
   justify-content:flex-end;
 }
 
-/* ---------- NEW QUIRKY BUTTONS ---------- */
+/* ---------------- NAV BUTTONS ---------------- */
 
-.nav-links a,
-.reserve-btn,
-.menu-label,
-.section-badge{
+.nav-links a{
 
   position:relative;
 
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-
-  padding:12px 20px;
+  padding:10px 18px;
 
   font-family:"Baloo 2",sans-serif;
   font-weight:800;
-  font-size:13px;
+  font-size:12px;
 
   text-transform:uppercase;
-  letter-spacing:0.06em;
+  letter-spacing:0.08em;
 
   color:#111;
 
-  isolation:isolate;
+  background:#ffe34d;
 
-  transform:rotate(-1deg);
+  border:3px solid #111;
 
+  clip-path:polygon(
+    0 8%,
+    8% 0,
+    100% 0,
+    100% 85%,
+    92% 100%,
+    0 100%
+  );
+
+  box-shadow:
+    5px 5px 0 #e8345b;
+
+  transition:0.18s ease;
 }
 
-.nav-links a::before,
-.reserve-btn::before,
-.menu-label::before,
-.section-badge::before{
-
-  content:"";
-
-  position:absolute;
-  inset:0;
-
-  background:#ffd6dc;
-
-  border-radius:
-    44% 56% 58% 42% /
-    47% 38% 62% 53%;
-
-  z-index:-2;
-
+.nav-links a:hover{
+  transform:translate(-2px,-2px);
+  box-shadow:
+    8px 8px 0 #2433a3;
 }
 
-.nav-links a::after,
-.reserve-btn::after,
-.menu-label::after,
-.section-badge::after{
-
-  content:"";
-
-  position:absolute;
-  inset:6px;
-
-  border:4px solid #9f2d30;
-
-  border-radius:
-    63% 37% 44% 56% /
-    43% 62% 38% 57%;
-
-  z-index:-1;
-
-}
-
-.nav-links a:nth-child(2n)::before{
-  background:#2433a3;
-}
-
-.nav-links a:nth-child(2n){
-  color:#fff;
-}
-
-.nav-links a:nth-child(2n)::after{
-  border-color:#dbe0ff;
-}
-
-.nav-links a:nth-child(3n)::before{
-  background:#e8345b;
-}
-
-.nav-links a:nth-child(3n){
-  color:#fff;
-}
-
-.nav-links a:nth-child(3n)::after{
-  border-color:#ffdce4;
-}
-
-/* ---------- FLOATING BUTTON ---------- */
+/* ---------------- FLOAT BUTTON ---------------- */
 
 .reserve-btn{
+
   position:fixed;
-  right:18px;
-  bottom:18px;
+  right:16px;
+  bottom:16px;
 
   z-index:9999;
-}
 
-.reserve-btn::before{
+  padding:14px 18px;
+
   background:#111;
-}
-
-.reserve-btn{
   color:#fff;
+
+  border:3px solid #fff7cf;
+
+  font-family:"Baloo 2",sans-serif;
+  font-weight:800;
+
+  clip-path:polygon(
+    0 10%,
+    10% 0,
+    100% 0,
+    100% 90%,
+    90% 100%,
+    0 100%
+  );
 }
 
-.reserve-btn::after{
-  border-color:#fff7cf;
-}
-
-/* ---------- HERO ---------- */
+/* ---------------- HERO ---------------- */
 
 .hero{
 
-  min-height:100vh;
+  min-height:auto;
 
-  padding:130px 7vw 80px;
+  padding:
+    120px
+    5vw
+    70px;
 
   display:grid;
-  grid-template-columns:1.05fr 0.95fr;
-  gap:50px;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
   align-items:center;
 
   background:
     linear-gradient(
-      rgba(245,234,219,0.35),
-      rgba(245,234,219,0.55)
+      rgba(245,234,219,0.45),
+      rgba(245,234,219,0.65)
     ),
-    url("assets/rekdi2ndfloor.jpg") center/cover no-repeat;
+    url("assets/rekdi2ndfloor.jpg")
+    center/cover no-repeat;
 
   border-bottom:4px solid #111;
 }
 
-.hero-copy{
+.hero-main{
   position:relative;
   z-index:2;
 }
 
-.hero-logo{
-  width:min(620px,90vw);
-  margin-bottom:28px;
-  display:block;
+.hero-kicker{
+
+  display:inline-block;
+
+  background:#2433a3;
+  color:#fff;
+
+  padding:10px 14px;
+
+  border:3px solid #111;
+
+  font-family:"Archivo Black",sans-serif;
+  font-size:12px;
+  letter-spacing:0.08em;
+
+  margin-bottom:20px;
+
+  transform:rotate(-2deg);
 }
 
-.hero-copy h1{
+.hero-logo-text{
+  width:min(520px,90vw);
+  margin-bottom:18px;
+}
+
+.hero h1{
 
   font-family:"Shrikhand",cursive;
 
-  font-size:clamp(4rem,11vw,9rem);
+  font-size:clamp(3.2rem,9vw,7rem);
 
   line-height:0.9;
 
-  color:#111;
+  margin-bottom:24px;
 
-  margin-bottom:26px;
+  color:#111;
 
   text-shadow:
     5px 5px 0 #e8345b,
     -3px -3px 0 #fff7cf;
 }
 
-.hero-copy p{
+.hero-board{
 
-  max-width:650px;
-
-  font-size:clamp(1rem,1.7vw,1.3rem);
-
-  line-height:1.5;
-
-  font-weight:700;
+  max-width:620px;
 
   background:#fff7cf;
 
-  display:inline-block;
+  border:4px solid #111;
 
-  padding:20px 24px;
+  padding:24px;
 
-  border-radius:30px;
+  transform:rotate(-1deg);
 
-  border:3px dashed #111;
+  box-shadow:
+    12px 12px 0 #2433a3;
 }
 
-.hero-art{
+.hero-board p{
+
+  font-size:1rem;
+  line-height:1.6;
+  font-weight:700;
+}
+
+.hero-side{
   position:relative;
-  min-height:620px;
+  min-height:520px;
 }
 
-.hero-art .pink{
+.hero-side .blue{
+
   position:absolute;
-  width:95%;
-  right:-10%;
+
+  width:58%;
+
+  right:0;
   top:0;
 
-  opacity:0.72;
-
-  transform:rotate(-10deg);
-}
-
-.hero-art .blue{
-  position:absolute;
-  width:65%;
-  left:0;
-  bottom:0;
-
-  opacity:0.8;
+  opacity:0.7;
 
   transform:rotate(10deg);
 }
 
-/* ---------- SECTIONS ---------- */
+.hero-side .pink{
 
-.section-header{
+  position:absolute;
 
-  display:flex;
-  justify-content:space-between;
-  align-items:flex-end;
-  gap:30px;
+  width:78%;
 
-  margin-bottom:60px;
+  left:-10%;
+  bottom:0;
 
+  opacity:0.8;
+
+  transform:rotate(-8deg);
 }
 
-.section-header h2{
+.hero-note{
+
+  position:absolute;
+
+  bottom:12%;
+  right:8%;
+
+  width:320px;
+
+  background:#111;
+  color:#fff;
+
+  padding:20px;
+
+  border:4px solid #ffe34d;
+
+  font-family:"Baloo 2",sans-serif;
+  font-weight:700;
+
+  line-height:1.5;
+
+  transform:rotate(3deg);
+}
+
+/* ---------------- TITLES ---------------- */
+
+.section-title{
 
   font-family:"Shrikhand",cursive;
 
-  font-size:clamp(3.5rem,9vw,8rem);
+  font-size:clamp(3rem,8vw,6rem);
 
   line-height:0.88;
 
   color:#111;
+
+  margin-bottom:18px;
 
   text-shadow:
     4px 4px 0 #2433a3,
     -2px -2px 0 #fff7cf;
 }
 
-/* ---------- MENU ---------- */
+.section-title-tag{
+
+  display:inline-block;
+
+  background:#ffe34d;
+
+  border:3px solid #111;
+
+  padding:12px 18px;
+
+  font-family:"Baloo 2",sans-serif;
+  font-weight:800;
+
+  transform:rotate(-1deg);
+
+  box-shadow:
+    6px 6px 0 #e8345b;
+}
+
+/* ---------------- MENU ---------------- */
 
 .menu-section{
 
-  padding:90px 5vw 110px;
+  padding:80px 5vw;
 
-  background:
-    linear-gradient(
-      rgba(255,244,214,0.82),
-      rgba(255,244,214,0.86)
-    ),
-    url("assets/rekdirestoceiling.jpg") center/cover no-repeat;
+  background:#fff4d6;
 
   border-bottom:4px solid #111;
 }
 
-.menu-grid{
+.menu-wall{
 
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:28px;
+  gap:24px;
 
+  position:relative;
 }
 
-.menu-card{
+.menu-panel{
+
+  background:#fffdf6;
+
+  border:5px solid #ffe34d;
+
+  padding:24px;
 
   position:relative;
 
-  padding:28px;
-
-  border-radius:36px;
-
-  overflow:hidden;
-
+  box-shadow:
+    10px 10px 0 #111;
 }
 
-.menu-card::before{
-
-  content:"";
-
-  position:absolute;
-  inset:0;
-
-  background:#fff7cf;
-
-  border-radius:38px;
-
-  z-index:-2;
+.menu-panel:nth-child(2n){
+  transform:rotate(1deg);
 }
 
-.menu-card::after{
-
-  content:"";
-
-  position:absolute;
-  inset:10px;
-
-  border:5px solid #111;
-
-  border-radius:
-    56% 44% 63% 37% /
-    43% 62% 38% 57%;
-
-  opacity:0.95;
-
-  z-index:-1;
+.menu-panel:nth-child(2n+1){
+  transform:rotate(-1deg);
 }
 
-.menu-card.blue::before{
-  background:#2433a3;
-}
+.menu-panel h2{
 
-.menu-card.blue{
-  color:#fff;
-}
+  display:inline-block;
 
-.menu-card.blue::after{
-  border-color:#dbe0ff;
-}
+  background:#111;
+  color:#ffe34d;
 
-.menu-card.pink::before{
-  background:#e8345b;
-}
+  padding:10px 16px;
 
-.menu-card.pink{
-  color:#fff;
-}
+  margin-bottom:24px;
 
-.menu-card.pink::after{
-  border-color:#ffdce4;
-}
+  font-family:"Archivo Black",sans-serif;
+  font-size:1.3rem;
 
-.menu-label{
-
-  margin-bottom:30px;
-
-  width:max-content;
+  text-transform:uppercase;
 }
 
 .menu-item{
 
   padding:14px 0;
 
-  border-bottom:2px dashed currentColor;
+  border-bottom:2px dashed #111;
 
   display:grid;
   grid-template-columns:1fr auto;
-  gap:14px;
-
-  align-items:start;
+  gap:12px;
 }
 
 .menu-name{
 
   font-family:"Baloo 2",sans-serif;
-
-  font-size:1.05rem;
-
+  font-size:1rem;
   font-weight:800;
-
   text-transform:uppercase;
 }
 
@@ -458,7 +438,7 @@ nav{
 
   opacity:0.82;
 
-  line-height:1.45;
+  line-height:1.5;
 
   font-size:0.9rem;
 }
@@ -466,200 +446,437 @@ nav{
 .price{
 
   font-family:"Archivo Black",sans-serif;
-
-  font-size:0.95rem;
+  font-size:0.9rem;
 }
 
-/* ---------- STORY ---------- */
+.texture-red{
 
-.story-section{
+  position:absolute;
 
-  padding:100px 6vw;
+  width:260px;
 
-  background:#f5eadb;
+  right:-80px;
+  top:80px;
+
+  opacity:0.12;
+
+  transform:rotate(20deg);
+}
+
+.texture-blue{
+
+  position:absolute;
+
+  width:300px;
+
+  left:-120px;
+  bottom:40px;
+
+  opacity:0.12;
+
+  transform:rotate(-14deg);
+}
+
+/* ---------------- TRANSITION ---------------- */
+
+.transition-section{
+
+  padding:70px 5vw;
+
+  background:#e8345b;
+  color:#fff;
+
+  text-align:center;
 
   border-bottom:4px solid #111;
 }
 
-.story-layout{
+.transition-content h2{
 
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:70px;
-  align-items:center;
+  font-family:"Shrikhand",cursive;
+
+  font-size:clamp(2.8rem,8vw,5rem);
+
+  line-height:0.9;
+
+  margin-bottom:16px;
 }
 
-.story-copy{
+.transition-content p{
 
-  display:grid;
-  gap:26px;
+  font-size:1.1rem;
+
+  font-weight:700;
 }
 
-.story-copy p{
-
-  background:#fff7cf;
-
-  padding:24px;
-
-  border-radius:26px;
-
-  border:3px dashed #111;
-
-  font-size:1rem;
-
-  line-height:1.7;
-
-  font-weight:600;
-}
-
-.story-image{
-
-  position:relative;
-}
-
-.story-image img{
-
-  width:100%;
-
-  border-radius:42px;
-
-  display:block;
-
-  border:5px solid #111;
-
-  transform:rotate(2deg);
-}
-
-/* ---------- BAR ---------- */
+/* ---------------- BAR ---------------- */
 
 .bar-section{
 
-  padding:110px 5vw;
+  padding:80px 5vw;
 
   background:
     linear-gradient(
-      rgba(0,0,0,0.45),
-      rgba(0,0,0,0.6)
+      rgba(0,0,0,0.55),
+      rgba(0,0,0,0.7)
     ),
-    url("assets/rekdibarceiling.jpg") center/cover no-repeat;
+    url("assets/rekdibarceiling.jpg")
+    center/cover no-repeat;
 
   color:#fff;
 
   border-bottom:4px solid #111;
-}
-
-.bar-section h2{
-  color:#fff;
 }
 
 .bar-grid{
 
   display:grid;
-  grid-template-columns:1fr 1fr 1fr;
-  gap:24px;
+  grid-template-columns:0.7fr 1.3fr;
+  gap:30px;
 }
 
-/* ---------- CAREERS ---------- */
+.bar-poster{
 
-.careers-section{
+  background:#2433a3;
 
-  padding:100px 6vw;
+  padding:30px;
+
+  border:4px solid #fff7cf;
+
+  transform:rotate(-2deg);
+
+  height:max-content;
+}
+
+.bar-poster h2{
+
+  font-family:"Shrikhand",cursive;
+
+  font-size:clamp(3rem,7vw,5rem);
+
+  line-height:0.9;
+}
+
+.bar-menu{
+
+  background:rgba(255,255,255,0.08);
+
+  backdrop-filter:blur(10px);
+
+  border:4px solid #ffe34d;
+
+  padding:28px;
+}
+
+.bar-menu-grid{
+
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:26px;
+}
+
+.bar-menu h3{
+
+  display:inline-block;
+
+  background:#ffe34d;
+  color:#111;
+
+  padding:10px 14px;
+
+  margin-bottom:24px;
+
+  font-family:"Archivo Black",sans-serif;
+
+  transform:rotate(-1deg);
+}
+
+/* ---------------- STORY ---------------- */
+
+.story{
+
+  padding:80px 5vw;
+
+  background:#f5eadb;
+
+  border-bottom:4px solid #111;
+
+  position:relative;
+}
+
+.story::before{
+
+  content:"";
+
+  position:absolute;
+
+  width:360px;
+  height:360px;
+
+  background:url("assets/rekdipinkbg.png")
+  center/contain no-repeat;
+
+  opacity:0.08;
+
+  right:-80px;
+  top:40px;
+
+  transform:rotate(20deg);
+}
+
+.story-layout{
+
+  display:grid;
+  grid-template-columns:0.95fr 1.05fr;
+  gap:40px;
+  align-items:start;
+}
+
+.story-image{
+
+  position:sticky;
+  top:120px;
+}
+
+.story-image img{
+
+  border:5px solid #111;
+
+  transform:rotate(-2deg);
+
+  box-shadow:
+    14px 14px 0 #2433a3;
+}
+
+.story-copy{
+
+  display:grid;
+  gap:18px;
+
+  position:relative;
+}
+
+.story-copy h2{
+
+  font-family:"Shrikhand",cursive;
+
+  font-size:clamp(3rem,8vw,6rem);
+
+  line-height:0.88;
+
+  margin-bottom:10px;
+
+  transform:rotate(-2deg);
+}
+
+.story-copy p{
+
+  max-width:720px;
+
+  padding:18px 22px;
+
+  font-size:1rem;
+  line-height:1.7;
+  font-weight:700;
+
+  border:3px solid #111;
+
+  position:relative;
+}
+
+.story-copy p:nth-child(2){
+
+  background:#fff7cf;
+
+  transform:rotate(-1deg);
+}
+
+.story-copy p:nth-child(3){
+
+  background:#ffdce4;
+
+  transform:rotate(1deg);
+
+  margin-left:30px;
+}
+
+.story-copy p:nth-child(4){
+
+  background:#dbe0ff;
+
+  transform:rotate(-2deg);
+
+  margin-left:12px;
+}
+
+.story-copy p:nth-child(5){
+
+  background:#ffe34d;
+
+  transform:rotate(2deg);
+
+  width:90%;
+}
+
+.story-copy p:nth-child(6){
+
+  background:#111;
+  color:#fff;
+
+  transform:rotate(-1deg);
+
+  width:85%;
+}
+
+/* ---------------- CAREERS ---------------- */
+
+.careers{
+
+  padding:80px 5vw;
 
   background:#2433a3;
 
   color:#fff;
+
+  border-bottom:4px solid #111;
 }
 
-.jobs-grid{
+.careers h2{
+
+  font-family:"Shrikhand",cursive;
+
+  font-size:clamp(3rem,8vw,6rem);
+
+  line-height:0.9;
+
+  margin-bottom:40px;
+}
+
+.career-grid{
 
   display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:22px;
-
-  margin-top:50px;
+  grid-template-columns:repeat(4,1fr);
+  gap:20px;
 }
 
-.job-card{
+.career-card{
 
   background:#fff7cf;
 
   color:#111;
 
-  padding:26px;
-
-  border-radius:30px;
+  padding:24px;
 
   border:4px solid #111;
 
+  min-height:220px;
+}
+
+.career-card:nth-child(odd){
   transform:rotate(-1deg);
 }
 
-.job-card:nth-child(2n){
+.career-card:nth-child(even){
   transform:rotate(1deg);
 }
 
-.job-card h3{
+.career-card h3{
 
-  font-family:"Baloo 2",sans-serif;
+  font-family:"Archivo Black",sans-serif;
 
-  font-size:1.6rem;
-
-  margin-bottom:12px;
+  margin-bottom:14px;
 }
 
-.job-card p{
+.career-card p{
 
   line-height:1.6;
 
   font-weight:600;
 }
 
-/* ---------- FOOTER ---------- */
+.career-email{
 
-footer{
-
-  padding:60px 20px;
-
-  text-align:center;
-
-  background:#111;
-
-  color:#fff;
-}
-
-footer p{
+  margin-top:40px;
 
   font-family:"Baloo 2",sans-serif;
-
-  font-size:1rem;
-
-  letter-spacing:0.06em;
+  font-size:1.2rem;
+  font-weight:800;
 }
 
-/* ---------- MOBILE ---------- */
+/* ---------------- FIND ---------------- */
+
+.find{
+
+  padding:80px 5vw;
+}
+
+.find-layout{
+
+  display:grid;
+  grid-template-columns:0.9fr 1.1fr;
+  gap:30px;
+}
+
+.find-card{
+
+  background:#fff7cf;
+
+  border:4px solid #111;
+
+  padding:26px;
+
+  font-weight:700;
+
+  line-height:1.8;
+
+  box-shadow:
+    12px 12px 0 #e8345b;
+}
+
+.find iframe{
+
+  width:100%;
+  height:100%;
+  min-height:420px;
+
+  border:4px solid #111;
+}
+
+/* ---------------- MOBILE ---------------- */
 
 @media(max-width:1000px){
 
   .hero,
-  .story-layout,
-  .menu-grid,
+  .menu-wall,
   .bar-grid,
-  .jobs-grid,
-  .section-header{
+  .bar-menu-grid,
+  .story-layout,
+  .career-grid,
+  .find-layout{
 
     grid-template-columns:1fr;
   }
 
   .hero{
-    padding-top:130px;
+    padding-top:110px;
   }
 
-  .hero-art{
+  .hero-side{
     min-height:320px;
   }
 
-  .section-header{
-    display:grid;
+  .story-image{
+    position:relative;
+    top:auto;
+  }
+
+  .story-copy p{
+    width:100% !important;
+    margin-left:0 !important;
+  }
+
+  .career-card{
+    min-height:auto;
   }
 
   .nav-links{
@@ -668,12 +885,7 @@ footer p{
 
   .nav-links a{
     font-size:10px;
-    padding:10px 14px;
-  }
-
-  .reserve-btn{
-    right:12px;
-    bottom:12px;
+    padding:8px 12px;
   }
 
 }
