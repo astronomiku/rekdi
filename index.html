@@ -259,7 +259,7 @@ nav{
 .hero-note::before{
   content:"";
   position:absolute;
-  inset:-35px;
+  inset:-52px;
   background:url("assets/yellowframe.png") center/100% 100% no-repeat;
   pointer-events:none;
   z-index:0;
@@ -424,8 +424,8 @@ nav{
 .menu-desc{
   grid-column:1/-1;
   opacity:0.72;
-  line-height:1.35;
-  font-size:0.78rem;
+  line-height:1.28;
+  font-size:0.72rem;
   font-weight:700;
 }
 
@@ -522,7 +522,8 @@ nav{
   font-weight:900;
   text-transform:uppercase;
 }
-/* BAR */
+
+  /* BAR */
 
 .bar-section{
   padding:80px 5vw;
@@ -536,16 +537,16 @@ nav{
 .bar-grid{
   display:grid;
   grid-template-columns:0.7fr 1.3fr;
-  gap:30px;
+  gap:42px;
   align-items:start;
 }
 
 .bar-poster{
   position:relative;
-  overflow:hidden;
+  overflow:visible;
 
-  min-height:420px;
-  padding:42px 34px 60px;
+  min-height:460px;
+  padding:90px 50px 80px;
 
   background:
     linear-gradient(rgba(0,0,0,0.20),rgba(0,0,0,0.48)),
@@ -560,7 +561,7 @@ nav{
 .bar-poster::before{
   content:"";
   position:absolute;
-  inset:-35px;
+  inset:-42px -32px;
   background:url("assets/yellowframe.png") center/100% 100% no-repeat;
   z-index:3;
   pointer-events:none;
@@ -570,11 +571,11 @@ nav{
   content:"";
   position:absolute;
 
-  width:340px;
-  height:340px;
+  width:360px;
+  height:360px;
 
   left:50%;
-  top:54%;
+  top:56%;
 
   transform:translate(-50%,-50%) rotate(-8deg);
 
@@ -590,11 +591,11 @@ nav{
   position:relative;
   z-index:2;
 
-  font-size:clamp(3rem,7vw,5rem);
+  font-size:clamp(2.6rem,5.8vw,4.6rem);
 
   color:#fff;
 
-  margin-top:40px;
+  margin-top:20px;
 
   text-shadow:4px 4px 0 rgba(0,0,0,0.45);
 }
@@ -620,35 +621,6 @@ nav{
   margin-bottom:24px;
   transform:rotate(-1deg);
 }
-
-@media(max-width:1000px){
-  .bar-grid,
-  .bar-menu-grid{
-    grid-template-columns:1fr;
-  }
-
-  .bar-poster{
-    min-height:340px;
-    padding:44px 28px;
-  }
-
-  .bar-poster::before{
-    inset:-22px;
-  }
-
-  .bar-poster::after{
-    width:220px;
-    height:220px;
-    opacity:0.32;
-  }
-
-  .bar-poster h2{
-    font-size:clamp(2.4rem,16vw,4rem);
-    margin-top:20px;
-    overflow-wrap:break-word;
-  }
-}
-
 /* STORY */
 
 .story{
@@ -719,39 +691,66 @@ nav{
 
 .careers h2{
   font-size:clamp(3.6rem,9vw,7rem);
-  margin-bottom:42px;
+  margin-bottom:52px;
   color:#fff;
 }
 
 .career-grid{
   display:grid;
-  grid-template-columns:repeat(2,minmax(240px,1fr));
-  gap:34px;
+  grid-template-columns:1fr 1fr;
+  gap:54px;
+  align-items:start;
+}
+
+.career-column{
+  position:relative;
+  padding:70px 54px 60px;
+}
+
+.career-column::before{
+  content:"";
+  position:absolute;
+
+  inset:-46px;
+
+  background:url("assets/whiteframe.png")
+  center/100% 100% no-repeat;
+
+  pointer-events:none;
+
+  z-index:0;
+}
+
+.career-column::after{
+  content:"";
+  position:absolute;
+
+  inset:-52px;
+
+  background:url("assets/yellowframe.png")
+  center/100% 100% no-repeat;
+
+  pointer-events:none;
+
+  opacity:0.95;
+
+  transform:rotate(-2deg);
+
+  z-index:-1;
+}
+
+.career-column:nth-child(2)::after{
+  transform:rotate(2deg);
 }
 
 .career-card{
   position:relative;
-  padding:40px 46px;
-  color:#fff;
-  transform:rotate(-1deg);
-}
-
-.career-card::before{
-  content:"";
-  position:absolute;
-  inset:-35px;
-  background:url("assets/whiteframe.png") center/100% 100% no-repeat;
-  pointer-events:none;
-}
-
-.career-card:nth-child(even)::before{
-  background-image:url("assets/pinkframe.png");
-}
-
-.career-card h3,
-.career-card p{
-  position:relative;
+  margin-bottom:36px;
   z-index:2;
+}
+
+.career-card:last-child{
+  margin-bottom:0;
 }
 
 .career-card h3{
@@ -763,6 +762,7 @@ nav{
 .career-card p{
   line-height:1.65;
   font-weight:700;
+  color:#fff;
 }
 
 .career-email{
@@ -780,7 +780,10 @@ nav{
   content:"";
   position:absolute;
   inset:-30px;
-  background:url("assets/yellowframe.png") center/100% 100% no-repeat;
+
+  background:url("assets/yellowframe.png")
+  center/100% 100% no-repeat;
+
   pointer-events:none;
   z-index:0;
 }
@@ -790,7 +793,6 @@ nav{
   position:relative;
   z-index:1;
 }
-
 /* FIND */
 
 .find{
@@ -839,38 +841,83 @@ nav{
 /* MOBILE */
 
 @media(max-width:1000px){
+
+  /* MOBILE — BAR */
+
+.bar-grid,
+.bar-menu-grid{
+  grid-template-columns:1fr;
+}
+
 .bar-poster{
-  min-height:auto;
-  padding:44px 28px;
+  min-height:320px;
+
+  padding:62px 30px 56px;
+
+  overflow:visible;
 }
 
 .bar-poster::before{
-  inset:-22px;
+  inset:-34px -24px;
 }
 
 .bar-poster::after{
-  width:220px;
-  height:220px;
-  opacity:0.32;
+  width:210px;
+  height:210px;
+  opacity:0.28;
 }
 
 .bar-poster h2{
-  font-size:clamp(2.4rem,16vw,4rem);
-  margin-top:20px;
-  overflow-wrap:break-word;
+  font-size:clamp(2.2rem,14vw,3.8rem);
+
+  line-height:0.92;
+
+  margin-top:10px;
+
+  overflow-wrap:normal;
+  word-break:normal;
 }
 
-.transition-content{
-  width:100%;
-  padding:58px 28px;
+.bar-menu{
+  padding:22px;
 }
 
-.transition-content::before{
+/* MOBILE — CAREERS */
+
+.career-grid{
+  grid-template-columns:1fr;
+  gap:70px;
+}
+
+.career-column{
+  padding:54px 30px 46px;
+}
+
+.career-column::before{
+  inset:-30px;
+}
+
+.career-column::after{
+  inset:-46px;
+}
+
+.career-card h3{
+  font-size:1.55rem;
+}
+
+.career-card p{
+  font-size:0.92rem;
+  line-height:1.55;
+}
+
+.career-email{
+  margin-top:70px;
+  font-size:1rem;
+  padding:18px 24px;
+}
+
+.career-email::before{
   inset:-22px;
-}
-
-.transition-content h2{
-  font-size:clamp(2.8rem,15vw,5rem);
 }
   .hero,
   .menu-wall,
@@ -1157,18 +1204,51 @@ nav{
   <section class="careers" id="careers">
     <h2>Hiring<br>Now</h2>
 
-    <div class="career-grid">
-      <div class="career-card"><h3>Wait Staff</h3><p>For dining room service, guest assistance, table management, and day-to-day floor operations.</p></div>
-      <div class="career-card"><h3>Bar Staff</h3><p>For drink preparation support, stock handling, and keeping the bar organized during service.</p></div>
-      <div class="career-card"><h3>Kitchen Staff</h3><p>For prep work, line support, cleaning, organizing, and assisting the kitchen team.</p></div>
-      <div class="career-card"><h3>Utility</h3><p>For dishwashing, cleaning, kitchen support, and maintaining order in the back of house.</p></div>
+  <div class="career-grid">
+
+  <div class="career-column">
+
+    <div class="career-card">
+      <h3>Wait Staff</h3>
+      <p>
+        For dining room service, guest assistance,
+        table management, and day-to-day floor operations.
+      </p>
     </div>
 
-    <div class="career-email">
-      Email CV at <a href="mailto:rekdiph@gmail.com">rekdiph@gmail.com</a>
+    <div class="career-card">
+      <h3>Bar Staff</h3>
+      <p>
+        For drink preparation support, stock handling,
+        and keeping the bar organized during service.
+      </p>
     </div>
-  </section>
 
+  </div>
+
+  <div class="career-column">
+
+    <div class="career-card">
+      <h3>Kitchen Staff</h3>
+      <p>
+        For prep work, line support, cleaning,
+        organizing, and assisting the kitchen team.
+      </p>
+    </div>
+
+    <div class="career-card">
+      <h3>Utility</h3>
+      <p>
+        For dishwashing, cleaning, kitchen support,
+        and maintaining order in the back of house.
+      </p>
+    </div>
+
+  </div>
+
+</div>
+
+    </section>
   <section class="find" id="find">
     <div class="find-layout">
 
