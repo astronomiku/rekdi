@@ -450,17 +450,39 @@ nav{
 }
 
 .transition-content{
-  max-width:900px;
+
   position:relative;
-  padding:60px 70px;
+
+  width:min(900px,92vw);
+
+  margin:0 auto;
+
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+
+  text-align:center;
+
+  padding:80px 90px;
+
+  z-index:2;
 }
 
 .transition-content::before{
+
   content:"";
+
   position:absolute;
+
   inset:-45px;
-  background:url("assets/pinkframe.png") center/100% 100% no-repeat;
+
+  background:url("assets/grayovalframe.png")
+  center/100% 100% no-repeat;
+
   pointer-events:none;
+
+  z-index:1;
 }
 
 .transition-content h2,
@@ -497,7 +519,6 @@ nav{
   font-weight:900;
   text-transform:uppercase;
 }
-
 /* BAR */
 
 .bar-section{
@@ -827,6 +848,27 @@ nav{
 
 }
 
+  /* FRAME ROTATIONS */
+
+.rotate-left-sm::before{
+  transform:rotate(-1.5deg);
+}
+
+.rotate-left::before{
+  transform:rotate(-3deg);
+}
+
+.rotate-right-sm::before{
+  transform:rotate(1.5deg);
+}
+
+.rotate-right::before{
+  transform:rotate(3deg);
+}
+
+.rotate-none::before{
+  transform:none;
+}
 </style>
   
 </head>
