@@ -502,13 +502,34 @@ nav{
 }
 
 .transition-content p{
+
+  position:relative;
+
   display:inline-block;
-  background:#ffe34d;
+
+  padding:20px 34px;
+
   color:#111;
-  padding:16px 22px;
-  border:4px solid #111;
+
   font-weight:900;
+
   font-size:1.1rem;
+
+  z-index:2;
+}
+
+.transition-content p::before{
+
+  content:"";
+
+  position:absolute;
+
+  inset:-28px;
+
+  background:url("assets/yellowframe.png")
+  center/100% 100% no-repeat;
+
+  z-index:-1;
 }
 
 .transition-link{
