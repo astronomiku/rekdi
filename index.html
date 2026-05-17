@@ -192,7 +192,6 @@
       justify-content: center;
       text-align: center;
       padding: 80px 24px;
-
       background-image: url("assets/rekdibarceiling.jpg");
       background-size: cover;
       background-position: center;
@@ -233,12 +232,6 @@
       font-size: 0.82rem;
       letter-spacing: 0.18em;
       text-transform: uppercase;
-      transition: all 0.25s ease;
-    }
-
-    .transition-link:hover {
-      background: #fff;
-      color: #111;
     }
 
     .bar-intro {
@@ -270,7 +263,6 @@
       width: 100%;
       border-radius: 6px;
       display: block;
-      opacity: 0.95;
     }
 
     .bar-menu {
@@ -317,13 +309,12 @@
 
     .story-copy p {
       margin-bottom: 22px;
-      max-width: 600px;
     }
 
     .story-image img {
       width: 100%;
-      display: block;
       border-radius: 6px;
+      display: block;
     }
 
     .careers {
@@ -378,21 +369,11 @@
 
     @media (max-width: 900px) {
 
-      nav {
-        padding: 16px 20px;
-      }
-
       .menu-grid,
       .bar-layout,
       .find-layout,
       .story-layout {
         grid-template-columns: 1fr;
-      }
-
-      .nav-links {
-        gap: 12px;
-        flex-wrap: wrap;
-        justify-content: flex-end;
       }
 
       .menu-section,
@@ -404,20 +385,8 @@
         padding: 80px 24px;
       }
 
-      .hero p {
-        font-size: 1rem;
-      }
-
       .bar-copy h2 {
         font-size: 2.5rem;
-      }
-
-      .menu-item {
-        font-size: 0.88rem;
-      }
-
-      iframe {
-        height: 320px;
       }
 
     }
@@ -425,7 +394,35 @@
   </style>
 </head>
 
-<body>
+<body id="top">
+
+  <nav>
+    <a href="#top" class="nav-left">
+      <img src="assets/rekdilogo.png" alt="Rekdi Logo">
+    </a>
+
+    <div class="nav-links">
+      <a href="#menu">Menu</a>
+      <a href="#bar-transition">Bar</a>
+      <a href="#story">Our Story</a>
+      <a href="#careers">Careers</a>
+      <a href="#find">Find Rekdi</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-content">
+
+      <img src="assets/rekdilogo.png" alt="Rekdi" class="hero-logo">
+
+      <h1>Modern Karinderya</h1>
+
+      <p>Everything grilled.</p>
+      <p>Built around rice, noodles, or bread.</p>
+      <p>Best with drinks.</p>
+
+    </div>
+  </section>
 
 </body>
 </html>
