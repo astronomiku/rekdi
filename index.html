@@ -45,20 +45,6 @@ section{
   overflow:hidden;
 }
 
-/* ---------------- TYPE ---------------- */
-
-.display-font{
-  font-family:"Shrikhand",cursive;
-}
-
-.vendor-font{
-  font-family:"Baloo 2",sans-serif;
-}
-
-.block-font{
-  font-family:"Archivo Black",sans-serif;
-}
-
 /* ---------------- NAV ---------------- */
 
 nav{
@@ -90,11 +76,8 @@ nav{
   justify-content:flex-end;
 }
 
-/* ---------------- COMIC BUTTONS ---------------- */
-
 .nav-links a,
 .reserve-btn{
-
   position:relative;
 
   padding:13px 22px;
@@ -165,6 +148,7 @@ nav{
 .reserve-btn{
 
   position:fixed;
+
   right:16px;
   bottom:16px;
 
@@ -205,10 +189,7 @@ nav{
 
 .hero{
 
-  padding:
-    120px
-    5vw
-    70px;
+  padding:120px 5vw 70px;
 
   display:grid;
   grid-template-columns:1fr 1fr;
@@ -220,8 +201,7 @@ nav{
       rgba(245,234,219,0.4),
       rgba(245,234,219,0.65)
     ),
-    url("assets/rekdi2ndfloor.jpg")
-    center/cover no-repeat;
+    url("assets/rekdi2ndfloor.jpg") center/cover no-repeat;
 
   border-bottom:4px solid #111;
 }
@@ -405,158 +385,284 @@ nav{
 
   padding:80px 5vw;
 
-  background:#fff4d6;
+  background:
+    linear-gradient(
+      rgba(255,244,214,0.84),
+      rgba(255,244,214,0.9)
+    ),
+    url("assets/rekdirestoceiling.jpg") center/cover no-repeat;
 
   border-bottom:4px solid #111;
 }
 
+.section-title-wrap{
+  margin-bottom:30px;
+}
+
 .menu-wall{
+
+  max-width:1180px;
+  margin:0 auto;
 
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:26px;
+
+  gap:0;
+
+  background:#fffdf6;
+
+  border:22px solid #ffcc18;
+
+  outline:4px solid #111;
+
+  padding:24px;
 
   position:relative;
+}
+
+.menu-wall::before,
+.menu-wall::after{
+
+  content:"";
+
+  position:absolute;
+
+  width:10px;
+  height:10px;
+
+  background:#111;
+
+  border-radius:50%;
+
+  top:10px;
+}
+
+.menu-wall::before{
+  left:12px;
+}
+
+.menu-wall::after{
+  right:12px;
 }
 
 .menu-panel{
 
   background:#fffdf6;
 
-  border:9px solid #ffe34d;
+  border:2px solid #111;
 
-  padding:26px;
+  padding:18px 20px;
 
   position:relative;
 }
 
 .menu-panel:nth-child(1){
-
-  clip-path:polygon(
-    3% 0,
-    100% 0,
-    97% 100%,
-    0 96%
-  );
+  border-right:none;
+  border-bottom:none;
 }
 
 .menu-panel:nth-child(2){
-
-  clip-path:polygon(
-    0 4%,
-    96% 0,
-    100% 96%,
-    3% 100%
-  );
+  border-bottom:none;
 }
 
 .menu-panel:nth-child(3){
-
-  clip-path:polygon(
-    4% 0,
-    100% 5%,
-    96% 100%,
-    0 94%
-  );
-}
-
-.menu-panel:nth-child(4){
-
-  clip-path:polygon(
-    0 0,
-    97% 3%,
-    100% 100%,
-    4% 96%
-  );
+  border-right:none;
 }
 
 .menu-panel h2{
 
-  display:inline-block;
+  display:block;
 
-  background:#111;
-  color:#ffe34d;
+  background:#fffdf6;
 
-  padding:10px 16px;
+  color:#e8345b;
 
-  margin-bottom:24px;
+  border:2px solid #111;
+  border-left:12px solid #2433a3;
+
+  padding:7px 10px;
+
+  margin-bottom:14px;
 
   font-family:"Archivo Black",sans-serif;
-  font-size:1.2rem;
+  font-size:1rem;
 
   text-transform:uppercase;
+}
 
-  clip-path:polygon(
-    0 10%,
-    8% 0,
-    100% 0,
-    94% 100%,
-    0 90%
-  );
+.menu-panel:nth-child(2) h2{
+  color:#2433a3;
+  border-left-color:#e8345b;
+}
+
+.menu-panel:nth-child(3) h2{
+  color:#111;
+  border-left-color:#ffcc18;
+}
+
+.menu-panel:nth-child(4) h2{
+  color:#e8345b;
+  border-left-color:#111;
 }
 
 .menu-item{
 
-  padding:14px 0;
+  padding:8px 0 7px;
 
-  border-bottom:2px dashed #111;
+  border-bottom:1px solid rgba(0,0,0,0.25);
 
   display:grid;
   grid-template-columns:1fr auto;
-  gap:12px;
+
+  gap:14px;
 }
 
 .menu-name{
 
   font-family:"Baloo 2",sans-serif;
-  font-size:1rem;
-  font-weight:800;
+
+  font-size:0.98rem;
+  font-weight:900;
+
   text-transform:uppercase;
+
+  line-height:1.08;
 }
 
 .menu-desc{
 
   grid-column:1/-1;
 
-  opacity:0.82;
+  opacity:0.72;
 
-  line-height:1.5;
+  line-height:1.25;
 
-  font-size:0.9rem;
+  font-size:0.74rem;
+
+  font-weight:700;
+
+  margin-top:-2px;
 }
 
 .price{
 
   font-family:"Archivo Black",sans-serif;
-  font-size:0.9rem;
+
+  font-size:0.88rem;
+
+  color:#2433a3;
+
+  white-space:nowrap;
 }
 
-.texture-red{
+/* ---------------- CONTINUE CONVERSATION ---------------- */
 
-  position:absolute;
+.transition-section{
 
-  width:260px;
+  min-height:70vh;
 
-  right:-80px;
-  top:80px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
 
-  opacity:0.12;
+  text-align:center;
 
-  transform:rotate(20deg);
+  padding:100px 5vw;
+
+  background:
+    linear-gradient(
+      rgba(0,0,0,0.45),
+      rgba(0,0,0,0.72)
+    ),
+    url("assets/rekdibarceiling.jpg") center/cover no-repeat;
+
+  color:#fff;
+
+  border-bottom:4px solid #111;
 }
 
-.texture-blue{
+.transition-content{
+  max-width:900px;
+}
 
-  position:absolute;
+.transition-content h2{
 
-  width:300px;
+  font-family:"Shrikhand",cursive;
 
-  left:-120px;
-  bottom:40px;
+  font-size:clamp(4rem,10vw,9rem);
 
-  opacity:0.12;
+  line-height:0.86;
 
-  transform:rotate(-14deg);
+  margin-bottom:28px;
+
+  text-shadow:
+    5px 5px 0 #e8345b,
+    -3px -3px 0 #2433a3;
+}
+
+.transition-content p{
+
+  display:inline-block;
+
+  background:#ffe34d;
+  color:#111;
+
+  padding:16px 22px;
+
+  border:4px solid #111;
+
+  font-family:"Baloo 2",sans-serif;
+  font-weight:900;
+
+  font-size:1.1rem;
+
+  transform:rotate(-1deg);
+}
+
+.transition-link{
+
+  display:inline-block;
+
+  margin-top:26px;
+
+  background:#fffdf6;
+  color:#111;
+
+  padding:14px 22px;
+
+  border:4px solid #111;
+
+  font-family:"Baloo 2",sans-serif;
+  font-weight:900;
+
+  text-transform:uppercase;
+
+  letter-spacing:0.08em;
+
+  clip-path:polygon(
+    8% 18%,
+    20% 10%,
+    26% 2%,
+    38% 12%,
+    52% 6%,
+    62% 15%,
+    78% 10%,
+    88% 22%,
+    98% 30%,
+    90% 45%,
+    98% 62%,
+    84% 70%,
+    88% 88%,
+    68% 80%,
+    58% 96%,
+    45% 82%,
+    30% 90%,
+    26% 75%,
+    8% 78%,
+    16% 60%,
+    2% 48%,
+    16% 36%
+  );
 }
 
 /* ---------------- STORY ---------------- */
@@ -572,38 +678,21 @@ nav{
   position:relative;
 }
 
-.story::before{
-
-  content:"";
-
-  position:absolute;
-
-  width:360px;
-  height:360px;
-
-  background:
-    url("assets/rekdipinkbg.png")
-    center/contain no-repeat;
-
-  opacity:0.08;
-
-  right:-80px;
-  top:40px;
-
-  transform:rotate(20deg);
-}
-
 .story-layout{
 
   display:grid;
+
   grid-template-columns:0.95fr 1.05fr;
+
   gap:40px;
+
   align-items:start;
 }
 
 .story-image{
 
   position:sticky;
+
   top:120px;
 }
 
@@ -624,6 +713,7 @@ nav{
 .story-copy{
 
   display:grid;
+
   gap:18px;
 }
 
@@ -648,87 +738,38 @@ nav{
 
   font-size:1rem;
   line-height:1.7;
+
   font-weight:700;
 }
 
 .story-copy p:nth-child(2){
-
   background:#fff7cf;
-
   transform:rotate(-1deg);
-
-  clip-path:polygon(
-    0 8%,
-    100% 0,
-    94% 100%,
-    4% 94%
-  );
 }
 
 .story-copy p:nth-child(3){
-
   background:#ffdce4;
-
   transform:rotate(1deg);
-
   margin-left:30px;
-
-  clip-path:polygon(
-    0 0,
-    96% 6%,
-    100% 100%,
-    4% 92%
-  );
 }
 
 .story-copy p:nth-child(4){
-
   background:#dbe0ff;
-
   transform:rotate(-2deg);
-
-  clip-path:polygon(
-    4% 0,
-    100% 0,
-    96% 100%,
-    0 94%
-  );
 }
 
 .story-copy p:nth-child(5){
-
   background:#ffe34d;
-
   transform:rotate(2deg);
-
   width:90%;
-
-  clip-path:polygon(
-    0 4%,
-    100% 0,
-    96% 96%,
-    2% 100%
-  );
 }
 
 .story-copy p:nth-child(6){
-
   background:#111;
   color:#fff;
-
   transform:rotate(-1deg);
-
   width:85%;
-
   border-color:#ffe34d;
-
-  clip-path:polygon(
-    0 10%,
-    10% 0,
-    100% 0,
-    94% 100%,
-    0 90%
-  );
 }
 
 /* ---------------- BAR ---------------- */
@@ -742,8 +783,7 @@ nav{
       rgba(0,0,0,0.55),
       rgba(0,0,0,0.72)
     ),
-    url("assets/rekdibarceiling.jpg")
-    center/cover no-repeat;
+    url("assets/rekdibarceiling.jpg") center/cover no-repeat;
 
   color:#fff;
 
@@ -753,7 +793,9 @@ nav{
 .bar-grid{
 
   display:grid;
+
   grid-template-columns:0.7fr 1.3fr;
+
   gap:30px;
 }
 
@@ -764,13 +806,6 @@ nav{
   padding:30px;
 
   border:8px solid #ffe34d;
-
-  clip-path:polygon(
-    0 4%,
-    98% 0,
-    100% 94%,
-    4% 100%
-  );
 }
 
 .bar-poster h2{
@@ -791,19 +826,14 @@ nav{
   border:8px solid #ffe34d;
 
   padding:28px;
-
-  clip-path:polygon(
-    0 4%,
-    98% 0,
-    100% 94%,
-    4% 100%
-  );
 }
 
 .bar-menu-grid{
 
   display:grid;
+
   grid-template-columns:1fr 1fr;
+
   gap:26px;
 }
 
@@ -821,23 +851,15 @@ nav{
   font-family:"Archivo Black",sans-serif;
 
   transform:rotate(-1deg);
-
-  clip-path:polygon(
-    0 10%,
-    10% 0,
-    100% 0,
-    94% 100%,
-    0 90%
-  );
 }
 
 /* ---------------- CAREERS ---------------- */
 
 .careers{
 
-  padding:80px 5vw;
+  padding:90px 5vw;
 
-  background:#2433a3;
+  background:#0047ab;
 
   color:#fff;
 
@@ -848,17 +870,23 @@ nav{
 
   font-family:"Shrikhand",cursive;
 
-  font-size:clamp(3rem,8vw,6rem);
+  font-size:clamp(3.6rem,9vw,7rem);
 
-  line-height:0.9;
+  line-height:0.86;
 
-  margin-bottom:40px;
+  margin-bottom:42px;
+
+  text-shadow:
+    5px 5px 0 #e8345b,
+    -3px -3px 0 #111;
 }
 
 .career-grid{
 
   display:grid;
+
   grid-template-columns:repeat(4,1fr);
+
   gap:20px;
 }
 
@@ -870,49 +898,11 @@ nav{
 
   padding:24px;
 
-  border:8px solid #ffe34d;
-
   min-height:220px;
-}
 
-.career-card:nth-child(1){
+  border:6px solid #ffe34d;
 
-  clip-path:polygon(
-    0 4%,
-    98% 0,
-    100% 94%,
-    4% 100%
-  );
-}
-
-.career-card:nth-child(2){
-
-  clip-path:polygon(
-    4% 0,
-    100% 5%,
-    96% 100%,
-    0 94%
-  );
-}
-
-.career-card:nth-child(3){
-
-  clip-path:polygon(
-    0 0,
-    97% 3%,
-    100% 100%,
-    4% 96%
-  );
-}
-
-.career-card:nth-child(4){
-
-  clip-path:polygon(
-    3% 0,
-    100% 0,
-    97% 100%,
-    0 96%
-  );
+  outline:4px solid #111;
 }
 
 .career-card h3{
@@ -931,11 +921,22 @@ nav{
 
 .career-email{
 
-  margin-top:40px;
+  display:inline-block;
+
+  margin-top:42px;
+
+  padding:16px 22px;
+
+  background:#ffe34d;
+  color:#111;
+
+  border:4px solid #111;
 
   font-family:"Baloo 2",sans-serif;
   font-size:1.2rem;
-  font-weight:800;
+  font-weight:900;
+
+  transform:rotate(-1deg);
 }
 
 /* ---------------- FIND ---------------- */
@@ -948,8 +949,21 @@ nav{
 .find-layout{
 
   display:grid;
+
   grid-template-columns:0.9fr 1.1fr;
+
   gap:30px;
+}
+
+.find h2{
+
+  font-family:"Shrikhand",cursive;
+
+  font-size:clamp(3rem,8vw,6rem);
+
+  line-height:0.9;
+
+  margin-bottom:30px;
 }
 
 .find-card{
@@ -963,18 +977,12 @@ nav{
   font-weight:700;
 
   line-height:1.8;
-
-  clip-path:polygon(
-    0 4%,
-    98% 0,
-    100% 94%,
-    4% 100%
-  );
 }
 
 .find iframe{
 
   width:100%;
+
   min-height:420px;
 
   border:8px solid #ffe34d;
@@ -991,7 +999,6 @@ nav{
   .story-layout,
   .career-grid,
   .find-layout{
-
     grid-template-columns:1fr;
   }
 
@@ -1026,9 +1033,23 @@ nav{
     padding:8px 12px;
   }
 
+  .menu-panel:nth-child(1),
+  .menu-panel:nth-child(2),
+  .menu-panel:nth-child(3){
+    border-right:2px solid #111;
+    border-bottom:2px solid #111;
+  }
+
+  .menu-wall{
+    border-width:14px;
+    padding:16px;
+  }
+
 }
 
 </style>
+
+  
 </head>
 
 <body id="top">
@@ -1142,11 +1163,18 @@ nav{
   </section>
 
   <section id="bar-transition" class="transition-section">
-    <div class="transition-content">
-      <h2>Continue<br>The Conversation</h2>
-      <p>Downstairs. Cocktails. Late dinners. Long talks. Bad decisions.</p>
-    </div>
-  </section>
+  <div class="transition-content">
+    <h2>Continue<br>The Conversation</h2>
+
+    <p>
+      Downstairs. Cocktails. Late dinners. Long talks. Bad decisions.
+    </p>
+
+    <a href="#bar" class="transition-link">
+      Enter Rekdi Bar
+    </a>
+  </div>
+</section>
 
   <section class="bar-section" id="bar">
     <div class="bar-grid">
