@@ -911,15 +911,45 @@ nav{
 }
 
 .career-column{
-  padding:54px 30px 46px;
+  padding:20px 10px;
 }
 
 .career-column::before{
-  inset:-30px;
+  display:none;
 }
 
 .career-column::after{
-  inset:-46px;
+  display:none;
+}
+
+.careers::before{
+  width:340px;
+  height:340px;
+
+  left:-12%;
+
+  top:30%;
+
+  opacity:0.72;
+
+  transform:rotate(-10deg);
+}
+
+.careers::after{
+  width:360px;
+  height:260px;
+
+  right:-10%;
+
+  top:52%;
+
+  opacity:0.78;
+
+  transform:rotate(8deg);
+}
+
+.career-card{
+  margin-bottom:42px;
 }
 
 .career-card h3{
@@ -940,6 +970,7 @@ nav{
 .career-email::before{
   inset:-22px;
 }
+  
   .hero,
   .menu-wall,
   .bar-grid,
