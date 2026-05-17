@@ -1,901 +1,884 @@
+Paste this as your full `index.html`:
+
 ```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-<title>Rekdi</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Space+Grotesk:wght@300;400;500;700&display=swap" rel="stylesheet">
-
-<style>
-
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
-
-html{
-  scroll-behavior:smooth;
-}
-
-body{
-  background:#f3f0ea;
-  color:#111;
-  font-family:'Space Grotesk',sans-serif;
-  overflow-x:hidden;
-}
-
-h1,h2,h3{
-  font-family:'Space Grotesk',sans-serif;
-  font-weight:700;
-  letter-spacing:-2px;
-}
-
-.menu-item,
-.story-copy p,
-.hero-manifesto,
-.transition-copy,
-.find p,
-.career-card p{
-  font-family:'Special Elite',serif;
-}
-
-a{
-  color:inherit;
-  text-decoration:none;
-}
-
-/* NAV */
-
-nav{
-  position:fixed;
-  top:0;
-  width:100%;
-  z-index:9999;
-
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-
-  padding:20px 40px;
-
-  background:rgba(243,240,234,0.86);
-  backdrop-filter:blur(12px);
-
-  border-bottom:1px solid rgba(0,0,0,0.08);
-}
-
-.nav-left img{
-  width:42px;
-}
-
-.nav-links{
-  display:flex;
-  gap:24px;
-}
-
-.nav-links a{
-  font-size:13px;
-  text-transform:uppercase;
-  letter-spacing:1px;
-}
-
-/* HERO */
-
-.hero{
-  min-height:100vh;
-  position:relative;
-
-  display:grid;
-  grid-template-columns:1.1fr 0.9fr;
-  align-items:center;
-
-  padding:140px 8vw 80px;
-
-  overflow:hidden;
-
-  background:#f3f0ea;
-}
-
-.hero-text{
-  position:relative;
-  z-index:2;
-}
-
-.hero h1{
-  font-size:7vw;
-  line-height:0.9;
-  margin-bottom:40px;
-  max-width:700px;
-}
-
-.hero-manifesto{
-  font-size:1.2rem;
-  line-height:1.8;
-  max-width:520px;
-}
-
-.hero-graphic{
-  position:relative;
-  height:100%;
-}
-
-.hero-graphic img{
-  position:absolute;
-  width:130%;
-  right:-10%;
-  top:50%;
-  transform:translateY(-50%) rotate(-6deg);
-
-  opacity:0.22;
-}
-
-/* FLOATING LOGO */
-
-.floating-logo{
-  position:absolute;
-  width:240px;
-  opacity:0.16;
-  pointer-events:none;
-  z-index:0;
-}
-
-.logo-pink{
-  top:120px;
-  right:-40px;
-}
-
-.logo-blue{
-  bottom:-50px;
-  left:-60px;
-}
-
-.logo-red{
-  top:-40px;
-  left:40%;
-}
-
-/* SECTIONS */
-
-section{
-  position:relative;
-  overflow:hidden;
-}
-
-/* MENU */
-
-.menu-section{
-  padding:140px 8vw;
-  background:#f3f0ea;
-}
-
-.section-title{
-  font-size:5rem;
-  margin-bottom:80px;
-  line-height:0.9;
-}
-
-.menu-layout{
-  display:grid;
-  grid-template-columns:1fr 1fr 0.8fr;
-  gap:60px;
-  position:relative;
-  z-index:2;
-}
-
-.menu-column{
-  position:relative;
-}
-
-.menu-item{
-  margin-bottom:36px;
-  line-height:1.7;
-  font-size:1rem;
-}
-
-.menu-item strong{
-  display:block;
-  margin-bottom:4px;
-  font-size:1.06rem;
-}
-
-.menu-bg{
-  position:absolute;
-  width:500px;
-  opacity:0.08;
-  pointer-events:none;
-}
-
-.menu-bg.one{
-  top:100px;
-  right:-120px;
-}
-
-.menu-bg.two{
-  bottom:-120px;
-  left:-120px;
-}
-
-/* TRANSITION */
-
-.transition{
-  min-height:55vh;
-  background:#111;
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
-  position:relative;
-
-  padding:80px 20px;
-}
-
-.transition-copy{
-  font-size:8vw;
-  text-align:center;
-  color:#f3f0ea;
-  line-height:0.9;
-  position:relative;
-  z-index:2;
-}
-
-.transition img{
-  position:absolute;
-  width:600px;
-  opacity:0.12;
-}
-
-/* BAR */
-
-.bar-section{
-  background:#111;
-  color:#f3f0ea;
-  padding:140px 8vw;
-}
-
-.bar-layout{
-  display:grid;
-  grid-template-columns:0.8fr 1.2fr;
-  gap:80px;
-  align-items:start;
-}
-
-.bar-copy h2{
-  font-size:5rem;
-  line-height:0.9;
-  margin-bottom:40px;
-}
-
-.bar-copy p{
-  font-family:'Special Elite',serif;
-  font-size:1.1rem;
-  line-height:1.8;
-}
-
-.bar-menu-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:50px;
-}
-
-.bar-image{
-  margin-top:80px;
-  position:relative;
-}
-
-.bar-image img{
-  width:100%;
-  display:block;
-  border-radius:10px;
-}
-
-/* STORY */
-
-.story{
-  padding:140px 8vw;
-  background:#f3f0ea;
-}
-
-.story-layout{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:80px;
-  align-items:center;
-}
-
-.story-image{
-  position:relative;
-}
-
-.story-image img{
-  width:100%;
-  display:block;
-  border-radius:12px;
-}
-
-.story-copy h2{
-  font-size:5rem;
-  line-height:0.9;
-  margin-bottom:40px;
-}
-
-.story-copy p{
-  font-size:1rem;
-  line-height:1.9;
-  margin-bottom:22px;
-}
-
-.story-stamp{
-  position:absolute;
-  width:300px;
-  top:-60px;
-  right:-60px;
-  opacity:0.14;
-}
-
-/* CAREERS */
-
-.careers{
-  background:#d92c2c;
-  color:#fff;
-  padding:140px 8vw;
-}
-
-.careers h2{
-  font-size:5rem;
-  margin-bottom:60px;
-}
-
-.career-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:28px;
-}
-
-.career-card{
-  background:rgba(255,255,255,0.08);
-  border:1px solid rgba(255,255,255,0.15);
-
-  padding:30px;
-
-  transform:rotate(-1deg);
-}
-
-.career-card:nth-child(2){
-  transform:rotate(1deg);
-}
-
-.career-card:nth-child(3){
-  transform:rotate(-2deg);
-}
-
-.career-card h3{
-  font-size:2rem;
-  margin-bottom:16px;
-}
-
-.career-card p{
-  line-height:1.8;
-}
-
-.career-email{
-  margin-top:60px;
-  font-size:1.1rem;
-}
-
-/* FIND */
-
-.find{
-  padding:140px 8vw;
-  background:#1f2f84;
-  color:#fff;
-}
-
-.find-layout{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:80px;
-}
-
-.find h2{
-  font-size:5rem;
-  margin-bottom:50px;
-}
-
-.find p{
-  line-height:1.9;
-  margin-bottom:28px;
-}
-
-iframe{
-  width:100%;
-  height:420px;
-  border:none;
-  border-radius:10px;
-}
-
-/* BUTTON */
-
-.reserve-btn{
-  position:fixed;
-  right:24px;
-  bottom:24px;
-
-  background:#111;
-  color:#fff;
-
-  padding:14px 22px;
-
-  border-radius:999px;
-
-  font-size:12px;
-  text-transform:uppercase;
-  letter-spacing:1px;
-
-  z-index:9999;
-}
-
-/* MOBILE */
-
-@media(max-width:1000px){
-
-  nav{
-    padding:18px 20px;
-  }
-
-  .nav-links{
-    gap:14px;
-    flex-wrap:wrap;
-    justify-content:flex-end;
-  }
-
-  .hero,
-  .story-layout,
-  .bar-layout,
-  .find-layout,
-  .menu-layout,
-  .bar-menu-grid,
-  .career-grid{
-    grid-template-columns:1fr;
-  }
-
-  .hero{
-    padding-top:160px;
-  }
-
-  .hero h1,
-  .section-title,
-  .bar-copy h2,
-  .story-copy h2,
-  .careers h2,
-  .find h2{
-    font-size:3.4rem;
-  }
-
-  .transition-copy{
-    font-size:4rem;
-  }
-
-  .hero-graphic{
-    min-height:300px;
-  }
-
-}
-
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rekdi</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #f1eadc;
+      color: #111;
+      font-family: "Inter", sans-serif;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    h1, h2, h3 {
+      font-family: "Archivo Black", sans-serif;
+      text-transform: uppercase;
+      line-height: 0.88;
+      letter-spacing: -0.06em;
+    }
+
+    section {
+      position: relative;
+      overflow: hidden;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 9999;
+      padding: 14px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(241, 234, 220, 0.9);
+      backdrop-filter: blur(10px);
+      border-bottom: 3px solid #111;
+    }
+
+    .nav-left img {
+      width: 44px;
+      display: block;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .nav-links a {
+      border: 2px solid #111;
+      padding: 7px 10px;
+      font-size: 11px;
+      font-weight: 900;
+      text-transform: uppercase;
+      background: #f7f0df;
+      box-shadow: 3px 3px 0 #111;
+    }
+
+    .nav-links a:nth-child(2n) {
+      background: #e8345b;
+      color: #fff;
+    }
+
+    .nav-links a:nth-child(3n) {
+      background: #2433a3;
+      color: #fff;
+    }
+
+    .reserve-btn {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 9999;
+      padding: 14px 18px;
+      background: #e8345b;
+      color: #fff;
+      border: 3px solid #111;
+      box-shadow: 5px 5px 0 #111;
+      font-size: 12px;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .stamp {
+      position: absolute;
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.5;
+    }
+
+    .hero {
+      min-height: 100vh;
+      padding: 130px 7vw 70px;
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      align-items: center;
+      gap: 40px;
+      background:
+        linear-gradient(rgba(241, 234, 220, 0.34), rgba(241, 234, 220, 0.48)),
+        url("assets/rekdi2ndfloor.jpg") center/cover no-repeat;
+      border-bottom: 5px solid #111;
+    }
+
+    .hero-main {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-kicker {
+      display: inline-block;
+      padding: 8px 12px;
+      background: #2433a3;
+      color: #fff;
+      border: 3px solid #111;
+      box-shadow: 5px 5px 0 #111;
+      font-size: 13px;
+      font-weight: 900;
+      text-transform: uppercase;
+      transform: rotate(-2deg);
+      margin-bottom: 22px;
+    }
+
+    .hero-logo-text {
+      width: min(620px, 90vw);
+      display: block;
+      margin-bottom: 24px;
+      filter: drop-shadow(6px 6px 0 rgba(0,0,0,0.9));
+    }
+
+    .hero h1 {
+      font-size: clamp(4rem, 11vw, 10rem);
+      color: #111;
+      text-shadow: 5px 5px 0 #e8345b;
+      margin-bottom: 28px;
+    }
+
+    .hero-board {
+      background: #f7f0df;
+      border: 4px solid #111;
+      box-shadow: 8px 8px 0 #111;
+      padding: 22px;
+      max-width: 580px;
+      transform: rotate(1deg);
+    }
+
+    .hero-board p {
+      font-size: clamp(1rem, 2vw, 1.35rem);
+      font-weight: 900;
+      line-height: 1.35;
+      text-transform: uppercase;
+    }
+
+    .hero-side {
+      position: relative;
+      z-index: 1;
+      min-height: 560px;
+    }
+
+    .hero-side .blue {
+      width: 115%;
+      position: absolute;
+      right: -18%;
+      top: 5%;
+      transform: rotate(-8deg);
+      opacity: 0.78;
+    }
+
+    .hero-side .pink {
+      width: 70%;
+      position: absolute;
+      left: -5%;
+      bottom: 2%;
+      transform: rotate(12deg);
+      opacity: 0.78;
+    }
+
+    .hero-note {
+      position: absolute;
+      right: 8%;
+      bottom: 16%;
+      background: #e8345b;
+      color: #fff;
+      border: 4px solid #111;
+      box-shadow: 8px 8px 0 #111;
+      padding: 24px;
+      width: 260px;
+      transform: rotate(-4deg);
+      font-weight: 900;
+      font-size: 1.15rem;
+      line-height: 1.2;
+      text-transform: uppercase;
+    }
+
+    .menu-section {
+      padding: 90px 5vw 110px;
+      background:
+        linear-gradient(rgba(255, 244, 214, 0.72), rgba(255, 244, 214, 0.78)),
+        url("assets/rekdirestoceiling.jpg") center/cover no-repeat;
+      border-bottom: 5px solid #111;
+    }
+
+    .section-title-wrap {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 30px;
+      align-items: end;
+      margin-bottom: 44px;
+    }
+
+    .section-title {
+      font-size: clamp(4rem, 10vw, 9rem);
+      color: #111;
+      text-shadow: 5px 5px 0 #2433a3;
+    }
+
+    .section-title-tag {
+      justify-self: end;
+      background: #e8345b;
+      color: #fff;
+      border: 4px solid #111;
+      box-shadow: 8px 8px 0 #111;
+      padding: 18px;
+      max-width: 360px;
+      transform: rotate(2deg);
+      font-weight: 900;
+      text-transform: uppercase;
+      line-height: 1.25;
+    }
+
+    .menu-wall {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      max-width: 1500px;
+      margin: 0 auto;
+    }
+
+    .menu-panel {
+      border: 4px solid #111;
+      box-shadow: 8px 8px 0 #111;
+      padding: 22px;
+      background: #f7f0df;
+    }
+
+    .menu-panel:nth-child(2) {
+      background: #fff7cf;
+      transform: rotate(-1deg);
+    }
+
+    .menu-panel:nth-child(3) {
+      background: #2433a3;
+      color: #fff;
+      transform: rotate(1deg);
+    }
+
+    .menu-panel:nth-child(4) {
+      background: #e8345b;
+      color: #fff;
+      transform: rotate(-1deg);
+    }
+
+    .menu-panel h2 {
+      font-size: clamp(2.2rem, 4vw, 4rem);
+      margin-bottom: 20px;
+      text-shadow: 3px 3px 0 rgba(0,0,0,0.18);
+    }
+
+    .price-board {
+      display: grid;
+      gap: 10px;
+    }
+
+    .menu-item {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 12px;
+      padding: 10px 0;
+      border-top: 2px dashed currentColor;
+      font-size: 0.93rem;
+      line-height: 1.35;
+    }
+
+    .menu-name {
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+    }
+
+    .menu-desc {
+      grid-column: 1 / -1;
+      opacity: 0.82;
+      font-size: 0.88rem;
+    }
+
+    .price {
+      font-weight: 900;
+      white-space: nowrap;
+    }
+
+    .texture-red {
+      width: 420px;
+      top: 4%;
+      right: -120px;
+      opacity: 0.34;
+      transform: rotate(8deg);
+    }
+
+    .texture-blue {
+      width: 460px;
+      bottom: -130px;
+      left: -130px;
+      opacity: 0.34;
+      transform: rotate(-12deg);
+    }
+
+    .transition-section {
+      min-height: 72vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 80px 24px;
+      background:
+        linear-gradient(rgba(0,0,0,0.42), rgba(0,0,0,0.7)),
+        url("assets/rekdibarceiling.jpg") center/cover no-repeat;
+      border-bottom: 5px solid #111;
+    }
+
+    .transition-content {
+      position: relative;
+      z-index: 2;
+      max-width: 950px;
+    }
+
+    .transition-content h2 {
+      font-size: clamp(4rem, 11vw, 11rem);
+      color: #fff;
+      text-shadow: 7px 7px 0 #e8345b;
+      transform: rotate(-2deg);
+      margin-bottom: 24px;
+    }
+
+    .transition-content p {
+      display: inline-block;
+      background: #f7f0df;
+      color: #111;
+      border: 4px solid #111;
+      box-shadow: 8px 8px 0 #111;
+      padding: 18px 22px;
+      font-weight: 900;
+      text-transform: uppercase;
+      transform: rotate(1deg);
+    }
+
+    .bar-section {
+      background: #111;
+      color: #fff;
+      padding: 100px 5vw;
+      border-bottom: 5px solid #111;
+    }
+
+    .bar-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 26px;
+      align-items: stretch;
+      max-width: 1500px;
+      margin: 0 auto;
+    }
+
+    .bar-poster {
+      background:
+        linear-gradient(rgba(36,51,163,0.35), rgba(0,0,0,0.65)),
+        url("assets/rekdibarmenupic.jpg") center/cover no-repeat;
+      border: 4px solid #fff;
+      box-shadow: 9px 9px 0 #e8345b;
+      min-height: 580px;
+      padding: 26px;
+      display: flex;
+      align-items: end;
+    }
+
+    .bar-poster h2 {
+      font-size: clamp(4rem, 8vw, 8rem);
+      color: #fff;
+      text-shadow: 6px 6px 0 #2433a3;
+    }
+
+    .bar-menu {
+      position: relative;
+      background:
+        linear-gradient(rgba(0,0,0,0.62), rgba(0,0,0,0.76)),
+        url("assets/rekdibarwallart.jpg") center/cover no-repeat;
+      border: 4px solid #fff;
+      box-shadow: 9px 9px 0 #2433a3;
+      padding: 24px;
+    }
+
+    .bar-menu .bar-menu-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+    }
+
+    .bar-menu h3 {
+      font-size: 2.3rem;
+      margin-bottom: 16px;
+      color: #fff;
+      text-shadow: 4px 4px 0 #e8345b;
+    }
+
+    .bar-menu .menu-item {
+      border-top-color: rgba(255,255,255,0.45);
+    }
+
+    .story {
+      padding: 100px 5vw;
+      background: #f7f0df;
+      border-bottom: 5px solid #111;
+    }
+
+    .story-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      max-width: 1450px;
+      margin: 0 auto;
+      align-items: center;
+    }
+
+    .story-image {
+      position: relative;
+      transform: rotate(-2deg);
+      border: 4px solid #111;
+      box-shadow: 9px 9px 0 #111;
+    }
+
+    .story-image img {
+      width: 100%;
+      display: block;
+    }
+
+    .story-copy {
+      background: #2433a3;
+      color: #fff;
+      border: 4px solid #111;
+      box-shadow: 9px 9px 0 #111;
+      padding: 32px;
+      transform: rotate(1deg);
+    }
+
+    .story-copy h2 {
+      font-size: clamp(3.5rem, 7vw, 7rem);
+      margin-bottom: 24px;
+      text-shadow: 5px 5px 0 #e8345b;
+    }
+
+    .story-copy p {
+      font-weight: 700;
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+
+    .careers {
+      position: relative;
+      padding: 100px 5vw;
+      background:
+        linear-gradient(rgba(232,52,91,0.7), rgba(232,52,91,0.82)),
+        url("assets/rekdi3rdfloor.jpg") center/cover no-repeat;
+      color: #fff;
+      border-bottom: 5px solid #111;
+    }
+
+    .careers h2 {
+      font-size: clamp(4rem, 9vw, 9rem);
+      margin-bottom: 36px;
+      text-shadow: 6px 6px 0 #111;
+    }
+
+    .career-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      max-width: 1500px;
+    }
+
+    .career-card {
+      background: #f7f0df;
+      color: #111;
+      border: 4px solid #111;
+      box-shadow: 7px 7px 0 #111;
+      padding: 22px;
+      min-height: 220px;
+    }
+
+    .career-card:nth-child(1) { transform: rotate(-2deg); }
+    .career-card:nth-child(2) { transform: rotate(2deg); background: #2433a3; color: #fff; }
+    .career-card:nth-child(3) { transform: rotate(-1deg); background: #fff7cf; }
+    .career-card:nth-child(4) { transform: rotate(1deg); background: #111; color: #fff; }
+
+    .career-card h3 {
+      font-size: 2rem;
+      margin-bottom: 12px;
+    }
+
+    .career-card p {
+      font-weight: 700;
+      line-height: 1.45;
+    }
+
+    .career-email {
+      margin-top: 50px;
+      display: inline-block;
+      background: #111;
+      border: 4px solid #fff;
+      box-shadow: 8px 8px 0 #fff;
+      padding: 20px;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .find {
+      padding: 100px 5vw;
+      background:
+        linear-gradient(rgba(36,51,163,0.88), rgba(36,51,163,0.92)),
+        url("assets/rekdibluebg.png") center/cover no-repeat;
+      color: #fff;
+    }
+
+    .find-layout {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 28px;
+      max-width: 1450px;
+      margin: 0 auto;
+    }
+
+    .find h2 {
+      font-size: clamp(4rem, 9vw, 9rem);
+      margin-bottom: 36px;
+      text-shadow: 6px 6px 0 #e8345b;
+    }
+
+    .find-card {
+      background: #f7f0df;
+      color: #111;
+      border: 4px solid #111;
+      box-shadow: 8px 8px 0 #111;
+      padding: 28px;
+      font-weight: 900;
+      text-transform: uppercase;
+      line-height: 1.45;
+    }
+
+    .find-card p {
+      margin-bottom: 22px;
+    }
+
+    iframe {
+      width: 100%;
+      height: 460px;
+      border: 4px solid #111;
+      box-shadow: 8px 8px 0 #111;
+      filter: saturate(0.8) contrast(1.05);
+    }
+
+    @media (max-width: 1000px) {
+      nav {
+        align-items: flex-start;
+        padding: 12px 16px;
+      }
+
+      .nav-links {
+        gap: 6px;
+      }
+
+      .nav-links a {
+        font-size: 9px;
+        padding: 6px 7px;
+      }
+
+      .hero,
+      .section-title-wrap,
+      .menu-wall,
+      .bar-grid,
+      .bar-menu .bar-menu-grid,
+      .story-layout,
+      .career-grid,
+      .find-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 120px;
+      }
+
+      .hero-side {
+        min-height: 300px;
+      }
+
+      .hero h1,
+      .section-title,
+      .transition-content h2,
+      .bar-poster h2,
+      .story-copy h2,
+      .careers h2,
+      .find h2 {
+        font-size: 3.6rem;
+      }
+
+      .menu-section,
+      .bar-section,
+      .story,
+      .careers,
+      .find {
+        padding: 70px 20px;
+      }
+
+      .bar-poster {
+        min-height: 420px;
+      }
+
+      .reserve-btn {
+        right: 12px;
+        bottom: 12px;
+        padding: 11px 13px;
+        font-size: 10px;
+      }
+    }
+  </style>
 </head>
 
 <body id="top">
 
-<nav>
-
-  <a href="#top" class="nav-left">
-    <img src="assets/rekdilogo.png">
-  </a>
-
-  <div class="nav-links">
-    <a href="#menu">Menu</a>
-    <a href="#bar">Bar</a>
-    <a href="#story">Story</a>
-    <a href="#careers">Careers</a>
-    <a href="#find">Find Rekdi</a>
-  </div>
-
-</nav>
-
-<!-- HERO -->
-
-<section class="hero">
-
-  <img src="assets/rekdipinkbg.png" class="floating-logo logo-pink">
-  <img src="assets/rekdibluebg.png" class="floating-logo logo-blue">
-
-  <div class="hero-text">
-
-    <h1>
-      MODERN<br>
-      KARINDERYA
-    </h1>
-
-    <div class="hero-manifesto">
-
-      Everything grilled.<br>
-      Built around rice, noodles, or bread.<br>
-      Or taken straight.<br><br>
-
-      Best with drinks.<br>
-      Paired with buckets of conversation.<br><br>
-
-      No olive oil.<br>
-      Butter. Chicken oil. Lard. Tallow.<br><br>
-
-      Pinoy high-low food.<br>
-      Home-pantry umami cooking.<br>
-      Seasoned by travel and bad ideas.
-
-    </div>
-
-  </div>
-
-  <div class="hero-graphic">
-    <img src="assets/rekditext.png">
-  </div>
-
-</section>
-
-<!-- MENU -->
-
-<section class="menu-section" id="menu">
-
-  <img src="assets/Rekdiredbg.png" class="menu-bg one">
-  <img src="assets/rekdibluebg.png" class="menu-bg two">
-
-  <h2 class="section-title">
-    FOOD<br>
-    MENU
-  </h2>
-
-  <div class="menu-layout">
-
-    <div class="menu-column">
-
-      <div class="menu-item">
-        <strong>Black Sesame Dandan Noodles — ₱540</strong>
-        Scallion-ginger oil, house chili crunch, furikake
-      </div>
-
-      <div class="menu-item">
-        <strong>Egg Noodles — ₱560</strong>
-        Grilled tomato, anchovy, capers, bonito flakes
-      </div>
-
-      <div class="menu-item">
-        <strong>Butter Fried Rice — ₱280</strong>
-        Salted fish, mushroom, crumbled uga
-      </div>
-
-      <div class="menu-item">
-        <strong>Steamed Rice — ₱100</strong>
-        Lemongrass-infused
-      </div>
-
-      <div class="menu-item">
-        <strong>Grilled Chicken Thigh — ₱380</strong>
-        Pineapple-cashew chili crunch, shrimp bisque, crispy alamang
-      </div>
-
-      <div class="menu-item">
-        <strong>Grilled Pork Jowl — ₱420</strong>
-        Green mango-apple compote, yellow lentils risotto
-      </div>
-
-      <div class="menu-item">
-        <strong>REKDI BBQ — ₱580</strong>
-        Grilled pork and beef belly, kansi onion soup
-      </div>
-
-    </div>
-
-    <div class="menu-column">
-
-      <div class="menu-item">
-        <strong>Grilled Shrimp — ₱520</strong>
-        Ginger XO sauce, black sesame eggplant salad
-      </div>
-
-      <div class="menu-item">
-        <strong>Honey Ginger Miso Blue Marlin — ₱560</strong>
-        Curried carrot squash puree, everything bagel
-      </div>
-
-      <div class="menu-item">
-        <strong>Sinuglaw — ₱520</strong>
-        Shrimp, clams, singkamas, pineapple
-      </div>
-
-      <div class="menu-item">
-        <strong>Grilled Baby Squid — ₱520</strong>
-        Stracciatella, nata de coco, grapes
-      </div>
-
-      <div class="menu-item">
-        <strong>Thai-style Scotch Kwek Kwek — ₱280</strong>
-        Red-eye gravy, vinegar dip
-      </div>
-
-      <div class="menu-item">
-        <strong>Kiamoy-glazed Squid Poppers — ₱340</strong>
-        Sesame seeds, vinegar dip
-      </div>
-
-    </div>
-
-    <div class="menu-column">
-
-      <div class="menu-item">
-        <strong>Desserts — ₱360</strong>
-        By Crumb Next Door
-      </div>
-
-      <div class="menu-item">
-        <strong>Rekdessert</strong>
-        Tinutong na munggo riz au lait, chocolate mousse dilis chip
-      </div>
-
-      <div class="menu-item">
-        <strong>Coconut Ice Cream</strong>
-        Pineapple-lemongrass-ginger compote
-      </div>
-
-      <div class="menu-item">
-        <strong>Grilled Brown Butter Cake</strong>
-        Kesong puti, batwan-raspberry jam
-      </div>
-
-      <div class="menu-item" style="margin-top:70px;">
-        <strong>Mocktails — ₱320</strong>
-        Add ₱120 to turn it into a cocktail
-      </div>
-
-      <div class="menu-item">
-        <strong>French Press Coffee — ₱120</strong>
-      </div>
-
-      <div class="menu-item">
-        <strong>San Mig Light — ₱120</strong>
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-<!-- TRANSITION -->
-
-<section class="transition">
-
-  <img src="assets/rekdipinkbg.png">
-
-  <div class="transition-copy">
-    CONTINUE<br>
-    THE<br>
-    CONVERSATION
-  </div>
-
-</section>
-
-<!-- BAR -->
-
-<section class="bar-section" id="bar">
-
-  <div class="bar-layout">
-
-    <div class="bar-copy">
-
-      <h2>
-        COCKTAILS<br>
-        FIRST.
-      </h2>
-
-      <p>
-        A darker room for drinking,
-        talking, staying too long,
-        and ordering one more round.
-      </p>
-
-    </div>
-
-    <div>
-
-      <div class="bar-menu-grid">
-
-        <div class="menu-item">
-          <strong>Bourdain Negroni — ₱550</strong>
-          Mezcal, campari, vermouth
-        </div>
-
-        <div class="menu-item">
-          <strong>Cuaron Paloma — ₱550</strong>
-          Mezcal, grapefruit soda, lemon
-        </div>
-
-        <div class="menu-item">
-          <strong>Friedkin Boulevardier — ₱550</strong>
-          Bourbon, campari, vermouth
-        </div>
-
-        <div class="menu-item">
-          <strong>Melville Whiskey Sour — ₱550</strong>
-          Bourbon, lemon juice, egg foam
-        </div>
-
-      </div>
-
-      <div class="bar-image">
-        <img src="assets/rekdi3rdfloor.jpg">
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-<!-- STORY -->
-
-<section class="story" id="story">
-
-  <img src="assets/Rekdiredbg.png" class="story-stamp">
-
-  <div class="story-layout">
-
-    <div class="story-image">
-      <img src="assets/rekdifront.jpeg">
-    </div>
-
-    <div class="story-copy">
-
-      <h2>
-        OUR<br>
-        STORY
-      </h2>
-
-      <p>
-        Rekdi opened in February 2026.
-      </p>
-
-      <p>
-        The food started from cravings, experiments,
-        old pantry habits, travel memories,
-        drinking sessions, and accidental discoveries.
-      </p>
-
-      <p>
-        Some dishes came from carinderias.
-        Some from bars.
-        Some from kitchens trying to survive with whatever was left.
-      </p>
-
-      <p>
-        Nothing here tries to be delicate.
-        Or proper.
-      </p>
-
-      <p>
-        If it works, it stays.
-      </p>
-
-    </div>
-
-  </div>
-
-</section>
-
-<!-- CAREERS -->
-
-<section class="careers" id="careers">
-
-  <h2>
-    WORK<br>
-    WITH US
-  </h2>
-
-  <div class="career-grid">
-
-    <div class="career-card">
-      <h3>Wait Staff</h3>
-      <p>
-        Fast on your feet.
-        Comfortable talking to people.
-        Doesn’t panic during dinner rush.
-      </p>
-    </div>
-
-    <div class="career-card">
-      <h3>Bartenders</h3>
-      <p>
-        Knows classic cocktails.
-        Can handle loud nights,
-        messy orders, and good conversation.
-      </p>
-    </div>
-
-    <div class="career-card">
-      <h3>Kitchen Crew</h3>
-      <p>
-        Organized under pressure.
-        Clean station.
-        Serious about food.
-      </p>
-    </div>
-
-  </div>
-
-  <div class="career-email">
-    Send CVs to:
-    <a href="mailto:rekdiph@gmail.com">
-      rekdiph@gmail.com
+  <nav>
+    <a href="#top" class="nav-left">
+      <img src="assets/rekdilogo.png" alt="Rekdi Logo">
     </a>
-  </div>
 
-</section>
+    <div class="nav-links">
+      <a href="#menu">Menu</a>
+      <a href="#bar-transition">Bar</a>
+      <a href="#story">Story</a>
+      <a href="#careers">Careers</a>
+      <a href="#find">Find Rekdi</a>
+    </div>
+  </nav>
 
-<!-- FIND -->
+  <section class="hero">
+    <div class="hero-main">
+      <div class="hero-kicker">Poblacion / Makati / Since 2026</div>
 
-<section class="find" id="find">
+      <img src="assets/rekditext.png" class="hero-logo-text" alt="Rekdi">
 
-  <h2>
-    FIND<br>
-    REKDI
-  </h2>
+      <h1>Modern<br>Karinderya</h1>
 
-  <div class="find-layout">
-
-    <div>
-
-      <p>
-        5713 Pagulayan<br>
-        Poblacion, Makati City
-      </p>
-
-      <p>
-        Wednesday to Sunday<br>
-        6PM – 1AM
-      </p>
-
-      <p>
-        Reservations via text only
-      </p>
-
-      <p>
-        +63 917 000 0000
-      </p>
-
+      <div class="hero-board">
+        <p>
+          Everything grilled.<br>
+          Built around rice, noodles, or bread.<br>
+          Best with drinks.<br><br>
+          No olive oil. Butter. Chicken oil. Lard. Tallow.
+        </p>
+      </div>
     </div>
 
-    <div>
+    <div class="hero-side">
+      <img src="assets/rekdibluebg.png" class="blue" alt="">
+      <img src="assets/rekdipinkbg.png" class="pink" alt="">
+      <div class="hero-note">
+        Pinoy high-low food. Home-pantry umami cooking. Seasoned by travel and bad ideas.
+      </div>
+    </div>
+  </section>
 
-      <iframe
-        src="https://maps.google.com/maps?q=5713%20Pagulayan%20Poblacion%20Makati%20City&t=&z=15&ie=UTF8&iwloc=&output=embed">
-      </iframe>
+  <section class="menu-section" id="menu">
+    <img src="assets/rekdiredbg.png" class="stamp texture-red" alt="">
+    <img src="assets/rekdibluebg.png" class="stamp texture-blue" alt="">
 
+    <div class="section-title-wrap">
+      <h2 class="section-title">Menu<br>Board</h2>
+      <div class="section-title-tag">
+        Kanin. Noodles. Inihaw. Pulutan. Pang-share. Pang-solo. Pang-balik.
+      </div>
     </div>
 
-  </div>
+    <div class="menu-wall">
 
-</section>
+      <div class="menu-panel">
+        <h2>Kanin + Noodles</h2>
+        <div class="price-board">
+          <div class="menu-item"><div class="menu-name">Grilled Potato Pandesyosa</div><div class="price">₱180</div><div class="menu-desc">Chicken oil, 2pcs</div></div>
+          <div class="menu-item"><div class="menu-name">Black Sesame Dandan Noodles</div><div class="price">₱540</div><div class="menu-desc">Scallion-ginger oil, house chili crunch, furikake</div></div>
+          <div class="menu-item"><div class="menu-name">Egg Noodles</div><div class="price">₱560</div><div class="menu-desc">Grilled tomato, anchovy, capers, bonito flakes</div></div>
+          <div class="menu-item"><div class="menu-name">Butter Fried Rice</div><div class="price">₱280</div><div class="menu-desc">Salted fish, mushroom, crumbled uga</div></div>
+          <div class="menu-item"><div class="menu-name">Steamed Rice</div><div class="price">₱100</div><div class="menu-desc">Lemongrass-infused</div></div>
+        </div>
+      </div>
 
-<a href="sms:+639170000000" class="reserve-btn">
-  Reserve
-</a>
+      <div class="menu-panel">
+        <h2>Inihaw + Ulam</h2>
+        <div class="price-board">
+          <div class="menu-item"><div class="menu-name">Grilled Tsukune</div><div class="price">₱380</div><div class="menu-desc">Coconut clam dashi soup, tofu, bilo-bilo, watermelon</div></div>
+          <div class="menu-item"><div class="menu-name">Grilled Korean Daikon</div><div class="price">₱290</div><div class="menu-desc">Apple pear sinigang, roasted seaweed, pickled labanos, tulapo</div></div>
+          <div class="menu-item"><div class="menu-name">Grilled Cabbage</div><div class="price">₱390</div><div class="menu-desc">Salted egg-caper hollandaise, green mango, crispy dilis, parmesan</div></div>
+          <div class="menu-item"><div class="menu-name">Grilled Native Corn</div><div class="price">₱370</div><div class="menu-desc">Mixed mushrooms, carrot-squash puree, Japanese mustard mascarpone</div></div>
+          <div class="menu-item"><div class="menu-name">Sinuglaw</div><div class="price">₱520</div><div class="menu-desc">Shrimp, clams, singkamas, pineapple, red-eye gravy</div></div>
+          <div class="menu-item"><div class="menu-name">Grilled Baby Squid</div><div class="price">₱520</div><div class="menu-desc">Stracciatella, taba ng talangka caviar, nata de coco, grapes</div></div>
+        </div>
+      </div>
+
+      <div class="menu-panel">
+        <h2>More Food</h2>
+        <div class="price-board">
+          <div class="menu-item"><div class="menu-name">Thai-style Scotch Kwek Kwek</div><div class="price">₱280</div><div class="menu-desc">Red-eye gravy, vinegar dip</div></div>
+          <div class="menu-item"><div class="menu-name">Kiamoy-glazed Squid Poppers</div><div class="price">₱340</div><div class="menu-desc">Sesame seeds, red-eye gravy, vinegar dip</div></div>
+          <div class="menu-item"><div class="menu-name">Grilled Pickled Baby Mackerel</div><div class="price">₱400</div><div class="menu-desc">Orange, pickled cucumber, kimchi</div></div>
+          <div class="menu-item"><div class="menu-name">Grilled Shrimp</div><div class="price">₱520</div><div class="menu-desc">Ginger XO sauce, black sesame eggplant salad</div></div>
+          <div class="menu-item"><div class="menu-name">Honey Ginger Miso Blue Marlin</div><div class="price">₱560</div><div class="menu-desc">Carrot-squash-kamote rosti okoy, curried carrot squash puree</div></div>
+          <div class="menu-item"><div class="menu-name">Grilled Chicken Thigh</div><div class="price">₱380</div><div class="menu-desc">Pineapple-cashew chili crunch, shrimp bisque, crispy alamang</div></div>
+          <div class="menu-item"><div class="menu-name">Grilled Pork Jowl</div><div class="price">₱420</div><div class="menu-desc">Green mango-apple compote, yellow lentils risotto</div></div>
+          <div class="menu-item"><div class="menu-name">REKDI BBQ</div><div class="price">₱580</div><div class="menu-desc">Grilled pork and beef belly, kansi onion soup, torched fontal cheese</div></div>
+        </div>
+      </div>
+
+      <div class="menu-panel">
+        <h2>Dessert + Drinks</h2>
+        <div class="price-board">
+          <div class="menu-item"><div class="menu-name">By Crumb Next Door</div><div class="price">₱360</div></div>
+          <div class="menu-item"><div class="menu-name">Rekdessert</div><div class="price"></div><div class="menu-desc">Tinutong na munggo riz au lait, chocolate mousse dilis chip</div></div>
+          <div class="menu-item"><div class="menu-name">Coconut Ice Cream</div><div class="price"></div><div class="menu-desc">Pineapple-lemongrass-ginger compote, coconut macaroon</div></div>
+          <div class="menu-item"><div class="menu-name">Grilled Brown Butter Cake</div><div class="price"></div><div class="menu-desc">Kesong puti, batwan-raspberry jam</div></div>
+          <div class="menu-item"><div class="menu-name">Mocktails</div><div class="price">₱320</div><div class="menu-desc">Add ₱120 to turn it into a cocktail</div></div>
+          <div class="menu-item"><div class="menu-name">French Press Coffee</div><div class="price">₱120</div></div>
+          <div class="menu-item"><div class="menu-name">San Mig Light</div><div class="price">₱120</div></div>
+          <div class="menu-item"><div class="menu-name">Cerveza Negra</div><div class="price">₱180</div></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="bar-transition" class="transition-section">
+    <div class="transition-content">
+      <h2>Continue<br>The Conversation</h2>
+      <p>Downstairs. Cocktails. Late dinners. Long talks. Bad decisions.</p>
+    </div>
+  </section>
+
+  <section class="bar-section" id="bar">
+    <div class="bar-grid">
+
+      <div class="bar-poster">
+        <h2>Cocktails<br>First.</h2>
+      </div>
+
+      <div class="bar-menu">
+        <div class="bar-menu-grid">
+
+          <div>
+            <h3>Cocktails — ₱550</h3>
+            <div class="menu-item"><div class="menu-name">Bourdain Negroni</div><div class="price"></div><div class="menu-desc">Mezcal, campari, vermouth, orange peel</div></div>
+            <div class="menu-item"><div class="menu-name">Cuaron Paloma</div><div class="price"></div><div class="menu-desc">Mezcal, grapefruit soda, lemon, balut salt</div></div>
+            <div class="menu-item"><div class="menu-name">Tornatorre Gin Basil</div><div class="price"></div><div class="menu-desc">Tanqueray, cucumber syrup, basil leaves, lemon juice</div></div>
+            <div class="menu-item"><div class="menu-name">Friedkin Boulevardier</div><div class="price"></div><div class="menu-desc">Bourbon, campari, vermouth, orange peel</div></div>
+            <div class="menu-item"><div class="menu-name">Melville Whiskey Sour</div><div class="price"></div><div class="menu-desc">Bourbon, simple syrup, lemon juice, egg foam</div></div>
+            <div class="menu-item"><div class="menu-name">Yimou</div><div class="price"></div><div class="menu-desc">Sous vide white rum, black sesame, tapuy rice wine</div></div>
+            <div class="menu-item"><div class="menu-name">Ad Castillo</div><div class="price"></div><div class="menu-desc">Mezcal infused labuyo & oolong tea, grapefruit juice</div></div>
+            <div class="menu-item"><div class="menu-name">Del Toro</div><div class="price"></div><div class="menu-desc">Whiskey, corn, chili liqueur, spicy salt</div></div>
+            <div class="menu-item"><div class="menu-name">Oshima</div><div class="price"></div><div class="menu-desc">Sake, vodka, plum liqueur, nori syrup, wasabi</div></div>
+            <div class="menu-item"><div class="menu-name">Argento</div><div class="price"></div><div class="menu-desc">Vodka, calvados, tomato, San Mig Lemon</div></div>
+          </div>
+
+          <div>
+            <h3>Wines + Beer</h3>
+            <div class="menu-item"><div class="menu-name">De Chanceny Cremant De Loire Brut NV</div><div class="price">₱2,800</div></div>
+            <div class="menu-item"><div class="menu-name">Familia Oliveda Brut Jove NV</div><div class="price">₱2,200</div></div>
+            <div class="menu-item"><div class="menu-name">Pascal Jolivet Attitude Rosé 2021</div><div class="price">₱450 / ₱3,000</div></div>
+            <div class="menu-item"><div class="menu-name">Bread & Butter Chardonnay 2022</div><div class="price">₱500 / ₱3,400</div></div>
+            <div class="menu-item"><div class="menu-name">Map Maker Pinot Noir NZ</div><div class="price">₱400 / ₱2,500</div></div>
+            <div class="menu-item"><div class="menu-name">Boondocks Brewing Strong Ale</div><div class="price">₱280</div></div>
+            <div class="menu-item"><div class="menu-name">Hoppyside Hazy Pale Ale</div><div class="price">₱340</div></div>
+            <div class="menu-item"><div class="menu-name">Elias Hop Boi IPA</div><div class="price">₱410</div></div>
+            <div class="menu-item"><div class="menu-name">Palm Tree Abbey Saison</div><div class="price">₱420</div></div>
+            <div class="menu-item"><div class="menu-name">San Mig Light / Pale / All Malt</div><div class="price">₱120</div></div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="story" id="story">
+    <div class="story-layout">
+      <div class="story-image">
+        <img src="assets/rekdifront.jpeg" alt="Rekdi Front">
+      </div>
+
+      <div class="story-copy">
+        <h2>Our<br>Story</h2>
+        <p>Rekdi opened in February 2026 in Poblacion, Makati.</p>
+        <p>Built around grilling, drinking, and long conversations.</p>
+        <p>The food starts with Filipino pantry cooking — rice, noodles, bread, skewers, seafood, things eaten with your hands, things best shared over drinks.</p>
+        <p>Some dishes stay close to memory. Others wander through travel, cravings, street food, and bad decisions.</p>
+        <p>Nothing here tries to be perfect. Only worth coming back for.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="careers" id="careers">
+    <h2>Hiring<br>Now</h2>
+
+    <div class="career-grid">
+      <div class="career-card"><h3>Wait Staff</h3><p>For dining room service, guest assistance, table management, and day-to-day floor operations.</p></div>
+      <div class="career-card"><h3>Bar Staff</h3><p>For drink preparation support, stock handling, and keeping the bar organized during service.</p></div>
+      <div class="career-card"><h3>Kitchen Staff</h3><p>For prep work, line support, cleaning, organizing, and assisting the kitchen team.</p></div>
+      <div class="career-card"><h3>Utility</h3><p>For dishwashing, cleaning, kitchen support, and maintaining order in the back of house.</p></div>
+    </div>
+
+    <div class="career-email">
+      Email CV at <a href="mailto:rekdiph@gmail.com">rekdiph@gmail.com</a>
+    </div>
+  </section>
+
+  <section class="find" id="find">
+    <div class="find-layout">
+
+      <div>
+        <h2>Find<br>Rekdi</h2>
+
+        <div class="find-card">
+          <p>5713 Pagulayan<br>Poblacion, Makati City<br>1210 Metro Manila</p>
+          <p>Open Wednesday to Sunday<br>6PM – 1AM</p>
+          <p>Reservations via text only<br><a href="sms:+639170000000">+63 917 000 0000</a></p>
+          <p>Instagram<br><a href="https://instagram.com/rekdi.ph" target="_blank">@rekdi.ph</a></p>
+        </div>
+      </div>
+
+      <div>
+        <iframe
+          src="https://maps.google.com/maps?q=5713%20Pagulayan%20Poblacion%20Makati%20City&t=&z=15&ie=UTF8&iwloc=&output=embed"
+          loading="lazy">
+        </iframe>
+      </div>
+
+    </div>
+  </section>
+
+  <a href="sms:+639170000000" class="reserve-btn">Reserve via Text</a>
 
 </body>
 </html>
