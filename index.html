@@ -710,13 +710,45 @@ nav{
     url("assets/rekdi3rdfloor.jpg") center/cover no-repeat;
 }
 
+.careers::before{
+  content:"";
+  position:absolute;
+  width:560px;
+  height:560px;
+  left:2%;
+  top:26%;
+  background:url("assets/pinkframe.png") center/contain no-repeat;
+  opacity:0.68;
+  transform:rotate(-8deg);
+  pointer-events:none;
+  z-index:0;
+}
+
+.careers::after{
+  content:"";
+  position:absolute;
+  width:620px;
+  height:460px;
+  right:2%;
+  top:34%;
+  background:url("assets/grayovalframe.png") center/contain no-repeat;
+  opacity:0.78;
+  transform:rotate(7deg);
+  pointer-events:none;
+  z-index:0;
+}
+
 .careers h2{
+  position:relative;
+  z-index:2;
   font-size:clamp(3.6rem,9vw,7rem);
   margin-bottom:52px;
   color:#fff;
 }
 
 .career-grid{
+  position:relative;
+  z-index:2;
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:54px;
@@ -725,43 +757,12 @@ nav{
 
 .career-column{
   position:relative;
-  padding:70px 54px 60px;
+  padding:40px 30px;
 }
 
-.career-column::before{
-  content:"";
-  position:absolute;
-
-  inset:-46px;
-
-  background:url("assets/whiteframe.png")
-  center/100% 100% no-repeat;
-
-  pointer-events:none;
-
-  z-index:0;
-}
-
+.career-column::before,
 .career-column::after{
-  content:"";
-  position:absolute;
-
-  inset:-52px;
-
-  background:url("assets/yellowframe.png")
-  center/100% 100% no-repeat;
-
-  pointer-events:none;
-
-  opacity:0.95;
-
-  transform:rotate(-2deg);
-
-  z-index:-1;
-}
-
-.career-column:nth-child(2)::after{
-  transform:rotate(2deg);
+  display:none;
 }
 
 .career-card{
@@ -789,6 +790,7 @@ nav{
 .career-email{
   display:inline-block;
   position:relative;
+  z-index:2;
   margin-top:54px;
   padding:24px 34px;
   color:#ffe34d;
@@ -801,10 +803,7 @@ nav{
   content:"";
   position:absolute;
   inset:-30px;
-
-  background:url("assets/yellowframe.png")
-  center/100% 100% no-repeat;
-
+  background:url("assets/yellowframe.png") center/100% 100% no-repeat;
   pointer-events:none;
   z-index:0;
 }
@@ -812,7 +811,7 @@ nav{
 .career-email a,
 .career-email{
   position:relative;
-  z-index:1;
+  z-index:2;
 }
 /* FIND */
 
