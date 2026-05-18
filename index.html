@@ -802,12 +802,20 @@ nav{
 }
 
 .career-email{
-  display:inline-block;
+  display:block;
+  width:fit-content;
+
   position:relative;
   z-index:2;
-  margin-top:54px;
+
+  margin:70px auto 0;
+
+  text-align:center;
+
   padding:24px 34px;
+
   color:#ffe34d;
+
   font-family:"Special Elite", monospace;
   font-size:1.15rem;
   font-weight:900;
@@ -817,8 +825,12 @@ nav{
   content:"";
   position:absolute;
   inset:-30px;
-  background:url("assets/yellowframe.png") center/100% 100% no-repeat;
+
+  background:url("assets/yellowframe.png")
+  center/100% 100% no-repeat;
+
   pointer-events:none;
+
   z-index:0;
 }
 
