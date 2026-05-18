@@ -2018,8 +2018,6 @@ const navLinks = document.querySelector(".nav-links");
 const navItems = document.querySelectorAll(".nav-links a");
 const sections = document.querySelectorAll("section[id]");
 
-/* MOBILE MENU */
-
 menuToggle.addEventListener("click", function(){
   navLinks.classList.toggle("show");
 });
@@ -2030,32 +2028,24 @@ navItems.forEach(item => {
   });
 });
 
-/* ACTIVE NAV HIGHLIGHT */
-
 window.addEventListener("scroll", () => {
-
   let current = "";
 
   sections.forEach(section => {
-
     const sectionTop = section.offsetTop - 140;
 
     if(window.scrollY >= sectionTop){
       current = section.getAttribute("id");
     }
-
   });
 
   navItems.forEach(link => {
-
     link.classList.remove("active");
 
     if(link.getAttribute("href") === "#" + current){
       link.classList.add("active");
     }
-
   });
-
 });
 </script>
 </body>
