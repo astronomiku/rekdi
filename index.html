@@ -788,6 +788,44 @@ nav{
   font-weight:700;
   max-width:760px;
 }
+
+  .story-pig-stamp{
+  position:absolute;
+  width:180px;
+  right:7%;
+  bottom:50px;
+  transform:rotate(10deg);
+  opacity:0.92;
+  pointer-events:none;
+  z-index:3;
+}
+
+.story-fan-stamp{
+  position:absolute;
+  width:260px;
+  right:-20px;
+  top:40px;
+  transform:scaleX(-1) rotate(-10deg);
+  opacity:0.82;
+  pointer-events:none;
+  z-index:3;
+}
+
+.story-frame-stamp{
+  position:absolute;
+  width:420px;
+  left:-90px;
+  bottom:-70px;
+  transform:rotate(-12deg);
+  opacity:0.28;
+  pointer-events:none;
+  z-index:1;
+}
+
+.story-copy{
+  position:relative;
+  z-index:4;
+}
   
 /* CAREERS */
 
@@ -1490,6 +1528,9 @@ nav{
 
 </section>
 <section class="story" id="story">
+  <img src="assets/chicharonpig.png" alt="" class="story-pig-stamp">
+<img src="assets/electricfan.png" alt="" class="story-fan-stamp">
+<img src="assets/pinkframe.png" alt="" class="story-frame-stamp">
   <div class="story-layout">
     <div class="story-copy">
       <h2>Our<br>Story</h2>
