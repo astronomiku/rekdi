@@ -767,7 +767,17 @@ nav{
 }
 
 .story::before{
-  background: rgba(0,0,0,0.5); /* change from the beige rgba */
+  content:"";
+
+  position:absolute;
+
+  inset:0;
+
+  background:rgba(245,234,219,0.18);
+
+  pointer-events:none;
+
+  z-index:0;
 }
 
 .story-layout{
