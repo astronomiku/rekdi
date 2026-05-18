@@ -433,7 +433,7 @@ nav{
 .price{
   font-family:"Archivo Black",sans-serif;
   font-size:0.88rem;
-  color:#2433a3;
+  color:#fff;
   white-space:nowrap;
 }
   
@@ -654,22 +654,7 @@ nav{
   z-index:2;
 }
 
-.bar-menu::before{
-  content:"";
 
-  position:absolute;
-
-  inset:-42px -36px -48px -40px;
-transform:rotate(1.5deg);
-  background:url("assets/whiteframe.png")
-  center/100% 100% no-repeat;
-
-  opacity:0.92;
-
-  pointer-events:none;
-
-  z-index:0;
-}
   .bar-menu-grid,
 .bar-menu h3,
 .bar-menu .menu-item{
@@ -682,7 +667,6 @@ transform:rotate(1.5deg);
   grid-template-columns:1fr 1fr;
   gap:26px;
 }
-
 .bar-menu h3{
   position:relative;
 
@@ -690,11 +674,9 @@ transform:rotate(1.5deg);
 
   color:#111;
 
-  padding:18px 24px;
+  padding:14px 24px;
 
-  margin-bottom:30px;
-
-  transform:rotate(-1deg);
+  margin-bottom:34px;
 
   z-index:2;
 }
@@ -704,7 +686,7 @@ transform:rotate(1.5deg);
 
   position:absolute;
 
-  inset:-24px;
+  inset:-18px;
 
   background:url("assets/yellowframe.png")
   center/100% 100% no-repeat;
@@ -712,7 +694,10 @@ transform:rotate(1.5deg);
   pointer-events:none;
 
   z-index:-1;
+
+  transform:rotate(-1deg);
 }
+  
 /* STORY */
 
 .story{
@@ -993,7 +978,18 @@ transform:rotate(1.5deg);
 }
 
 .bar-menu{
-  padding:22px;
+  position:relative;
+
+  padding:20px 10px 20px 40px;
+
+  z-index:2;
+}
+
+  .bar-menu,
+.bar-menu .menu-name,
+.bar-menu .menu-desc,
+.bar-menu .price{
+  color:#fff;
 }
 
 /* MOBILE — CAREERS */
