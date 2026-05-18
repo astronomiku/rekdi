@@ -704,7 +704,7 @@ nav{
   padding:80px 5vw;
 
   background:
-    linear-gradient(rgba(245,234,219,0.38),rgba(245,234,219,0.48)),
+    linear-gradient(rgba(245,234,219,0.08),rgba(245,234,219,0.16)),
     url("assets/rekdiwall.jpg") center/cover no-repeat;
 
   border-bottom:4px solid #111;
@@ -734,7 +734,9 @@ nav{
 
   pointer-events:none;
 
-  opacity:0.92;
+  opacity:0.28;
+
+  mix-blend-mode:multiply;
 
   z-index:0;
 }
@@ -746,6 +748,11 @@ nav{
   display:grid;
 
   gap:22px;
+
+  color:#111;
+
+  text-shadow:
+    1px 1px 0 rgba(255,255,255,0.18);
 }
 
 .story-copy h2{
