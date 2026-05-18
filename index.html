@@ -723,13 +723,28 @@ nav{
 /* STORY */
 
 .story{
+  position:relative;
+
   padding:80px 5vw;
 
-  background:
-    linear-gradient(rgba(245,234,219,0.08),rgba(245,234,219,0.16)),
-    url("assets/rekdiwall.jpg") center/cover no-repeat;
+  background:url("assets/rekdiwall.jpg")
+  center/cover no-repeat;
 
   border-bottom:4px solid #111;
+}
+
+.story::before{
+  content:"";
+
+  position:absolute;
+
+  inset:0;
+
+  background:rgba(245,234,219,0.18);
+
+  pointer-events:none;
+
+  z-index:0;
 }
 
 .story-layout{
@@ -742,6 +757,8 @@ nav{
   padding:80px 90px;
 
   display:block;
+
+  z-index:2;
 }
 
 .story-layout::before{
@@ -765,6 +782,7 @@ nav{
 
 .story-copy{
   position:relative;
+
   z-index:2;
 
   display:grid;
