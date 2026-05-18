@@ -352,14 +352,28 @@ nav{
 
 .menu-hover-img{
   position:absolute;
-  width:180px;
-  right:-120px;
-  top:-40px;
+
+  width:220px;
+  height:220px;
+
+  object-fit:contain;
+  object-position:center;
+
+  right:-130px;
+  top:-60px;
+
   opacity:0;
+
   transform:rotate(12deg) scale(0.9);
-  transition:opacity 0.25s ease, transform 0.25s ease;
+
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
+
   pointer-events:none;
+
   z-index:20;
+
   display:block;
 }
 
@@ -1759,22 +1773,15 @@ nav{
         <h2>More Food</h2>
         <div class="price-board">
          <div class="menu-item menu-hover-item">
-           <div class="menu-name">
-    Thai-style Scotch Kwek Kwek
-  </div>
-
+           <div class="menu-name">Thai-style Scotch Kwek Kwek</div>
   <div class="price">₱280</div>
-
   <div class="menu-desc">
     Red-eye gravy, vinegar dip
   </div>
-
   <img
     src="assets/kwekwek.png"
     alt=""
-    class="menu-hover-img"
-  >
-
+    class="menu-hover-img">
 </div>
 
   
@@ -1787,15 +1794,11 @@ nav{
             <div class="menu-item menu-hover-item">
 
   <div class="menu-name">
-    Grilled Pork Jowl
-  </div>
-
+    Grilled Pork Jowl</div>
   <div class="price">₱420</div>
 
   <div class="menu-desc">
-    Green mango-apple compote, yellow lentils risotto
-  </div>
-
+    Green mango-apple compote, yellow lentils risotto</div>
   <img
     src="assets/jowltrans.png"
     alt=""
