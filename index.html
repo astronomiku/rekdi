@@ -333,8 +333,8 @@ nav{
 .menu-wall::after{
   content:"";
   position:absolute;
-  width:170px;
-  height:230px;
+  width:260px;
+  height:360px;
   right:10px;
   top:-40px;
   background:url("assets/lamphanging.png") top center/contain no-repeat;
@@ -374,7 +374,8 @@ nav{
 
 .menu-panel:nth-child(4)::before{
   background-image:url("assets/blackframe.png");
-  opacity:0.9;
+  opacity:0.22;
+  filter:blur(1.8px);
 }
 
 .menu-panel h2,
@@ -668,8 +669,30 @@ nav{
 }
 
 .story-copy{
+  position:relative;
   display:grid;
   gap:18px;
+  padding:56px 60px;
+}
+
+.story-copy::before{
+  content:"";
+  position:absolute;
+
+  inset:-46px;
+
+  background:url("assets/pinkframe.png")
+  center/100% 100% no-repeat;
+
+  pointer-events:none;
+
+  opacity:0.92;
+}
+
+.story-copy h2,
+.story-copy p{
+  position:relative;
+  z-index:2;
 }
 
 .story-copy h2{
@@ -678,23 +701,9 @@ nav{
 }
 
 .story-copy p{
-  position:relative;
-  padding:34px 42px;
   font-size:1rem;
   line-height:1.7;
   font-weight:700;
-}
-
-.story-copy p::before{
-  content:"";
-  position:absolute;
-  inset:-28px;
-  background:url("assets/grayovalframe.png") center/100% 100% no-repeat;
-  pointer-events:none;
-}
-
-.story-copy p:nth-child(even)::before{
-  background-image:url("assets/blackframe.png");
 }
 
 /* CAREERS */
