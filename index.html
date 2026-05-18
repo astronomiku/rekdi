@@ -659,8 +659,8 @@ nav{
 
   position:absolute;
 
-  inset:-34px;
-
+  inset:-42px -36px -48px -40px;
+transform:rotate(1.5deg);
   background:url("assets/whiteframe.png")
   center/100% 100% no-repeat;
 
@@ -684,12 +684,34 @@ nav{
 }
 
 .bar-menu h3{
+  position:relative;
+
   display:inline-block;
-  background:#ffe34d;
+
   color:#111;
-  padding:10px 14px;
-  margin-bottom:24px;
+
+  padding:18px 24px;
+
+  margin-bottom:30px;
+
   transform:rotate(-1deg);
+
+  z-index:2;
+}
+
+.bar-menu h3::before{
+  content:"";
+
+  position:absolute;
+
+  inset:-24px;
+
+  background:url("assets/yellowframe.png")
+  center/100% 100% no-repeat;
+
+  pointer-events:none;
+
+  z-index:-1;
 }
 /* STORY */
 
