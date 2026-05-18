@@ -2012,10 +2012,13 @@ nav{
 
   <a href="sms:+639170000000" class="reserve-btn">Reserve via Text</a>
 
- <script>
+<script>
 const menuToggle = document.querySelector(".mobile-menu-toggle");
 const navLinks = document.querySelector(".nav-links");
 const navItems = document.querySelectorAll(".nav-links a");
+const sections = document.querySelectorAll("section[id]");
+
+/* MOBILE MENU */
 
 menuToggle.addEventListener("click", function(){
   navLinks.classList.toggle("show");
@@ -2026,34 +2029,33 @@ navItems.forEach(item => {
     navLinks.classList.remove("show");
   });
 });
-</script>
+
+/* ACTIVE NAV HIGHLIGHT */
 
 window.addEventListener("scroll", () => {
 
   let current = "";
 
   sections.forEach(section => {
+
     const sectionTop = section.offsetTop - 140;
 
     if(window.scrollY >= sectionTop){
       current = section.getAttribute("id");
     }
+
   });
 
-  navLinks.forEach(link => {
+  navItems.forEach(link => {
+
     link.classList.remove("active");
 
     if(link.getAttribute("href") === "#" + current){
       link.classList.add("active");
     }
+
   });
 
-});
-</script>
-
-  <script>
-document.querySelector(".mobile-menu-toggle").addEventListener("click", function(){
-  document.querySelector(".nav-links").classList.toggle("show");
 });
 </script>
 </body>
