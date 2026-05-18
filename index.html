@@ -346,6 +346,41 @@ nav{
   z-index:5;
 }
 
+  .menu-hover-item{
+  position:relative;
+}
+
+.menu-hover-img{
+  position:absolute;
+
+  width:180px;
+
+  right:-120px;
+  top:-40px;
+
+  opacity:0;
+
+  transform:
+    rotate(12deg)
+    scale(0.9);
+
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
+
+  pointer-events:none;
+
+  z-index:20;
+}
+
+.menu-hover-item:hover .menu-hover-img{
+  opacity:1;
+
+  transform:
+    rotate(8deg)
+    scale(1);
+}
+
 .menu-panel{
   position:relative;
   background:transparent;
@@ -1688,7 +1723,25 @@ nav{
       <div class="menu-panel">
         <h2>Kanin + Noodles</h2>
         <div class="price-board">
-          <div class="menu-item"><div class="menu-name">Grilled Potato Pandesyosa</div><div class="price">₱180</div><div class="menu-desc">Chicken oil, 2pcs</div></div>
+          <div class="menu-item menu-hover-item">
+
+  <div class="menu-name">
+    Grilled Potato Pandesyosa
+  </div>
+
+  <div class="price">₱180</div>
+
+  <div class="menu-desc">
+    Chicken oil, 2pcs
+  </div>
+
+  <img
+    src="assets/pandesyosatrans.png"
+    alt=""
+    class="menu-hover-img"
+  >
+
+</div>
           <div class="menu-item"><div class="menu-name">Black Sesame Dandan Noodles</div><div class="price">₱540</div><div class="menu-desc">Scallion-ginger oil, house chili crunch, furikake</div></div>
           <div class="menu-item"><div class="menu-name">Egg Noodles</div><div class="price">₱560</div><div class="menu-desc">Grilled tomato, anchovy, capers, bonito flakes</div></div>
           <div class="menu-item"><div class="menu-name">Butter Fried Rice</div><div class="price">₱280</div><div class="menu-desc">Salted fish, mushroom, crumbled uga</div></div>
