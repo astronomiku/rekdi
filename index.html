@@ -352,25 +352,15 @@ nav{
 
 .menu-hover-img{
   position:absolute;
-
   width:180px;
-
   right:-120px;
   top:-40px;
-
   opacity:0;
-
-  transform:
-    rotate(12deg)
-    scale(0.9);
-
-  transition:
-    opacity 0.25s ease,
-    transform 0.25s ease;
-
+  transform:rotate(12deg) scale(0.9);
+  transition:opacity 0.25s ease, transform 0.25s ease;
   pointer-events:none;
-
   z-index:20;
+  display:block;
 }
 
 .menu-hover-item:hover .menu-hover-img{
@@ -1126,6 +1116,10 @@ nav{
 
 .nav-left img{
   width:36px;
+}
+
+  .menu-hover-img{
+  display:none;
 }
 
   section{
