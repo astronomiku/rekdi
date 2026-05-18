@@ -622,6 +622,24 @@ nav{
   text-shadow:4px 4px 0 rgba(0,0,0,0.45);
 }
 
+  .bar-lamp{
+  position:absolute;
+
+  width:220px;
+
+  left:50%;
+
+  bottom:-10px;
+
+  transform:translateX(-50%) rotate(-3deg);
+
+  opacity:0.95;
+
+  z-index:2;
+
+  pointer-events:none;
+}
+
 .bar-menu{
   background:rgba(255,255,255,0.08);
   backdrop-filter:blur(10px);
@@ -1220,9 +1238,15 @@ nav{
   <section class="bar-section" id="bar">
     <div class="bar-grid">
 
-      <div class="bar-poster">
-        <h2>Cocktails<br>First.</h2>
-      </div>
+     <div class="bar-poster">
+  <h2>Cocktails<br>First.</h2>
+
+  <img
+    src="assets/bluelampbar.png"
+    alt=""
+    class="bar-lamp"
+  >
+</div>
 
       <div class="bar-menu">
         <div class="bar-menu-grid">
