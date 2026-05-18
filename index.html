@@ -1027,9 +1027,9 @@ nav{
 
 /* MOBILE */
 
-/* MOBILE */
-
 @media(max-width:1000px){
+
+  
 
   section{
     overflow:hidden;
@@ -1334,6 +1334,56 @@ nav{
     bottom:12px;
     max-width:calc(100vw - 24px);
   }
+
+  /* MOBILE FIX — MENU LAMP */
+.menu-wall::after{
+  width:150px;
+  height:210px;
+  right:-36px;
+  top:-70px;
+  opacity:0.45;
+}
+
+/* MOBILE FIX — CONTINUE */
+.transition-section{
+  padding-top:120px;
+  padding-bottom:120px;
+}
+
+.transition-content{
+  padding:70px 32px;
+}
+
+.transition-content h2{
+  font-size:clamp(2.5rem,13vw,4.4rem);
+  line-height:0.95;
+}
+
+/* MOBILE FIX — COCKTAILS FIRST */
+.bar-poster{
+  padding:80px 34px 70px;
+  min-height:360px;
+}
+
+.bar-poster h2{
+  font-size:clamp(2rem,12vw,3.4rem);
+  line-height:0.98;
+}
+
+.bar-poster::before{
+  inset:-18px -10px;
+}
+
+/* MOBILE FIX — BAR MENU PRICES */
+.bar-menu .menu-item{
+  grid-template-columns:1fr;
+  gap:4px;
+}
+
+.bar-menu .price{
+  white-space:normal;
+  overflow-wrap:anywhere;
+}
 }
   /* FRAME ROTATIONS */
 
