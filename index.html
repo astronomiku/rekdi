@@ -153,15 +153,22 @@ nav{
 /* HERO */
 
 .hero{
+  position:relative;
+
   padding:120px 5vw 70px;
+
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:40px;
   align-items:center;
+
   background:
-    linear-gradient(rgba(245,234,219,0.4),rgba(245,234,219,0.65)),
+    linear-gradient(rgba(180,0,0,0.72),rgba(180,0,0,0.78)),
     url("assets/rekdi2ndfloor.jpg") center/cover no-repeat;
+
   border-bottom:4px solid #111;
+
+  isolation:isolate;
 }
 
 .hero-main{
