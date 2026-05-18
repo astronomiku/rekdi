@@ -557,6 +557,32 @@ nav{
   border-bottom:4px solid #111;
 }
 
+  .bar-pink-stamp{
+  position:absolute;
+  width:360px;
+  right:4%;
+  bottom:-60px;
+  opacity:0.28;
+  transform:rotate(12deg);
+  pointer-events:none;
+  z-index:0;
+}
+
+.bar-frame-stamp{
+  position:absolute;
+  width:420px;
+  right:14%;
+  bottom:40px;
+  opacity:0.22;
+  transform:rotate(-8deg);
+  pointer-events:none;
+  z-index:0;
+}
+
+.bar-grid{
+  position:relative;
+  z-index:2;
+}
 .bar-grid{
   display:grid;
   grid-template-columns:0.7fr 1.3fr;
@@ -1285,7 +1311,8 @@ nav{
 </section>
 
  <section class="bar-section" id="bar">
-
+<img src="assets/rekdipinkbg.png" alt="" class="bar-pink-stamp">
+<img src="assets/grayovalframe.png" alt="" class="bar-frame-stamp">
   <div class="bar-grid">
 
     <div class="bar-left">
