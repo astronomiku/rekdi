@@ -643,10 +643,38 @@ nav{
 }
 
 .bar-menu{
-  background:rgba(255,255,255,0.08);
-  backdrop-filter:blur(10px);
-  border:8px solid #ffe34d;
-  padding:28px;
+  position:relative;
+
+  background:transparent;
+
+  border:none;
+
+  padding:46px 42px;
+
+  z-index:2;
+}
+
+.bar-menu::before{
+  content:"";
+
+  position:absolute;
+
+  inset:-34px;
+
+  background:url("assets/whiteframe.png")
+  center/100% 100% no-repeat;
+
+  opacity:0.92;
+
+  pointer-events:none;
+
+  z-index:0;
+}
+  .bar-menu-grid,
+.bar-menu h3,
+.bar-menu .menu-item{
+  position:relative;
+  z-index:2;
 }
 
 .bar-menu-grid{
