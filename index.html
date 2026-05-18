@@ -545,9 +545,10 @@ nav{
   text-transform:uppercase;
 }
 
-  /* BAR */
+ /* BAR */
 
 .bar-section{
+  position:relative;
   padding:80px 5vw;
   background:
     linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.72)),
@@ -556,40 +557,6 @@ nav{
   border-bottom:4px solid #111;
 }
 
-  <img
-  src="assets/bluelampbar.png"
-  alt=""
-  class="bar-corner-lamp"
->
-
-  .bar-corner-lamp{
-  position:absolute;
-
-  width:420px;
-
-  left:-40px;
-
-  bottom:-40px;
-
-  transform:rotate(-8deg);
-
-  opacity:0.95;
-
-  pointer-events:none;
-
-  z-index:1;
-}
-
-  <section class="bar-section" id="bar">
-
-  <img
-    src="assets/bluelampbar.png"
-    alt=""
-    class="bar-corner-lamp"
-  >
-
-  <div class="bar-grid">
-
 .bar-grid{
   display:grid;
   grid-template-columns:0.7fr 1.3fr;
@@ -597,20 +564,23 @@ nav{
   align-items:start;
 }
 
+.bar-left{
+  display:flex;
+  flex-direction:column;
+  gap:24px;
+  min-height:100%;
+}
+
 .bar-poster{
   position:relative;
   overflow:visible;
-
   min-height:460px;
   padding:90px 50px 80px;
-
   background:
     linear-gradient(rgba(0,0,0,0.20),rgba(0,0,0,0.48)),
     url("assets/rekdibarmenupic.jpg") center/cover no-repeat;
-
   border:none;
   border-radius:46px 58px 52px 44px;
-
   transform:rotate(-1deg);
 }
 
@@ -626,19 +596,13 @@ nav{
 .bar-poster::after{
   content:"";
   position:absolute;
-
   width:360px;
   height:360px;
-
   left:50%;
   top:56%;
-
   transform:translate(-50%,-50%) rotate(-8deg);
-
   background:url("assets/Rekdiredbg.png") center/contain no-repeat;
-
   opacity:0.35;
-
   pointer-events:none;
   z-index:1;
 }
@@ -646,31 +610,26 @@ nav{
 .bar-poster h2{
   position:relative;
   z-index:2;
-
   font-size:clamp(2.6rem,5.8vw,4.6rem);
-
   color:#fff;
-
   margin-top:20px;
-
   text-shadow:4px 4px 0 rgba(0,0,0,0.45);
 }
 
-  .bar-corner-lamp{
+.bar-lamp-wrap{
+  position:relative;
+  flex:1;
+  min-height:320px;
+}
+
+.bar-corner-lamp{
   position:absolute;
-
-  width:420px;
-
-  left:-40px;
-
-  bottom:-40px;
-
+  width:500px;
+  left:-100px;
+  bottom:-70px;
   transform:rotate(-8deg);
-
-  opacity:0.95;
-
+  opacity:0.96;
   pointer-events:none;
-
   z-index:1;
 }
 
@@ -1271,7 +1230,29 @@ nav{
 
   <section class="bar-section" id="bar">
 
-  <h2>Cocktails<br>First.</h2>
+  <section class="bar-section" id="bar">
+
+  <div class="bar-grid">
+
+    <div class="bar-left">
+
+      <div class="bar-poster">
+        <h2>Cocktails<br>First.</h2>
+      </div>
+
+      <div class="bar-lamp-wrap">
+        <img
+          src="assets/bluelampbar.png"
+          alt=""
+          class="bar-corner-lamp"
+        >
+      </div>
+
+    </div>
+
+    <div class="bar-menu">
+
+      <div class="bar-menu-grid">
 </div>
 
       <div class="bar-menu">
