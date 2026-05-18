@@ -556,6 +556,40 @@ nav{
   border-bottom:4px solid #111;
 }
 
+  <img
+  src="assets/bluelampbar.png"
+  alt=""
+  class="bar-corner-lamp"
+>
+
+  .bar-corner-lamp{
+  position:absolute;
+
+  width:420px;
+
+  left:-40px;
+
+  bottom:-40px;
+
+  transform:rotate(-8deg);
+
+  opacity:0.95;
+
+  pointer-events:none;
+
+  z-index:1;
+}
+
+  <section class="bar-section" id="bar">
+
+  <img
+    src="assets/bluelampbar.png"
+    alt=""
+    class="bar-corner-lamp"
+  >
+
+  <div class="bar-grid">
+
 .bar-grid{
   display:grid;
   grid-template-columns:0.7fr 1.3fr;
@@ -622,22 +656,22 @@ nav{
   text-shadow:4px 4px 0 rgba(0,0,0,0.45);
 }
 
-  .bar-lamp{
+  .bar-corner-lamp{
   position:absolute;
 
-  width:220px;
+  width:420px;
 
-  left:50%;
+  left:-40px;
 
-  bottom:-10px;
+  bottom:-40px;
 
-  transform:translateX(-50%) rotate(-3deg);
+  transform:rotate(-8deg);
 
   opacity:0.95;
 
-  z-index:2;
-
   pointer-events:none;
+
+  z-index:1;
 }
 
 .bar-menu{
@@ -1236,16 +1270,8 @@ nav{
 </section>
 
   <section class="bar-section" id="bar">
-    <div class="bar-grid">
 
-     <div class="bar-poster">
   <h2>Cocktails<br>First.</h2>
-
-  <img
-    src="assets/bluelampbar.png"
-    alt=""
-    class="bar-lamp"
-  >
 </div>
 
       <div class="bar-menu">
