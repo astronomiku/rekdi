@@ -297,7 +297,6 @@ nav{
   transform:rotate(-1deg);
 }
 
-/* MENU */
 
 /* MENU */
 
@@ -1384,15 +1383,6 @@ nav{
     max-width:calc(100vw - 24px);
   }
 
-  /* MOBILE FIX — MENU LAMP */
-.menu-wall::after{
-  width:150px;
-  height:210px;
-  right:-36px;
-  top:-70px;
-  opacity:0.45;
-}
-
 /* MOBILE FIX — CONTINUE */
 .transition-section{
   padding-top:120px;
@@ -1432,20 +1422,17 @@ nav{
 .bar-menu .price{
   white-space:normal;
   overflow-wrap:anywhere;
+  
 }
-  /* STRONG MOBILE OVERRIDES */
 
-.menu-wall::after{
+  .menu-wall::after{
+  display:block;
   width:120px;
   height:180px;
-
   right:-18px;
   top:120px;
-
   opacity:0.22;
-
   z-index:0;
-
   transform:rotate(10deg);
 }
   .menu-wall{
@@ -1523,11 +1510,7 @@ nav{
   padding-bottom:18px;
 }
 
-/* REMOVE MOBILE LAMP */
 
-.menu-wall::after{
-  display:none;
-}
 
 /* CONTINUE SECTION */
 
