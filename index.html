@@ -72,7 +72,7 @@ section{
   padding:40px;
   background:
     url("assets/walltextureneongreen.png")
-    center/cover no-repeat;
+    center center / auto 100% repeat;
 }
 
 .opening-inner{
@@ -84,11 +84,25 @@ section{
   margin:0 auto 22px;
 }
 
+  .opening-logo{
+  width:min(760px,88vw);
+
+  filter:
+    drop-shadow(6px 6px 0 #000)
+    drop-shadow(0 0 20px rgba(255,255,255,.25));
+}
 .opening-subtitle{
-  font-family:"Archivo Black",sans-serif;
-  text-transform:uppercase;
-  font-size:clamp(1.4rem,3vw,2.4rem);
-  letter-spacing:-0.02em;
+  color:#111;
+
+  background:#f5eadb;
+
+  display:inline-block;
+
+  padding:10px 20px;
+
+  transform:rotate(-1deg);
+
+  box-shadow:6px 6px 0 #111;
 }
 
 /* NAV */
