@@ -72,7 +72,7 @@ section{
   padding:40px;
   background:
     url("assets/walltextureneongreen.png")
-    center center / auto 100% repeat;
+    center center / cover no-repeat;
 }
 
 .opening-inner{
@@ -92,19 +92,25 @@ section{
     drop-shadow(0 0 20px rgba(255,255,255,.25));
 }
 .opening-subtitle{
+  font-family:"Archivo Black",sans-serif;
+
+  font-size:clamp(2rem,5vw,4rem);
+
+  text-transform:uppercase;
+
   color:#111;
 
-  background:#f5eadb;
+  background:none;
+  border:none;
+  box-shadow:none;
 
-  display:inline-block;
+  padding:0;
+  margin-top:20px;
 
-  padding:10px 20px;
-
-  transform:rotate(-1deg);
-
-  box-shadow:6px 6px 0 #111;
+  text-shadow:
+    3px 3px 0 rgba(255,255,255,0.65),
+    6px 6px 0 rgba(0,0,0,0.25);
 }
-
 /* NAV */
 
 nav{
