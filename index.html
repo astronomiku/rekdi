@@ -131,10 +131,20 @@ nav{
   border-bottom:3px solid #111;
 }
 
+.nav-left{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
 .nav-left img{
   width:42px;
 }
 
+.nav-ygy-logo{
+  width:auto;
+  height:32px;
+}
 .nav-links{
   display:flex;
   flex-wrap:wrap;
@@ -1853,25 +1863,32 @@ nav{
   </div>
 
 </section>
-  <nav>
-  <a href="#top" class="nav-left">
-    <img src="assets/rekdilogo.png" alt="Rekdi Logo">
-  </a>
+<nav>
 
- <button class="mobile-menu-toggle">
-  ☰
-</button>
+  <div class="nav-left">
+
+    <a href="#top">
+      <img src="assets/rekdilogo.png" alt="Rekdi Logo">
+    </a>
+
+    <a href="#bar">
+      <img
+        src="assets/ygypink.png"
+        alt="YGY"
+        class="nav-ygy-logo"
+      >
+    </a>
+
+  </div>
+
+  <button class="mobile-menu-toggle">
+    ☰
+  </button>
 
   <div class="nav-links">
   <a href="#hero">Home</a>
   <a href="#menu">Menu</a>
-  <a href="#bar" class="ygy-nav-link">
-  <img
-    src="assets/ygypink.png"
-    alt="YGY"
-    class="ygy-nav-logo"
-  >
-</a>
+ <a href="#events">Events</a>
   <a href="#story">Story</a>
   <a href="#careers">Careers</a>
   <a href="#find">Find Rekdi</a>
