@@ -702,6 +702,23 @@ nav{
 
   z-index:1;
 }
+
+  .bar-corner-lamp{
+  position:absolute;
+
+  width:520px;
+
+  left:-120px;
+  bottom:-80px;
+
+  opacity:0.95;
+
+  transform:rotate(-8deg);
+
+  pointer-events:none;
+
+  z-index:1;
+}
 .bar-grid{
   display:grid;
   grid-template-columns:0.7fr 1.3fr;
@@ -790,18 +807,40 @@ nav{
 
 .bar-menu{
   position:relative;
-
   background:transparent;
-
   border:none;
-
-  padding:46px 42px;
-
+  padding:0;
   z-index:2;
+
+  max-width:1100px;
+  margin:0 auto;
 }
 
+.bar-menu-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:60px;
+}
 
-  .bar-menu-grid,
+  .bar-header{
+  text-align:center;
+  margin-bottom:60px;
+  position:relative;
+  z-index:3;
+}
+
+.bar-logo{
+  width:min(420px,60vw);
+  margin:0 auto 16px;
+}
+
+.bar-tagline{
+  font-family:"Special Elite", monospace;
+  font-size:1rem;
+  color:#fff;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
 .bar-menu h3,
 .bar-menu .menu-item{
   position:relative;
@@ -2033,6 +2072,12 @@ nav{
     </div>
   </div>
 
+  <img
+  src="assets/lampbar.png"
+  alt=""
+  class="bar-corner-lamp"
+>
+
   <div class="bar-menu">
 
     <div class="bar-menu-grid">
@@ -2071,13 +2116,6 @@ nav{
 
   </div>
 
-  <div class="bar-lamp-bottom">
-    <img
-      src="assets/lampbar.png"
-      alt=""
-      class="bar-bottom-lamp"
-    >
-  </div>
 
 </section>
 
