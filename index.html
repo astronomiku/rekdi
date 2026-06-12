@@ -149,16 +149,6 @@ nav{
 }
 
 .nav-ygy-logo{
-  height:42px;
-  width:auto;
-  display:block;
-}
-
-.nav-left > a:first-child img{
-  width:42px;
-}
-
-.nav-ygy-logo{
   height:60px;
   width:auto;
   display:block;
@@ -599,79 +589,90 @@ nav{
 
   /* EVENTS */
 
+/* EVENTS */
+
 .events-section{
-  padding:80px 5vw;
-
-  background:#f5eadb;
-
+  position:relative;
+  padding:90px 5vw;
+  background:#ff2f92;
   border-bottom:4px solid #111;
+  overflow:hidden;
 }
 
 .events-wrap{
-  max-width:1000px;
+  position:relative;
+  z-index:2;
+  max-width:1180px;
   margin:0 auto;
 }
 
 .events-section .section-title{
-  margin-bottom:12px;
+  color:#111;
+  margin-bottom:18px;
 }
 
 .events-section .section-title-tag{
   color:#111;
-  margin-bottom:40px;
+  max-width:520px;
+  font-size:1.1rem;
+  line-height:1.4;
+  margin-bottom:38px;
 }
 
 .event-card{
-  max-width:700px;
-
-  padding:32px;
-
+  max-width:620px;
+  padding:34px 38px;
   border:3px solid #111;
-
-  background:#fff;
+  background:#f5eadb;
+  transform:rotate(-1deg);
 }
 
 .event-date{
   font-family:"Archivo Black",sans-serif;
-  font-size:0.9rem;
+  font-size:1.4rem;
   text-transform:uppercase;
-
-  margin-bottom:12px;
-
   color:#e8345b;
+  margin-bottom:14px;
 }
 
 .event-title{
   font-family:"Archivo Black",sans-serif;
-  font-size:2rem;
+  font-size:clamp(2rem,5vw,4rem);
+  line-height:0.9;
   text-transform:uppercase;
-
-  margin-bottom:12px;
+  margin-bottom:18px;
 }
 
 .event-copy{
-  font-size:1.1rem;
-  line-height:1.5;
-
-  margin-bottom:12px;
+  font-size:1.2rem;
+  line-height:1.4;
+  margin-bottom:18px;
 }
 
 .event-time{
-  font-weight:700;
+  font-family:"Archivo Black",sans-serif;
+  font-size:1.1rem;
+  padding-top:16px;
+  border-top:2px solid #111;
 }
 
-  .event-ticket{
-  margin-top:12px;
-
+.event-ticket{
+  margin-top:16px;
   font-family:"Archivo Black",sans-serif;
-
   color:#e8345b;
-
-  font-size:1rem;
-
+  font-size:1.1rem;
   text-transform:uppercase;
 }
-  
+
+.events-brain-stamp{
+  position:absolute;
+  width:360px;
+  right:6%;
+  top:180px;
+  z-index:1;
+  transform:rotate(5deg);
+  pointer-events:none;
+}  
 /* CONTINUE */
 
 .transition-section{
@@ -1867,6 +1868,30 @@ nav{
   white-space:normal;
   overflow-wrap:anywhere;
 }
+
+  .events-section{
+  padding:70px 7vw;
+}
+
+.events-section .section-title,
+.events-section .section-title-tag{
+  text-align:center;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.event-card{
+  padding:28px 24px;
+  transform:none;
+}
+
+.events-brain-stamp{
+  position:relative;
+  width:220px;
+  right:auto;
+  top:auto;
+  margin:36px auto 0;
+}
 /* MOBILE TEXT + CROPPING FIXES */
 
 .hero h1,
@@ -2214,7 +2239,13 @@ nav{
     </div>
   </section>
 
-    <section class="events-section" id="events">
+   <section class="events-section" id="events">
+
+  <img
+    src="assets/braincrown.png"
+    alt=""
+    class="events-brain-stamp"
+  >
 
   <div class="events-wrap">
 
