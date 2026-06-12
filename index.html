@@ -114,42 +114,7 @@ section{
 
   /* YGY SCREEN */
 
-.ygy-screen{
-  min-height:75vh;
 
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
-  padding:40px;
-
-  background:
-    url("assets/wallrekdiorangegreen.png")
-    center center / cover no-repeat;
-
-  border-bottom:4px solid #111;
-}
-
-.ygy-inner{
-  text-align:center;
-}
-
-.ygy-logo{
-  width:min(420px,60vw);
-  margin:0 auto 24px;
-}
-
-.ygy-subtitle{
-  font-family:"Special Elite", monospace;
-
-  font-size:1rem;
-
-  color:#fff;
-
-  letter-spacing:0.05em;
-
-  text-transform:uppercase;
-}
 /* NAV */
 
 nav{
@@ -742,6 +707,25 @@ nav{
   grid-template-columns:0.7fr 1.3fr;
   gap:42px;
   align-items:start;
+}
+  .bar-header{
+  text-align:center;
+  margin-bottom:60px;
+  position:relative;
+  z-index:3;
+}
+
+.bar-logo{
+  width:min(420px,60vw);
+  margin:0 auto 18px;
+}
+
+.bar-tagline{
+  font-family:"Special Elite", monospace;
+  font-size:1rem;
+  color:#fff;
+  text-transform:uppercase;
+  letter-spacing:.08em;
 }
 
 .bar-left{
@@ -1811,7 +1795,7 @@ nav{
   <div class="nav-links">
   <a href="#hero">Home</a>
   <a href="#menu">Menu</a>
-  <a href="#bar-transition">Bar</a>
+  <a href="#bar-transition">YGY</a>
   <a href="#story">Story</a>
   <a href="#careers">Careers</a>
   <a href="#find">Find Rekdi</a>
@@ -2051,28 +2035,24 @@ nav{
   </div>
 </section>
 
-  <section class="ygy-screen">
 
-  <div class="ygy-inner">
-
-    <img
-      src="assets/ygylogo.png"
-      alt="Yagangyang"
-      class="ygy-logo"
-    >
-
-    <div class="ygy-subtitle">
-      Go out and have fun.
-    </div>
-
-  </div>
-
-</section>
-
- <section class="bar-section" id="YGY">
+ <section class="bar-section" id="bar">
 <img src="assets/rekdipinkbg.png" alt="" class="bar-pink-stamp">
 <img src="assets/grayovalframe.png" alt="" class="bar-frame-stamp">
    <img src="assets/whiteframe.png" alt="" class="bar-frame-stamp-2">
+   <div class="bar-header">
+
+  <img
+    src="assets/ygylogo.png"
+    alt="Yagangyang"
+    class="bar-logo"
+  >
+
+  <div class="bar-tagline">
+    Go out and have fun.
+  </div>
+
+</div>
   <div class="bar-grid">
 
     <div class="bar-left">
