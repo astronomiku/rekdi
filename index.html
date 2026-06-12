@@ -1074,56 +1074,70 @@ nav{
 }
   
 /* STORY */
+/* STORY */
+
 .story{
   position:relative;
-  padding:80px 5vw;
+  padding:100px 5vw;
   background:
-    linear-gradient(rgba(0,0,0,0.45),rgba(0,0,0,0.45)),
+    linear-gradient(rgba(0,0,0,0.50),rgba(0,0,0,0.60)),
     url("assets/rekdiwall.JPG") center/cover no-repeat;
   border-bottom:4px solid #111;
 }
 
 .story-layout{
   position:relative;
-  max-width:1100px;
+  max-width:1180px;
   margin:0 auto;
-  padding:60px;
   z-index:2;
 }
 
 .story-copy{
+  position:relative;
+  z-index:4;
+
   display:grid;
-  gap:22px;
+  grid-template-columns:0.75fr 1.25fr;
+  gap:70px;
+  align-items:start;
+
   color:#fff;
 }
 
 .story-copy h2{
-  font-size:clamp(3rem,8vw,6rem);
+  font-size:clamp(3.5rem,8vw,7rem);
   color:#e8345b;
+  position:sticky;
+  top:120px;
+}
+
+.story-text{
+  max-width:760px;
 }
 
 .story-copy p{
   font-size:1rem;
   line-height:1.75;
   font-weight:700;
-  max-width:760px;
+  margin-bottom:22px;
+}
+
+.story-copy p:first-child{
+  font-family:"Archivo Black",sans-serif;
+  text-transform:uppercase;
+  font-size:1.2rem;
+  line-height:1.2;
+  color:#ffe34d;
 }
 
 .story-blue-stamp{
   position:absolute;
-
   width:240px;
-
   right:4%;
-
   bottom:-20px;
-
   transform:rotate(16deg);
-
   opacity:0.24;
-
   pointer-events:none;
-
   z-index:2;
 }
 
@@ -1147,9 +1161,7 @@ nav{
   opacity:0.28;
   pointer-events:none;
   z-index:1;
-}
-
-.story-copy{
+}.story-copy{
   position:relative;
   z-index:4;
 }
@@ -1666,35 +1678,46 @@ nav{
 
   /* STORY */
 
-  .story{
-    overflow:hidden;
-  }
+ .story{
+  padding:80px 7vw;
+}
 
-  .story-layout{
-    padding:54px 26px;
-    max-width:100%;
-  }
+.story-layout{
+  padding:0;
+  max-width:100%;
+}
 
-  .story-copy h2{
-    font-size:clamp(2.8rem,15vw,4.8rem);
-  }
+.story-copy{
+  grid-template-columns:1fr;
+  gap:34px;
+}
 
-  .story-copy p{
-    font-size:0.92rem;
-    line-height:1.6;
-  }
+.story-copy h2{
+  position:relative;
+  top:auto;
+  font-size:clamp(2.8rem,15vw,4.8rem);
+}
 
-  .story-fan-stamp{
-    width:180px;
-    right:-70px;
-    top:20px;
-  }
+.story-copy p{
+  font-size:0.92rem;
+  line-height:1.65;
+}
 
-  .story-blue-stamp{
-    width:180px;
-    right:-60px;
-    bottom:-30px;
-  }
+.story-copy p:first-child{
+  font-size:1rem;
+}
+
+.story-fan-stamp{
+  width:180px;
+  right:-70px;
+  top:20px;
+}
+
+.story-blue-stamp{
+  width:180px;
+  right:-60px;
+  bottom:-30px;
+}
 
   /* CAREERS */
 
@@ -2397,20 +2420,62 @@ nav{
 </section>
 
 <section class="story" id="story">
- <img src="assets/rekdibluebg.png" alt="" class="story-blue-stamp">
-<img src="assets/electricfan.png" alt="" class="story-fan-stamp">
-<img src="assets/pinkframe.png" alt="" class="story-frame-stamp">
+
+  <img src="assets/rekdibluebg.png" alt="" class="story-blue-stamp">
+  <img src="assets/electricfan.png" alt="" class="story-fan-stamp">
+  <img src="assets/pinkframe.png" alt="" class="story-frame-stamp">
+
   <div class="story-layout">
+
     <div class="story-copy">
+
       <h2>Our<br>Story</h2>
-      <p>Rekdi opened in February 2026 in Poblacion, Makati.</p>
-      <p>Built around grilling, drinking, and long conversations.</p>
-      <p>The food starts with Filipino pantry cooking — rice, noodles, bread, skewers, seafood, things eaten with your hands, things best shared over drinks.</p>
-      <p>Some dishes stay close to memory. Others wander through travel, cravings, street food, and bad decisions.</p>
-      <p>Nothing here tries to be perfect. Only worth coming back for.</p>
+
+      <div class="story-text">
+
+        <p>
+          Rekdi opened in February 2026 in Poblacion, Makati.
+        </p>
+
+        <p>
+          Rekdi’s menu is a living document, evolving through tasting,
+          testing, and arguing in the kitchen. Our food is built around
+          the grill, but the goal isn’t to imitate or perform Filipino-ness.
+          It’s to honor the instinct of the Filipino palate: salty, smoky,
+          sour, umami, and sweet with discipline and restraint.
+        </p>
+
+        <p>
+          No ingredient is sacred. We use anything. And we will use anything.
+          We bring humble ingredients to the center stage: local corn, daikon,
+          cabbage, blue marlin, mackerel, pork jowl.
+        </p>
+
+        <p>
+          Rekdi looks the way it tastes: raw, warm, and electric. The walls
+          are imperfect, the lights are cinematic, and the space feels like
+          it’s breathing. A mix of karinderya grit and art-film glow.
+        </p>
+
+        <p>
+          Each floor has its own tempo. The bar hums, the dining room sways,
+          and the kitchen beats steady. The design isn’t polished. It’s felt,
+          alive, layered, and Filipino in texture, not just in name.
+        </p>
+
+        <p>
+          Our menu evolves with our cooks. Every dish is a collaboration,
+          not a hierarchy. We rewrite recipes the way we rewrite scripts,
+          until the flavor feels like a story that ends exactly right.
+        </p>
+
+      </div>
+
     </div>
+
   </div>
-</section>   
+
+</section>
 
   <section class="careers" id="careers">
     <div class="haze"></div>
