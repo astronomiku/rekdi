@@ -703,17 +703,18 @@ nav{
   z-index:1;
 }
 
- .bar-corner-lamp{
+.bar-corner-lamp{
   position:absolute;
 
   width:260px;
 
-  right:-20px;
-  bottom:-20px;
+  right:20px;
+
+  bottom:20px;
 
   opacity:0.35;
 
-  transform:scaleX(-1) rotate(-8deg);
+  transform:scaleX(-1);
 
   pointer-events:none;
 
@@ -2071,8 +2072,6 @@ nav{
   </div>
 </div>
 
-<img src="assets/lampbar.png" alt="" class="bar-corner-lamp">
-
   <div class="bar-menu">
 
     <div class="bar-menu-grid">
@@ -2110,6 +2109,8 @@ nav{
     </div>
 
   </div>
+
+  <img src="assets/lampbar.png" alt="" class="bar-corner-lamp">
 
 
 </section>
