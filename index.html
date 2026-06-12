@@ -590,9 +590,22 @@ nav{
 
 .transition-content h2,
 .transition-content p,
-.transition-link{
-  position:relative;
-  z-index:2;
+.transition-ygy{
+  text-align:center;
+  margin-top:26px;
+}
+
+.transition-copy{
+  font-family:"Special Elite", monospace;
+  font-size:1rem;
+  color:#fff;
+  margin-bottom:12px;
+}
+
+.transition-ygy-logo{
+  width:min(520px,80vw);
+  display:block;
+  margin:0 auto;
 }
 
 .transition-content h2{
@@ -639,7 +652,7 @@ nav{
 
   font-size:clamp(1.8rem,4vw,3rem);
 
-  color:#ff2f92;
+  color:#ff2f92 !important;
 
   text-transform:uppercase;
 
@@ -648,6 +661,8 @@ nav{
   line-height:1;
 
   text-align:center;
+
+  text-shadow:none;
 }
 
  /* BAR */
@@ -2069,7 +2084,7 @@ nav{
     </div>
   </section>
 
-  <section id="bar-transition" class="transition-section">
+ <section id="bar-transition" class="transition-section">
   <div class="transition-content">
     <h2>Continue<br>The Conversation</h2>
 
@@ -2077,9 +2092,17 @@ nav{
       Downstairs. Cocktails. Late dinners. Long talks. Bad decisions.
     </p>
 
-    <a href="#bar" class="transition-link">
-      It's time to YAGANGYANG.
-    </a>
+    <div class="transition-ygy">
+      <div class="transition-copy">
+        It's time to
+      </div>
+
+      <img
+        src="assets/yagangyangpink.png"
+        alt="Yagangyang"
+        class="transition-ygy-logo"
+      >
+    </div>
   </div>
 </section>
 
