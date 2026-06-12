@@ -1456,11 +1456,12 @@ nav{
     inset:-14px;
   }
 
-  .bar-corner-lamp{
-    width:320px;
-    left:-90px;
-    bottom:-40px;
-  }
+ .bar-corner-lamp{
+  width:240px;
+  right:0;
+  bottom:0;
+  left:auto;
+}
 
   .bar-pink-stamp,
   .bar-frame-stamp,
@@ -1588,12 +1589,16 @@ nav{
   }
 
 /* MOBILE FIX — CONTINUE */
-  .opening-subtitle{
-  font-size:clamp(2.8rem,16vw,4.8rem);
+.opening-subtitle{
+  font-size:clamp(2rem,11vw,3.6rem);
+
   line-height:1.05;
-  letter-spacing:-0.05em;
-  max-width:100%;
-  overflow-wrap:break-word;
+
+  letter-spacing:-0.03em;
+
+  text-align:center;
+
+  padding:0 16px;
 }
 
 .transition-content h2{
@@ -2087,11 +2092,12 @@ nav{
 
  <section id="bar-transition" class="transition-section">
   <div class="transition-content">
-     <img
-    src="assets/ygypink.png"
-    alt="YGY"
-    class="transition-ygy-logo"
-  >
+    <img
+      src="assets/ygypink.png"
+      alt="YGY"
+      class="transition-ygy-logo"
+    >
+
     <h2>Continue<br>The Conversation</h2>
 
     <p>
@@ -2099,14 +2105,12 @@ nav{
     </p>
 
     <div class="transition-ygy">
-
-
-  <div class="transition-copy">
-    Yagangyang Time
+      <div class="transition-copy">
+        Yagangyang Time
+      </div>
+    </div>
   </div>
-
-</div>
- </section>
+</section>
 
 <section class="bar-section" id="bar">
 
