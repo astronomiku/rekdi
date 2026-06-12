@@ -132,9 +132,26 @@ nav{
 }
 
 .nav-left{
+  flex:1;
+}
+
+  .nav-links{
+  flex:1;
+  justify-content:center;
+}
+
+  .nav-ygy-link{
+  flex:1;
+
   display:flex;
+  justify-content:flex-end;
   align-items:center;
-  gap:12px;
+}
+
+.nav-ygy-logo{
+  height:42px;
+  width:auto;
+  display:block;
 }
 
 .nav-left > a:first-child img{
@@ -1941,22 +1958,11 @@ nav{
 </section>
 <nav>
 
-  <div class="nav-left">
-
-    <a href="#top">
-      <img src="assets/rekdilogo.png" alt="Rekdi Logo">
-    </a>
-
-    <a href="#bar-transition">
-      <img
-        src="assets/ygypink.png"
-        alt="YGY"
-        class="nav-ygy-logo"
-      >
-    </a>
-
-  </div>
-
+ <div class="nav-left">
+  <a href="#top">
+    <img src="assets/rekdilogo.png" alt="Rekdi Logo">
+  </a>
+</div>
   <button class="mobile-menu-toggle">
     ☰
   </button>
@@ -1970,6 +1976,14 @@ nav{
   <a href="#find">Find Rekdi</a>
 </div>
   </nav>
+
+  <a href="#bar-transition" class="nav-ygy-link">
+  <img
+    src="assets/ygypink.png"
+    alt="YGY"
+    class="nav-ygy-logo"
+  >
+</a>
 
   <section class="hero" id="hero">
     <div class="hero-main">
