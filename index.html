@@ -75,7 +75,6 @@ section{
     url("assets/wallrekdiorangegreen.png")
     center center / cover no-repeat;
 
-
   border-bottom:4px solid #111;
 }
 
@@ -135,10 +134,12 @@ nav{
   flex:1;
 }
 
-  .nav-links{
-  flex:1;
-  justify-content:center;
+  .nav-left img{
+  width:42px;
+  height:auto;
+  display:block;
 }
+
 
   .nav-ygy-link{
   flex:1;
@@ -153,12 +154,15 @@ nav{
   width:auto;
   display:block;
 }
-.nav-links{
+
+  .nav-links{
+  flex:1;
+
   display:flex;
-  flex-wrap:wrap;
-  gap:22px;
-  justify-content:flex-end;
+  justify-content:center;
   align-items:center;
+
+  gap:22px;
 }
 
 .nav-links a{
@@ -2000,15 +2004,15 @@ nav{
   <a href="#careers">Careers</a>
   <a href="#find">Find Rekdi</a>
 </div>
-  </nav>
 
-  <a href="#bar-transition" class="nav-ygy-link">
+   <a href="#bar-transition" class="nav-ygy-link">
   <img
     src="assets/ygypink.png"
     alt="YGY"
     class="nav-ygy-logo"
   >
 </a>
+  </nav>
 
   <section class="hero" id="hero">
     <div class="hero-main">
