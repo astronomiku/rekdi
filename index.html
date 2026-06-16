@@ -3153,6 +3153,43 @@ window.addEventListener("scroll", () => {
   });
 });
 </script>
+
+  <script>
+const monthTabs = document.querySelectorAll(".month-tab");
+const monthPanels = document.querySelectorAll(".month-panel");
+const eventDays = document.querySelectorAll(".event-day");
+
+monthTabs.forEach(tab => {
+  tab.addEventListener("click", function(){
+    const targetMonth = this.dataset.month;
+
+    monthTabs.forEach(item => item.classList.remove("active"));
+    monthPanels.forEach(panel => panel.classList.remove("active"));
+    eventDays.forEach(day => day.classList.remove("active"));
+
+    this.classList.add("active");
+    document.getElementById(targetMonth).classList.add("active");
+  });
+});
+
+eventDays.forEach(day => {
+  day.addEventListener("click", function(e){
+    e.stopPropagation();
+
+    eventDays.forEach(item => {
+      if(item !== this){
+        item.classList.remove("active");
+      }
+    });
+
+    this.classList.toggle("active");
+  });
+});
+
+document.addEventListener("click", function(){
+  eventDays.forEach(day => day.classList.remove("active"));
+});
+</script>
   <script>
 const openTsismis = document.getElementById("openTsismis");
 const closeTsismis = document.getElementById("closeTsismis");
