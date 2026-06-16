@@ -291,6 +291,42 @@ nav{
   cursor:pointer;
 }
 
+  .tsismis-form{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+
+.tsismis-form input{
+  width:100%;
+  padding:14px 16px;
+
+  border:2px solid #111;
+
+  font-family:"Special Elite", monospace;
+  font-size:1rem;
+}
+
+.tsismis-form button{
+  width:fit-content;
+
+  background:#2728C2;
+  color:#fff;
+
+  border:none;
+
+  padding:12px 18px;
+
+  font-family:"Archivo Black",sans-serif;
+  font-size:0.9rem;
+  text-transform:uppercase;
+
+  cursor:pointer;
+}
+
+.tsismis-form button:hover{
+  opacity:0.8;
+}
 .reserve-btn{
   position:fixed;
   right:16px;
@@ -2710,7 +2746,36 @@ nav{
       Leave your email and we'll tell you first.
     </p>
 
-    <!-- Mailchimp embedded form goes here later -->
+  <form
+  action="https://rekdi.us15.list-manage.com/subscribe/post?u=41f88b58f9735ee8049dff43b&amp;id=f130373d85&amp;f_id=0049bae0f0"
+  method="post"
+  target="_blank"
+  class="tsismis-form"
+>
+  <input
+    type="email"
+    name="EMAIL"
+    placeholder="Your email"
+    required
+  >
+
+  <div hidden>
+    <input type="hidden" name="tags" value="2955179,2955180">
+  </div>
+
+  <div aria-hidden="true" style="position:absolute; left:-5000px;">
+    <input
+      type="text"
+      name="b_41f88b58f9735ee8049dff43b_f130373d85"
+      tabindex="-1"
+      value=""
+    >
+  </div>
+
+  <button type="submit">
+    Sali Ako
+  </button>
+</form>
 
   </div>
 </div>
