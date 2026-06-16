@@ -2525,7 +2525,7 @@ nav{
     </div>
   </section>
 
-   <section class="events-section" id="events">
+<section class="events-section" id="events">
 
   <img
     src="assets/braincrowndoodle.png"
@@ -2543,28 +2543,102 @@ nav{
       Film screenings. Collaborations. Tastings. Other bad ideas.
     </div>
 
-    <div class="event-card">
+    <div class="calendar-block">
 
-      <div class="event-date">
-        June 12
+      <h3 class="calendar-month">June 2026</h3>
+
+      <div class="calendar-grid">
+        <div class="day-name">Sun</div>
+        <div class="day-name">Mon</div>
+        <div class="day-name">Tue</div>
+        <div class="day-name">Wed</div>
+        <div class="day-name">Thu</div>
+        <div class="day-name">Fri</div>
+        <div class="day-name">Sat</div>
+
+        <div class="calendar-day">1</div>
+        <div class="calendar-day">2</div>
+        <div class="calendar-day">3</div>
+        <div class="calendar-day">4</div>
+        <div class="calendar-day">5</div>
+        <div class="calendar-day">6</div>
+        <div class="calendar-day">7</div>
+
+        <div class="calendar-day">8</div>
+        <div class="calendar-day">9</div>
+        <div class="calendar-day">10</div>
+        <div class="calendar-day">11</div>
+
+        <div class="calendar-day has-event past">
+          <span>12</span>
+          <button class="calendar-event" data-event="maximo">
+            Film Viewing
+          </button>
+        </div>
+
+        <div class="calendar-day">13</div>
+        <div class="calendar-day">14</div>
+
+        <div class="calendar-day">15</div>
+        <div class="calendar-day">16</div>
+        <div class="calendar-day">17</div>
+        <div class="calendar-day">18</div>
+        <div class="calendar-day">19</div>
+        <div class="calendar-day">20</div>
+        <div class="calendar-day">21</div>
+
+        <div class="calendar-day">22</div>
+        <div class="calendar-day">23</div>
+        <div class="calendar-day">24</div>
+        <div class="calendar-day">25</div>
+        <div class="calendar-day">26</div>
+        <div class="calendar-day">27</div>
+
+        <div class="calendar-day has-event">
+          <span>28</span>
+          <button class="calendar-event" data-event="journaling">
+            Journaling
+          </button>
+        </div>
+
+        <div class="calendar-day">29</div>
+        <div class="calendar-day">30</div>
       </div>
 
-      <div class="event-title">
-        Film Viewing
+      <h3 class="calendar-month">July 2026</h3>
+
+      <div class="calendar-grid july">
+        <div class="day-name">Sun</div>
+        <div class="day-name">Mon</div>
+        <div class="day-name">Tue</div>
+        <div class="day-name">Wed</div>
+        <div class="day-name">Thu</div>
+        <div class="day-name">Fri</div>
+        <div class="day-name">Sat</div>
+
+        <div class="calendar-day empty"></div>
+        <div class="calendar-day empty"></div>
+        <div class="calendar-day empty"></div>
+
+        <div class="calendar-day">1</div>
+        <div class="calendar-day">2</div>
+        <div class="calendar-day">3</div>
+
+        <div class="calendar-day has-event">
+          <span>4</span>
+          <button class="calendar-event" data-event="standup">
+            Stand-up Comedy
+          </button>
+        </div>
       </div>
 
-      <div class="event-copy">
-        Ang Pagdadalaga ni Maximo Oliveros
+      <div class="event-info-card" id="eventInfo">
+        <button class="event-info-close" id="closeEventInfo">×</button>
+        <div class="event-info-date" id="eventInfoDate"></div>
+        <div class="event-info-title" id="eventInfoTitle"></div>
+        <div class="event-info-copy" id="eventInfoCopy"></div>
+        <div class="event-info-price" id="eventInfoPrice"></div>
       </div>
-
-     <div class="event-time">
-  6:00 PM and 9:00 PM
-</div>
-
-<div class="event-ticket">
-  Tickets: ₱200
-</div>
-
 
     </div>
 
@@ -2954,7 +3028,54 @@ p.parentNode.insertBefore(m,p)
 }(document,"script","https://chimpstatic.com/mcjs-connected/js/users/41f88b58f9735ee8049dff43b/8e63a4e3a4e208b88ac12250f.js");
 </script>
 
+<script>
+const eventData = {
+  maximo: {
+    date: "June 12",
+    title: "Film Viewing",
+    copy: "Ang Pagdadalaga ni Maximo Oliveros. 6:00 PM and 9:00 PM.",
+    price: "Tickets: ₱200"
+  },
+  journaling: {
+    date: "June 28",
+    title: "Journaling",
+    copy: "6:00 PM – 8:00 PM.",
+    price: "Tickets: ₱300"
+  },
+  standup: {
+    date: "July 4",
+    title: "Stand-up Comedy feat. AC",
+    copy: "Stand-up comedy night at Rekdi.",
+    price: "₱1500 inclusive of food"
+  }
+};
 
+const eventButtons = document.querySelectorAll(".calendar-event");
+const eventInfo = document.getElementById("eventInfo");
+const eventInfoDate = document.getElementById("eventInfoDate");
+const eventInfoTitle = document.getElementById("eventInfoTitle");
+const eventInfoCopy = document.getElementById("eventInfoCopy");
+const eventInfoPrice = document.getElementById("eventInfoPrice");
+const closeEventInfo = document.getElementById("closeEventInfo");
+
+eventButtons.forEach(button => {
+  button.addEventListener("click", function(){
+    const eventKey = this.dataset.event;
+    const event = eventData[eventKey];
+
+    eventInfoDate.textContent = event.date;
+    eventInfoTitle.textContent = event.title;
+    eventInfoCopy.textContent = event.copy;
+    eventInfoPrice.textContent = event.price;
+
+    eventInfo.classList.add("show");
+  });
+});
+
+closeEventInfo.addEventListener("click", function(){
+  eventInfo.classList.remove("show");
+});
+</script>
 </body>
 </html>
 ```
