@@ -203,17 +203,11 @@ nav{
   display:block;
 }
 
-.reserve-btn{
-  position:fixed;
-  right:16px;
-  bottom:16px;
-  z-index:9999;
-
   .tsismis-btn{
   position:fixed;
   left:16px;
   bottom:16px;
-  z-index:9999;
+  z-index:99999;
 
   background:none;
   border:none;
@@ -226,26 +220,82 @@ nav{
 
   padding:0;
 
-  text-shadow:none;
+  cursor:pointer;
 }
 
 .tsismis-btn:hover{
   opacity:0.75;
 }
 
+.tsismis-modal{
+  display:none;
+
+  position:fixed;
+  inset:0;
+  z-index:100000;
+
+  background:rgba(0,0,0,0.55);
+
+  align-items:center;
+  justify-content:center;
+
+  padding:24px;
+}
+
+.tsismis-modal.show{
+  display:flex;
+}
+
+.tsismis-box{
+  position:relative;
+
+  width:min(420px,92vw);
+
+  background:#f5eadb;
+  border:3px solid #111;
+
+  padding:34px 28px;
+
+  color:#111;
+}
+
+.tsismis-box h2{
+  font-family:"Archivo Black",sans-serif;
+  font-size:clamp(2rem,8vw,3.2rem);
+  line-height:0.9;
+  letter-spacing:-0.04em;
+  text-transform:uppercase;
+
+  margin-bottom:18px;
+
+  color:#e8345b;
+}
+
+.tsismis-box p{
+  font-weight:700;
+  line-height:1.5;
+  margin-bottom:20px;
+}
+
+.tsismis-close{
+  position:absolute;
+  top:10px;
+  right:14px;
+
   background:none;
   border:none;
 
-  color:#0001b6;
+  font-size:2rem;
+  line-height:1;
 
-  font-family:"Archivo Black",sans-serif;
-  font-size:1rem;
-  text-transform:uppercase;
-
-  padding:0;
-
-  text-shadow:none;
+  cursor:pointer;
 }
+
+.reserve-btn{
+  position:fixed;
+  right:16px;
+  bottom:16px;
+  z-index:9999;
 
   .reserve-btn:hover{
   opacity:0.75;
@@ -2626,6 +2676,28 @@ nav{
     </a>
   </div>
 </footer>
+  <button class="tsismis-btn" id="openTsismis">
+  Join Rekdi's Tsismis Circle
+</button>
+
+<div class="tsismis-modal" id="tsismisModal">
+  <div class="tsismis-box">
+
+    <button class="tsismis-close" id="closeTsismis">
+      ×
+    </button>
+
+    <h2>Join Rekdi's<br>Tsismis Circle</h2>
+
+    <p>
+      What's cooking. What's pouring. What's happening.
+      Leave your email and we'll tell you first.
+    </p>
+
+    <!-- Mailchimp embedded form goes here later -->
+
+  </div>
+</div>
   <a href="sms:+639170000000" class="reserve-btn">Reserve via Text</a>
 <a href="#" class="tsismis-btn">
   Join Rekdi's Tsismis Circle
@@ -2668,6 +2740,24 @@ window.addEventListener("scroll", () => {
 </script>
 <script>
   ...
+
+  const openTsismis = document.getElementById("openTsismis");
+const closeTsismis = document.getElementById("closeTsismis");
+const tsismisModal = document.getElementById("tsismisModal");
+
+openTsismis.addEventListener("click", function(){
+  tsismisModal.classList.add("show");
+});
+
+closeTsismis.addEventListener("click", function(){
+  tsismisModal.classList.remove("show");
+});
+
+tsismisModal.addEventListener("click", function(e){
+  if(e.target === tsismisModal){
+    tsismisModal.classList.remove("show");
+  }
+});
 </script>
 
 <script id="mcjs">
