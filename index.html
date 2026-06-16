@@ -297,7 +297,20 @@ nav{
   bottom:16px;
   z-index:9999;
 
-  .reserve-btn:hover{
+  background:none;
+  border:none;
+
+  color:#2728C2;
+
+  font-family:"Archivo Black",sans-serif;
+  font-size:1rem;
+  text-transform:uppercase;
+
+  padding:0;
+  text-shadow:none;
+}
+
+.reserve-btn:hover{
   opacity:0.75;
 }
 
@@ -2698,10 +2711,7 @@ nav{
 
   </div>
 </div>
-  <a href="sms:+639170000000" class="reserve-btn">Reserve via Text</a>
-<a href="#" class="tsismis-btn">
-  Join Rekdi's Tsismis Circle
-</a>
+ 
 <script>
 const menuToggle = document.querySelector(".mobile-menu-toggle");
 const navLinks = document.querySelector(".nav-links");
@@ -2738,10 +2748,8 @@ window.addEventListener("scroll", () => {
   });
 });
 </script>
-<script>
-  ...
-
-  const openTsismis = document.getElementById("openTsismis");
+  <script>
+const openTsismis = document.getElementById("openTsismis");
 const closeTsismis = document.getElementById("closeTsismis");
 const tsismisModal = document.getElementById("tsismisModal");
 
@@ -2770,8 +2778,7 @@ p.parentNode.insertBefore(m,p)
 }(document,"script","https://chimpstatic.com/mcjs-connected/js/users/41f88b58f9735ee8049dff43b/8e63a4e3a4e208b88ac12250f.js");
 </script>
 
-</body>
-</html>
+
 </body>
 </html>
 ```
