@@ -227,17 +227,17 @@ nav{
   opacity:0.75;
 }
 
-.tsismis-modal{
+ .tsismis-modal{
   display:none;
 
   position:fixed;
   inset:0;
   z-index:100000;
 
-  background:rgba(0,0,0,0.55);
+  background:rgba(0,0,0,0.35);
 
-  align-items:center;
-  justify-content:center;
+  align-items:flex-end;
+  justify-content:flex-start;
 
   padding:24px;
 }
@@ -249,38 +249,65 @@ nav{
 .tsismis-box{
   position:relative;
 
-  width:min(420px,92vw);
+  width:min(390px,92vw);
 
   background:#f5eadb;
-  border:3px solid #111;
+  border:4px solid #111;
 
-  padding:34px 28px;
+  padding:42px 30px 34px;
 
   color:#111;
+
+  border-radius:220px 220px 28px 28px;
+
+  transform:rotate(-1deg);
+}
+
+.tsismis-box::before{
+  content:"";
+
+  position:absolute;
+  inset:8px;
+
+  border:2px solid #2728C2;
+  border-radius:210px 210px 22px 22px;
+
+  pointer-events:none;
 }
 
 .tsismis-box h2{
+  position:relative;
+  z-index:2;
+
   font-family:"Archivo Black",sans-serif;
-  font-size:clamp(2rem,8vw,3.2rem);
+  font-size:clamp(1.8rem,7vw,2.8rem);
   line-height:0.9;
   letter-spacing:-0.04em;
   text-transform:uppercase;
 
-  margin-bottom:18px;
+  margin:54px 0 18px;
 
   color:#e8345b;
+
+  text-align:center;
 }
 
 .tsismis-box p{
+  position:relative;
+  z-index:2;
+
   font-weight:700;
   line-height:1.5;
   margin-bottom:20px;
+
+  text-align:center;
 }
 
 .tsismis-close{
   position:absolute;
-  top:10px;
-  right:14px;
+  top:18px;
+  right:18px;
+  z-index:3;
 
   background:none;
   border:none;
@@ -288,10 +315,15 @@ nav{
   font-size:2rem;
   line-height:1;
 
+  color:#111;
+
   cursor:pointer;
 }
 
-  .tsismis-form{
+.tsismis-form{
+  position:relative;
+  z-index:2;
+
   display:flex;
   flex-direction:column;
   gap:12px;
@@ -299,33 +331,61 @@ nav{
 
 .tsismis-form input{
   width:100%;
-  padding:14px 16px;
+  padding:15px 16px;
 
-  border:2px solid #111;
+  border:3px solid #111;
+
+  background:#fff;
 
   font-family:"Special Elite", monospace;
   font-size:1rem;
 }
 
 .tsismis-form button{
-  width:fit-content;
+  width:100%;
 
-  background:#2728C2;
-  color:#fff;
+  background:#f59b18;
+  color:#111;
 
-  border:none;
+  border:3px solid #111;
+  border-radius:999px;
 
-  padding:12px 18px;
+  padding:14px 18px;
 
   font-family:"Archivo Black",sans-serif;
-  font-size:0.9rem;
+  font-size:0.95rem;
   text-transform:uppercase;
 
   cursor:pointer;
 }
 
-.tsismis-form button:hover{
-  opacity:0.8;
+.tsismis-no{
+  position:relative;
+  z-index:2;
+
+  width:100%;
+
+  margin-top:12px;
+
+  background:none;
+  color:#111;
+
+  border:2px solid #111;
+  border-radius:999px;
+
+  padding:12px 18px;
+
+  font-family:"Special Elite", monospace;
+  font-size:1rem;
+  text-transform:uppercase;
+
+  cursor:pointer;
+}
+
+.tsismis-form button:hover,
+.tsismis-no:hover,
+.tsismis-close:hover{
+  opacity:0.75;
 }
 .reserve-btn{
   position:fixed;
@@ -2773,8 +2833,11 @@ nav{
   </div>
 
   <button type="submit">
-    Sali Ako
+    Yes to chismis!
   </button>
+    <button class="tsismis-no" id="noTsismis">
+  No way
+</button>
 </form>
 
   </div>
@@ -2819,6 +2882,7 @@ window.addEventListener("scroll", () => {
   <script>
 const openTsismis = document.getElementById("openTsismis");
 const closeTsismis = document.getElementById("closeTsismis");
+    const noTsismis = document.getElementById("noTsismis");
 const tsismisModal = document.getElementById("tsismisModal");
 
 openTsismis.addEventListener("click", function(){
@@ -2826,6 +2890,9 @@ openTsismis.addEventListener("click", function(){
 });
 
 closeTsismis.addEventListener("click", function(){
+  tsismisModal.classList.remove("show");
+});
+    noTsismis.addEventListener("click", function(){
   tsismisModal.classList.remove("show");
 });
 
