@@ -263,22 +263,24 @@ nav{
   bottom:16px;
   z-index:99999;
 
-  background:none;
+  background:#ffe34d;
   border:none;
 
-  color:#2728C2;
+  color:#111;
 
   font-family:"Archivo Black",sans-serif;
-  font-size:1rem;
+  font-size:0.85rem;
   text-transform:uppercase;
 
-  padding:0;
+  padding:12px 20px;
 
   cursor:pointer;
+
+  clip-path:polygon(10px 0%,100% 0%,100% calc(100% - 10px),calc(100% - 10px) 100%,0% 100%,0% 10px);
 }
 
 .tsismis-btn:hover{
-  opacity:0.75;
+  opacity:0.85;
 }
 
 .tsismis-modal{
@@ -398,11 +400,10 @@ nav{
 .tsismis-form button{
   width:100%;
 
-  background:#f59b18;
+  background:#ffe34d;
   color:#111;
 
-  border:3px solid #111;
-  border-radius:999px;
+  border:none;
 
   padding:14px 18px;
 
@@ -411,6 +412,8 @@ nav{
   text-transform:uppercase;
 
   cursor:pointer;
+
+  clip-path:polygon(10px 0%,100% 0%,100% calc(100% - 10px),calc(100% - 10px) 100%,0% 100%,0% 10px);
 }
 
 .tsismis-no{
@@ -424,8 +427,7 @@ nav{
   background:none;
   color:#111;
 
-  border:2px solid #111;
-  border-radius:999px;
+  border:none;
 
   padding:12px 18px;
 
@@ -434,6 +436,9 @@ nav{
   text-transform:uppercase;
 
   cursor:pointer;
+
+  text-decoration:underline;
+  text-underline-offset:3px;
 }
 
 .tsismis-form button:hover,
@@ -447,21 +452,23 @@ nav{
   bottom:16px;
   z-index:9999;
 
-  background:none;
+  background:#ffe34d;
   border:none;
 
-  color:#2728C2;
+  color:#111;
 
   font-family:"Archivo Black",sans-serif;
-  font-size:1rem;
+  font-size:0.85rem;
   text-transform:uppercase;
 
-  padding:0;
+  padding:12px 20px;
   text-shadow:none;
+
+  clip-path:polygon(10px 0%,100% 0%,100% calc(100% - 10px),calc(100% - 10px) 100%,0% 100%,0% 10px);
 }
 
 .reserve-btn:hover{
-  opacity:0.75;
+  opacity:0.85;
 }
 
 /* HERO */
@@ -774,6 +781,21 @@ nav{
   padding:0;
   margin-bottom:16px;
   font-size:1.15rem;
+}
+
+.price-board h2{
+  margin-top:28px;
+  padding-top:20px;
+  border-top:1px solid rgba(255,255,255,0.25);
+  font-size:0.85rem;
+  letter-spacing:0.08em;
+  opacity:0.7;
+}
+
+.price-board h2:first-child{
+  margin-top:0;
+  padding-top:0;
+  border-top:none;
 }
 
 .menu-panel:nth-child(2) h2,
@@ -1447,10 +1469,15 @@ nav{
   position:relative;
   display:inline-block;
   color:#fff;
-  padding:14px 24px;
-  margin-bottom:34px;
+  padding:0;
+  margin-bottom:10px;
+  margin-top:28px;
   z-index:2;
   text-shadow:2px 2px 0 rgba(0,0,0,0.45);
+}
+
+.bar-menu h3:first-child{
+  margin-top:0;
 }
 
 .bar-menu h3::before{
@@ -2105,12 +2132,19 @@ nav{
   }
 
   .bar-menu h3{
+    display:block;
     font-size:1rem;
-    padding:12px 18px;
+    padding:0;
+    margin-top:22px;
+    margin-bottom:6px;
+  }
+
+  .bar-menu h3:first-child{
+    margin-top:0;
   }
 
   .bar-menu h3::before{
-    inset:-14px;
+    display:none;
   }
 
  .bar-corner-lamp{
@@ -2436,9 +2470,19 @@ nav{
 }
 
 .bar-menu h3{
+  display:block;
   line-height:1.2;
-  padding-top:18px;
-  padding-bottom:18px;
+  padding:0;
+  margin-top:22px;
+  margin-bottom:6px;
+}
+
+.bar-menu h3:first-child{
+  margin-top:0;
+}
+
+.bar-menu h3::before{
+  display:none;
 }
 
 /* BAR MENU */
@@ -2582,7 +2626,7 @@ nav{
     Grilled Potato Pandesyosa
   </div>
 
-  <div class="price">₱180</div>
+  <div class="price">₱190</div>
 
   <div class="menu-desc">
     Chicken oil, 2pcs
@@ -2601,7 +2645,7 @@ nav{
     Black Sesame Dandan Noodles
   </div>
 
-  <div class="price">₱540</div>
+  <div class="price">₱560</div>
 
   <div class="menu-desc">
     Scallion-ginger oil, house chili crunch, furikake
@@ -2620,7 +2664,7 @@ nav{
     Egg Noodles
   </div>
 
-  <div class="price">₱560</div>
+  <div class="price">₱580</div>
 
   <div class="menu-desc">
     Grilled tomato, anchovy, capers, bonito flakes
@@ -2633,26 +2677,26 @@ nav{
   >
 
 </div>
-          <div class="menu-item"><div class="menu-name">Butter Fried Rice</div><div class="price">₱280</div><div class="menu-desc">Salted fish, mushroom, crumbled uga</div></div>
-          <div class="menu-item"><div class="menu-name">Steamed Rice</div><div class="price">₱100</div><div class="menu-desc">Lemongrass-infused</div></div>
+          <div class="menu-item"><div class="menu-name">Butter Fried Rice</div><div class="price">₱300</div><div class="menu-desc">Salted fish, mushroom, crumbled uga</div></div>
+          <div class="menu-item"><div class="menu-name">Steamed Rice</div><div class="price">₱105</div><div class="menu-desc">Lemongrass-infused</div></div>
         </div>
       </div>
 
       <div class="menu-panel">
         <h2>Inihaw + Ulam</h2>
         <div class="price-board">
-          <div class="menu-item"><div class="menu-name">Grilled Tsukune</div><div class="price">₱380</div><div class="menu-desc">Coconut clam dashi soup, tofu, bilo-bilo, watermelon</div></div>
-          <div class="menu-item"><div class="menu-name">Grilled Korean Daikon</div><div class="price">₱290</div><div class="menu-desc">Apple pear sinigang, roasted seaweed, pickled labanos, tulapo</div></div>
-          <div class="menu-item"><div class="menu-name">Grilled Cabbage</div><div class="price">₱390</div><div class="menu-desc">Salted egg-caper hollandaise, green mango, crispy dilis, parmesan</div></div>
-          <div class="menu-item"><div class="menu-name">Grilled Native Corn</div><div class="price">₱370</div><div class="menu-desc">Mixed mushrooms, carrot-squash puree, Japanese mustard mascarpone</div></div>
-          <div class="menu-item"><div class="menu-name">Sinuglaw</div><div class="price">₱520</div><div class="menu-desc">Shrimp, clams, singkamas, pineapple, red-eye gravy</div></div>
+          <div class="menu-item"><div class="menu-name">Grilled Tsukune</div><div class="price">₱395</div><div class="menu-desc">Coconut clam dashi soup, tofu, bilo-bilo, watermelon</div></div>
+          <div class="menu-item"><div class="menu-name">Grilled Korean Daikon</div><div class="price">₱310</div><div class="menu-desc">Apple pear sinigang, roasted seaweed, pickled labanos, tulapo</div></div>
+          <div class="menu-item"><div class="menu-name">Grilled Cabbage</div><div class="price">₱410</div><div class="menu-desc">Salted egg-caper hollandaise, green mango, crispy dilis, parmesan</div></div>
+          <div class="menu-item"><div class="menu-name">Grilled Native Corn</div><div class="price">₱385</div><div class="menu-desc">Mixed mushrooms, carrot-squash puree, Japanese mustard mascarpone</div></div>
+          <div class="menu-item"><div class="menu-name">Sinuglaw</div><div class="price">₱540</div><div class="menu-desc">Shrimp, clams, singkamas, pineapple, red-eye gravy</div></div>
           <div class="menu-item menu-hover-item">
 
   <div class="menu-name">
     Grilled Baby Squid
   </div>
 
-  <div class="price">₱520</div>
+  <div class="price">₱545</div>
 
   <div class="menu-desc">
     Stracciatella, taba ng talangka caviar, nata de coco, grapes
@@ -2673,7 +2717,7 @@ nav{
         <div class="price-board">
          <div class="menu-item menu-hover-item">
            <div class="menu-name">Thai-style Scotch Kwek Kwek</div>
-  <div class="price">₱280</div>
+  <div class="price">₱295</div>
   <div class="menu-desc">
     Red-eye gravy, vinegar dip
   </div>
@@ -2684,17 +2728,17 @@ nav{
 </div>
 
   
-          <div class="menu-item"><div class="menu-name">Kiamoy-glazed Squid Poppers</div><div class="price">₱340</div><div class="menu-desc">Sesame seeds, red-eye gravy, vinegar dip</div></div>
-          <div class="menu-item"><div class="menu-name">Grilled Pickled Baby Mackerel</div><div class="price">₱400</div><div class="menu-desc">Orange, pickled cucumber, kimchi</div></div>
-          <div class="menu-item"><div class="menu-name">Grilled Shrimp</div><div class="price">₱520</div><div class="menu-desc">Ginger XO sauce, black sesame eggplant salad</div></div>
-          <div class="menu-item"><div class="menu-name">Honey Ginger Miso Blue Marlin</div><div class="price">₱560</div><div class="menu-desc">Carrot-squash-kamote rosti okoy, curried carrot squash puree</div></div>
-          <div class="menu-item"><div class="menu-name">Grilled Chicken Thigh</div><div class="price">₱380</div><div class="menu-desc">Pineapple-cashew chili crunch, shrimp bisque, crispy alamang</div></div>
+          <div class="menu-item"><div class="menu-name">Kiamoy-glazed Squid Poppers</div><div class="price">₱380</div><div class="menu-desc">Sesame seeds, red-eye gravy, vinegar dip</div></div>
+          <div class="menu-item"><div class="menu-name">Grilled Pickled Baby Mackerel</div><div class="price">₱415</div><div class="menu-desc">Orange, pickled cucumber, kimchi</div></div>
+          <div class="menu-item"><div class="menu-name">Grilled Shrimp</div><div class="price">₱540</div><div class="menu-desc">Ginger XO sauce, black sesame eggplant salad</div></div>
+          <div class="menu-item"><div class="menu-name">Honey Ginger Miso Blue Marlin</div><div class="price">₱580</div><div class="menu-desc">Carrot-squash-kamote rosti okoy, curried carrot squash puree</div></div>
+          <div class="menu-item"><div class="menu-name">Grilled Chicken Thigh</div><div class="price">₱395</div><div class="menu-desc">Pineapple-cashew chili crunch, shrimp bisque, crispy alamang</div></div>
     
             <div class="menu-item menu-hover-item">
 
   <div class="menu-name">
     Grilled Pork Jowl</div>
-  <div class="price">₱420</div>
+  <div class="price">₱435</div>
 
   <div class="menu-desc">
     Green mango-apple compote, yellow lentils risotto</div>
@@ -2707,7 +2751,7 @@ nav{
 </div>
     <div class="menu-item menu-hover-item">
   <div class="menu-name">REKDI BBQ</div>
-  <div class="price">₱580</div>
+  <div class="price">₱595</div>
   <div class="menu-desc">
     Grilled pork and beef belly, kansi onion soup, torched fontal cheese
   </div>
@@ -2734,10 +2778,10 @@ nav{
   </a>
 </div>
 
-  <div class="price">₱360</div>
+  <div class="price">₱385</div>
 </div>
-          <div class="menu-item"><div class="menu-name">Rekdessert</div><div class="price"></div><div class="menu-desc">Tinutong na munggo riz au lait, chocolate mousse dilis chip</div></div>
-          <div class="menu-item"><div class="menu-name">Coconut Ice Cream</div><div class="price"></div><div class="menu-desc">Pineapple-lemongrass-ginger compote, coconut macaroon</div></div>
+          <div class="menu-item"><div class="menu-name">Rekdessert</div><div class="price">₱385</div><div class="menu-desc">Tinutong na munggo riz au lait, chocolate mousse dilis chip</div></div>
+          <div class="menu-item"><div class="menu-name">Coconut Ice Cream</div><div class="price">₱385</div><div class="menu-desc">Pineapple-lemongrass-ginger compote, coconut macaroon</div></div>
         
            <div class="menu-item menu-hover-item">
 
@@ -2745,7 +2789,7 @@ nav{
     Grilled Brown Butter Cake
   </div>
 
-  <div class="price"></div>
+  <div class="price">₱385</div>
 
   <div class="menu-desc">
     Kesong puti, batwan-raspberry jam
@@ -2758,10 +2802,29 @@ nav{
   >
 
 </div>
-          <div class="menu-item"><div class="menu-name">Mocktails</div><div class="price">₱320</div><div class="menu-desc">Add ₱120 to turn it into a cocktail</div></div>
+          <h2>Wines</h2>
+          <div class="menu-item"><div class="menu-name">De Chanceny Cremant De Loire Brut NV</div><div class="price">₱2,800</div></div>
+          <div class="menu-item"><div class="menu-name">Familia Oliveda Brut Jove NV</div><div class="price">₱2,200</div></div>
+          <div class="menu-item"><div class="menu-name">Pascal Jolivet Attitude Rosé 2021</div><div class="price">₱450 / ₱3,000</div></div>
+          <div class="menu-item"><div class="menu-name">Bread & Butter Chardonnay 2022</div><div class="price">₱500 / ₱3,400</div></div>
+          <div class="menu-item"><div class="menu-name">Map Maker Pinot Noir NZ</div><div class="price">₱400 / ₱2,500</div></div>
+          <div class="menu-item"><div class="menu-name">Clos Triguedina French Malbec 2021</div><div class="price">₱420 / ₱2,800</div></div>
+          <div class="menu-item"><div class="menu-name">Vilafonte Seriously Old Dirt Cab Sauv 2021</div><div class="price">₱450 / ₱3,200</div></div>
+          <div class="menu-item"><div class="menu-name">Gerard Bertrand Cigalus 2022</div><div class="price">₱650 / ₱4,500</div></div>
+          <h2>Beer</h2>
+          <div class="menu-item"><div class="menu-name">Boondocks Brewing Strong Ale</div><div class="price">₱280</div></div>
+          <div class="menu-item"><div class="menu-name">Hoppyside Aurora Sunrise Hazy Pale Ale</div><div class="price">₱340</div></div>
+          <div class="menu-item"><div class="menu-name">Elias Hop Boi IPA</div><div class="price">₱410</div></div>
+          <div class="menu-item"><div class="menu-name">Palm Tree Abbey Saison</div><div class="price">₱420</div></div>
+          <div class="menu-item"><div class="menu-name">San Mig Light / Pale / All Malt</div><div class="price">₱140</div></div>
+          <div class="menu-item"><div class="menu-name">Cerveza Negra</div><div class="price">₱190</div></div>
+          <h2>Non-Alcoholic</h2>
+          <div class="menu-item"><div class="menu-name">Coke / Coke Zero / Sprite</div><div class="price">₱110</div></div>
+          <div class="menu-item"><div class="menu-name">Stanford Shaw Ginger Ale</div><div class="price">₱250</div></div>
+          <div class="menu-item"><div class="menu-name">Sparkling Water</div><div class="price">₱280</div></div>
+          <div class="menu-item"><div class="menu-name">Bottled Mineral Water</div><div class="price">₱80</div></div>
           <div class="menu-item"><div class="menu-name">French Press Coffee</div><div class="price">₱120</div></div>
-          <div class="menu-item"><div class="menu-name">San Mig Light</div><div class="price">₱120</div></div>
-          <div class="menu-item"><div class="menu-name">Cerveza Negra</div><div class="price">₱180</div></div>
+          <div class="menu-item"><div class="menu-name">Cold Brew</div><div class="price">₱150</div></div>
         </div>
       </div>
 
@@ -2902,33 +2965,39 @@ nav{
     <div class="bar-menu-grid">
 
       <div>
-        <h3>Cocktails — ₱550</h3>
+        <h3>Kanto Drinks</h3>
+        <div class="menu-item"><div class="menu-name">Yakult Ya Later</div><div class="price">₱380</div><div class="menu-desc">Magkeoli, rum/sake infused pandan, black sesame syrup, topped with Yakult foam</div></div>
+        <div class="menu-item"><div class="menu-name">Rekbull</div><div class="price">₱380</div><div class="menu-desc">Jameson whiskey, Giffard green apple syrup, acid-adjusted Earl Grey tea, watersalt</div></div>
+        <div class="menu-item"><div class="menu-name">Pomelo Patrol</div><div class="price">₱380</div><div class="menu-desc">Gin, pomelo, lemongrass gin, tang pomelo cordial</div></div>
+        <div class="menu-item"><div class="menu-name">Tikbalang's Kiss</div><div class="price">₱400</div><div class="menu-desc">Beer bomb, absinthe, sioktong, pale pilsen</div></div>
+        <div class="menu-item"><div class="menu-name">Jackolaman</div><div class="price">₱400</div><div class="menu-desc">Jack Daniel's, Coke, sago't gulaman, arnibal, vanilla foam topping</div></div>
 
-        <div class="menu-item"><div class="menu-name">Bourdain Negroni</div><div class="menu-desc">Mezcal, campari, vermouth, orange peel</div></div>
+        <h3>The OGs — ₱550</h3>
+        <div class="menu-item"><div class="menu-name">Bourdain Negroni</div><div class="menu-desc">Mezcal, Campari, vermouth, orange peel</div></div>
         <div class="menu-item"><div class="menu-name">Cuaron Paloma</div><div class="menu-desc">Mezcal, grapefruit soda, lemon, balut salt</div></div>
         <div class="menu-item"><div class="menu-name">Tornatorre Gin Basil</div><div class="menu-desc">Tanqueray, cucumber syrup, basil leaves, lemon juice</div></div>
-        <div class="menu-item"><div class="menu-name">Friedkin Boulevardier</div><div class="menu-desc">Bourbon, campari, vermouth, orange peel</div></div>
-        <div class="menu-item"><div class="menu-name">Melville Whiskey Sour</div><div class="menu-desc">Bourbon, simple syrup, lemon juice, egg foam</div></div>
-        <div class="menu-item"><div class="menu-name">Yimou</div><div class="menu-desc">Sous vide white rum, black sesame, tapuy rice wine</div></div>
-        <div class="menu-item"><div class="menu-name">Ad Castillo</div><div class="menu-desc">Mezcal infused labuyo & oolong tea, grapefruit juice</div></div>
-        <div class="menu-item"><div class="menu-name">Del Toro</div><div class="menu-desc">Whiskey, corn, chili liqueur, spicy salt</div></div>
-        <div class="menu-item"><div class="menu-name">Oshima</div><div class="menu-desc">Sake, vodka, plum liqueur, nori syrup, wasabi</div></div>
-        <div class="menu-item"><div class="menu-name">Argento</div><div class="menu-desc">Vodka, calvados, tomato, San Mig Lemon</div></div>
+        <div class="menu-item"><div class="menu-name">Campbell Martini</div><div class="menu-desc">Gin, dry vermouth, sumac</div></div>
+        <div class="menu-item"><div class="menu-name">Melville Whiskey Sour</div><div class="menu-desc">Bourbon, simple syrup, lemon juice, lemon slice, egg foam</div></div>
       </div>
 
       <div>
-        <h3>Wines + Beer</h3>
+        <h3>Main Characters — ₱550</h3>
+        <div class="menu-item"><div class="menu-name">Yimou</div><div class="menu-desc">Sous vide white rum, black sesame, tapuy rice wine</div></div>
+        <div class="menu-item"><div class="menu-name">Ad Castillo</div><div class="menu-desc">Mezcal infused labuyo & oolong tea, grapefruit juice, passionfruit liqueur, vermouth</div></div>
+        <div class="menu-item"><div class="menu-name">Oshima</div><div class="menu-desc">Sake, vodka, plum liqueur, nori syrup, lemon juice, wasabi</div></div>
 
-        <div class="menu-item"><div class="menu-name">De Chanceny Cremant De Loire Brut NV</div><div class="price">₱2,800</div></div>
-        <div class="menu-item"><div class="menu-name">Familia Oliveda Brut Jove NV</div><div class="price">₱2,200</div></div>
-        <div class="menu-item"><div class="menu-name">Pascal Jolivet Attitude Rosé 2021</div><div class="price">₱450 / ₱3,000</div></div>
-        <div class="menu-item"><div class="menu-name">Bread & Butter Chardonnay 2022</div><div class="price">₱500 / ₱3,400</div></div>
-        <div class="menu-item"><div class="menu-name">Map Maker Pinot Noir NZ</div><div class="price">₱400 / ₱2,500</div></div>
-        <div class="menu-item"><div class="menu-name">Boondocks Brewing Strong Ale</div><div class="price">₱280</div></div>
-        <div class="menu-item"><div class="menu-name">Hoppyside Hazy Pale Ale</div><div class="price">₱340</div></div>
-        <div class="menu-item"><div class="menu-name">Elias Hop Boi IPA</div><div class="price">₱410</div></div>
-        <div class="menu-item"><div class="menu-name">Palm Tree Abbey Saison</div><div class="price">₱420</div></div>
-        <div class="menu-item"><div class="menu-name">San Mig Light / Pale / All Malt</div><div class="price">₱120</div></div>
+        <h3>Side Quests</h3>
+        <div class="menu-item"><div class="menu-name">Sandiya Tea</div><div class="price">₱240</div><div class="menu-desc">Tajin salt, watermelon shrub, oolong mint tea, lemon juice, Singha soda water</div></div>
+        <div class="menu-item"><div class="menu-name">Pickle Tickle</div><div class="price">₱240</div><div class="menu-desc">Cucumber & dill shrub, jalapeño brine, lemon juice, Singha soda water</div></div>
+        <div class="menu-item"><div class="menu-name">Le Petit Cacao D'Orange</div><div class="price">₱280</div><div class="menu-desc">Orange & basil cordial, lemon juice, Singha soda water, topped with tablea whipped cream with cloves</div></div>
+
+        <h3>Pica</h3>
+        <div class="menu-item"><div class="menu-name">Shakshouka</div><div class="price">₱375</div></div>
+
+        <h3>Tusok Tusok</h3>
+        <div class="menu-item"><div class="menu-name">Pork with Mushroom Duxelle</div><div class="price">₱250</div></div>
+        <div class="menu-item"><div class="menu-name">Shrimp with Cheese Pimiento</div><div class="price">₱250</div></div>
+        <div class="menu-item"><div class="menu-name">Mackerel Fish Ball</div><div class="price">₱250</div></div>
       </div>
 
     </div>
