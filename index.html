@@ -393,12 +393,13 @@ nav{
 
   display:flex;
   flex-direction:column;
-  gap:12px;
+  align-items:center;
+  gap:10px;
 }
 
 .tsismis-form input{
-  width:100%;
-  padding:14px 18px;
+  width:80%;
+  padding:11px 18px;
 
   border:2px solid #3a1a0a;
   border-radius:999px;
@@ -406,46 +407,20 @@ nav{
   background:#fff;
 
   font-family:"Special Elite", monospace;
-  font-size:1rem;
+  font-size:0.9rem;
 
   color:#3a1a0a;
   box-sizing:border-box;
+  text-align:center;
 }
 
 .tsismis-form button[type="submit"]{
-  width:100%;
-
   background:#e07820;
   color:#fff;
 
   border:none;
-  border-radius:999px;
 
-  padding:15px 18px;
-
-  font-family:"Archivo Black",sans-serif;
-  font-size:0.95rem;
-  text-transform:uppercase;
-  letter-spacing:0.05em;
-
-  cursor:pointer;
-
-  clip-path:none;
-}
-
-.tsismis-no{
-  position:relative;
-  z-index:2;
-
-  width:100%;
-
-  background:#fff;
-  color:#3a1a0a;
-
-  border:2px solid #3a1a0a;
-  border-radius:999px;
-
-  padding:13px 18px;
+  padding:12px 28px;
 
   font-family:"Archivo Black",sans-serif;
   font-size:0.85rem;
@@ -454,7 +429,29 @@ nav{
 
   cursor:pointer;
 
-  text-decoration:none;
+  clip-path:polygon(10px 0%,100% 0%,100% calc(100% - 10px),calc(100% - 10px) 100%,0% 100%,0% 10px);
+}
+
+.tsismis-no{
+  position:relative;
+  z-index:2;
+
+  background:none;
+  color:#3a1a0a;
+
+  border:none;
+
+  padding:6px 0;
+
+  font-family:"Archivo Black",sans-serif;
+  font-size:0.8rem;
+  text-transform:uppercase;
+  letter-spacing:0.05em;
+
+  cursor:pointer;
+
+  text-decoration:underline;
+  text-underline-offset:3px;
 }
 
 .tsismis-form button[type="submit"]:hover,
