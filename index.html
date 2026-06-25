@@ -1001,13 +1001,61 @@ nav{
   }
 }
 
-.events-brain-stamp{
+.events-title-block{
+  position:relative;
   display:inline-block;
-  vertical-align:middle;
-  width:clamp(80px,12vw,180px);
-  margin-left:12px;
+}
+
+.events-brain-stamp{
+  position:absolute;
+  width:clamp(100px,14vw,200px);
+  right:-20px;
+  top:-10px;
   transform:rotate(5deg);
   pointer-events:none;
+  z-index:2;
+}
+
+.events-left{
+  position:relative;
+}
+
+.events-right{
+  display:none;
+}
+
+.featured-poster{
+  display:none;
+}
+
+.featured-poster.active{
+  display:block;
+}
+
+.featured-poster-img{
+  width:100%;
+  display:block;
+  border:3px solid #111;
+}
+
+@media(min-width:900px){
+  .events-wrap{
+    display:grid;
+    grid-template-columns:minmax(380px,520px) 1fr;
+    gap:60px;
+    align-items:start;
+  }
+  .events-right{
+    display:block;
+    position:sticky;
+    top:80px;
+  }
+  .featured-poster-img{
+    width:100%;
+    max-height:80vh;
+    object-fit:cover;
+    object-position:top;
+  }
 }
 
   .event-calendar{
@@ -1050,38 +1098,6 @@ nav{
   display:block;
 }
 
-@media(min-width:900px){
-  .month-panel.active{
-    display:grid;
-    grid-template-columns:minmax(320px,400px) 1fr;
-    grid-template-rows:auto 1fr;
-    column-gap:60px;
-    align-items:start;
-  }
-  .month-panel.active .calendar-days{
-    grid-column:1;
-    grid-row:1;
-  }
-  .month-panel.active .calendar-grid{
-    grid-column:1;
-    grid-row:2;
-  }
-  .month-panel.active .event-poster-block{
-    grid-column:2;
-    grid-row:1/3;
-    flex-direction:column;
-    align-items:stretch;
-    border-top:none;
-    padding-top:0;
-    margin-top:0;
-    gap:20px;
-  }
-  .month-panel.active .event-poster-img{
-    width:100%;
-    max-width:none;
-    flex-shrink:0;
-  }
-}
 
 .calendar-days,
 .calendar-grid{
@@ -2541,10 +2557,6 @@ nav{
   transform:none;
 }
 
-.events-brain-stamp{
-  width:clamp(60px,10vw,120px);
-  margin:0 0 0 8px;
-}
 /* MOBILE TEXT + CROPPING FIXES */
 
 .hero h1,
@@ -2926,106 +2938,103 @@ nav{
 
   <div class="events-wrap">
 
-    <h2 class="section-title events-title">
-      What's<img src="assets/braincrowndoodle.png" alt="" class="events-brain-stamp"><br>Happening
-    </h2>
+    <div class="events-left">
 
-    <div class="section-title-tag">
-      Film screenings. Collaborations. Tastings. Other bad ideas.
+      <div class="events-title-block">
+        <h2 class="section-title">What's<br>Happening</h2>
+        <img src="assets/braincrowndoodle.png" alt="" class="events-brain-stamp">
+      </div>
+
+      <div class="section-title-tag">
+        Film screenings. Collaborations. Tastings. Other bad ideas.
+      </div>
+
+      <div class="event-calendar">
+
+        <div class="month-tabs">
+          <button class="month-tab active" data-month="june">June</button>
+          <button class="month-tab" data-month="july">July</button>
+          <button class="month-tab" data-month="aug" hidden>Aug</button>
+          <button class="month-tab" data-month="sept" hidden>Sept</button>
+          <button class="month-tab" data-month="oct" hidden>Oct</button>
+          <button class="month-tab" data-month="nov" hidden>Nov</button>
+          <button class="month-tab" data-month="dec" hidden>Dec</button>
+        </div>
+
+        <div class="month-panel active" id="june">
+          <div class="calendar-days">
+            <span>MO</span><span>TU</span><span>WE</span><span>TH</span><span>FR</span><span>SA</span><span>SU</span>
+          </div>
+
+          <div class="calendar-grid">
+            <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span>
+            <span>8</span><span>9</span><span>10</span><span>11</span>
+
+            <button class="event-day past">
+              12
+              <div class="event-popover">
+                <strong>Film Viewing</strong>
+                <p>Ang Pagdadalaga ni Maximo Oliveros</p>
+                <p>6:00 PM and 9:00 PM</p>
+                <p>Tickets: ₱200</p>
+              </div>
+            </button>
+
+            <span>13</span><span>14</span>
+            <span>15</span><span>16</span><span>17</span><span>18</span><span>19</span><span>20</span><span>21</span>
+            <span>22</span><span>23</span><span>24</span><span>25</span><span>26</span><span>27</span>
+
+            <button class="event-day upcoming">
+              28
+              <div class="event-popover">
+                <strong>Tarot Thursday</strong>
+                <p>@tarotbyraf &amp; @theblessedbhie</p>
+                <p>8–11 PM</p>
+                <p>₱500 tarot + ₱500 consumable</p>
+              </div>
+            </button>
+
+            <span>29</span><span>30</span>
+          </div>
+        </div>
+
+        <div class="month-panel" id="july">
+          <div class="calendar-days">
+            <span>MO</span><span>TU</span><span>WE</span><span>TH</span><span>FR</span><span>SA</span><span>SU</span>
+          </div>
+
+          <div class="calendar-grid">
+            <span></span><span></span>
+            <span>1</span><span>2</span><span>3</span><span>4</span>
+
+            <button class="event-day upcoming">
+              5
+              <div class="event-popover">
+                <strong>Komedi at Rekdi</strong>
+                <p>Alex Calleja + guests</p>
+                <p>2 shows — 5:30 PM &amp; 8:30 PM</p>
+                <p>Door charge: ₱1,000 + ₱1,000 min. consumable</p>
+              </div>
+            </button>
+
+            <span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span>
+            <span>13</span><span>14</span><span>15</span><span>16</span><span>17</span><span>18</span><span>19</span>
+            <span>20</span><span>21</span><span>22</span><span>23</span><span>24</span><span>25</span><span>26</span>
+            <span>27</span><span>28</span><span>29</span><span>30</span><span>31</span>
+          </div>
+        </div>
+
+      </div>
+
     </div>
 
-    <div class="event-calendar">
-
-      <div class="month-tabs">
-        <button class="month-tab active" data-month="june">June</button>
-        <button class="month-tab" data-month="july">July</button>
+    <div class="events-right">
+      <div class="featured-poster active" data-month="june">
+        <img src="assets/tarot.jpg" alt="Tarot Thursday" class="featured-poster-img">
       </div>
-
-      <div class="month-panel active" id="june">
-        <div class="calendar-days">
-          <span>MO</span><span>TU</span><span>WE</span><span>TH</span><span>FR</span><span>SA</span><span>SU</span>
-        </div>
-
-        <div class="calendar-grid">
-          <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span>
-          <span>8</span><span>9</span><span>10</span><span>11</span>
-
-          <button class="event-day past">
-            12
-            <div class="event-popover">
-              <strong>Film Viewing</strong>
-              <p>Ang Pagdadalaga ni Maximo Oliveros</p>
-              <p>6:00 PM and 9:00 PM</p>
-              <p>Tickets: ₱200</p>
-            </div>
-          </button>
-
-          <span>13</span><span>14</span>
-          <span>15</span><span>16</span><span>17</span><span>18</span><span>19</span><span>20</span><span>21</span>
-          <span>22</span><span>23</span><span>24</span><span>25</span><span>26</span><span>27</span>
-
-          <button class="event-day upcoming">
-            28
-           <div class="event-popover">
-              <strong>Tarot Thursday</strong>
-              <p>@tarotbyraf & @theblessedbhie</p>
-              <p>8-11 PM</p>
-              <p>₱500 tarot + ₱500 consumable</p>
-            </div>
-          </button>
-
-          <span>29</span><span>30</span>
-        </div>
-
-        <div class="event-poster-block">
-          <img src="assets/tarot.jpg" alt="Tarot Thursday poster" class="event-poster-img">
-          <div class="event-poster-details">
-            <h3>Tarot Thursday</h3>
-            <p>June 28, 2026 &mdash; Thursday</p>
-            <p>8:00 PM – 11:00 PM</p>
-            <p>@tarotbyraf &amp; @theblessedbhie</p>
-            <p>₱500 tarot + ₱500 consumable</p>
-          </div>
-        </div>
+      <div class="featured-poster" data-month="july">
+        <img src="assets/comedyatrekdi.jpg" alt="Komedi at Rekdi" class="featured-poster-img">
       </div>
-
-      <div class="month-panel" id="july">
-        <div class="calendar-days">
-          <span>MO</span><span>TU</span><span>WE</span><span>TH</span><span>FR</span><span>SA</span><span>SU</span>
-        </div>
-
-        <div class="calendar-grid">
-          <span></span><span></span>
-          <span>1</span><span>2</span><span>3</span><span>4</span>
-
-          <button class="event-day upcoming">
-            5
-            <div class="event-popover">
-              <strong>Komedi at Rekdi</strong>
-              <p>Alex Calleja + guests</p>
-              <p>2 shows — 5:30 PM &amp; 8:30 PM</p>
-              <p>Door charge: ₱1,000 + ₱1,000 min. consumable</p>
-            </div>
-          </button>
-
-          <span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span>
-          <span>13</span><span>14</span><span>15</span><span>16</span><span>17</span><span>18</span><span>19</span>
-          <span>20</span><span>21</span><span>22</span><span>23</span><span>24</span><span>25</span><span>26</span>
-          <span>27</span><span>28</span><span>29</span><span>30</span><span>31</span>
-        </div>
-
-        <div class="event-poster-block">
-          <img src="assets/comedyatrekdi.jpg" alt="Komedi at Rekdi poster" class="event-poster-img">
-          <div class="event-poster-details">
-            <h3>Komedi at Rekdi</h3>
-            <p>July 5, 2026 &mdash; Sunday</p>
-            <p>1st show: doors open 5:30 PM<br>2nd show: doors open 8:30 PM</p>
-            <p>Door charge: ₱1,000 + ₱1,000 minimum consumable</p>
-            <p>For inquiries: Bianca Clemente<br>(+63) 9524669678</p>
-          </div>
-        </div>
-      </div>
-
     </div>
 
   </div>
@@ -3384,6 +3393,7 @@ window.addEventListener("scroll", () => {
 const monthTabs = document.querySelectorAll(".month-tab");
 const monthPanels = document.querySelectorAll(".month-panel");
 const eventDays = document.querySelectorAll(".event-day");
+const featuredPosters = document.querySelectorAll(".featured-poster");
 
 monthTabs.forEach(tab => {
   tab.addEventListener("click", function(){
@@ -3392,9 +3402,12 @@ monthTabs.forEach(tab => {
     monthTabs.forEach(item => item.classList.remove("active"));
     monthPanels.forEach(panel => panel.classList.remove("active"));
     eventDays.forEach(day => day.classList.remove("active"));
+    featuredPosters.forEach(p => p.classList.remove("active"));
 
     this.classList.add("active");
     document.getElementById(targetMonth).classList.add("active");
+    const poster = document.querySelector(`.featured-poster[data-month="${targetMonth}"]`);
+    if(poster) poster.classList.add("active");
   });
 });
 
