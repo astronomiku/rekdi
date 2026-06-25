@@ -953,6 +953,54 @@ nav{
   text-transform:uppercase;
 }
 
+.event-poster-block{
+  display:flex;
+  flex-direction:row;
+  align-items:flex-start;
+  gap:32px;
+  margin-top:32px;
+  padding-top:28px;
+  border-top:2px solid rgba(0,0,0,0.15);
+}
+
+.event-poster-img{
+  width:220px;
+  flex-shrink:0;
+  border:3px solid #111;
+  display:block;
+}
+
+.event-poster-details{
+  flex:1;
+}
+
+.event-poster-details h3{
+  font-family:"Archivo Black",sans-serif;
+  font-size:1.4rem;
+  text-transform:uppercase;
+  color:#e8345b;
+  margin-bottom:10px;
+  line-height:1.1;
+}
+
+.event-poster-details p{
+  font-family:"Special Elite",monospace;
+  font-size:0.9rem;
+  line-height:1.5;
+  color:#111;
+  margin-bottom:8px;
+}
+
+@media(max-width:600px){
+  .event-poster-block{
+    flex-direction:column;
+    gap:20px;
+  }
+  .event-poster-img{
+    width:100%;
+  }
+}
+
 .events-brain-stamp{
   position:absolute;
   width:360px;
@@ -961,7 +1009,7 @@ nav{
   z-index:1;
   transform:rotate(5deg);
   pointer-events:none;
-}  
+}
 
   .event-calendar{
   position:relative;
@@ -2912,22 +2960,33 @@ nav{
 
         <div class="calendar-grid">
           <span></span><span></span>
-          <span>1</span><span>2</span><span>3</span>
+          <span>1</span><span>2</span><span>3</span><span>4</span>
 
           <button class="event-day upcoming">
-            4
+            5
             <div class="event-popover">
-              <strong>Stand-up Comedy feat. AC</strong>
-              <p>Tickets: ₱1500</p>
-              <p>Inclusive of food</p>
+              <strong>Komedi at Rekdi</strong>
+              <p>Alex Calleja + guests</p>
+              <p>2 shows — 5:30 PM &amp; 8:30 PM</p>
+              <p>Door charge: ₱1,000 + ₱1,000 min. consumable</p>
             </div>
           </button>
 
-          <span>5</span>
           <span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span>
           <span>13</span><span>14</span><span>15</span><span>16</span><span>17</span><span>18</span><span>19</span>
           <span>20</span><span>21</span><span>22</span><span>23</span><span>24</span><span>25</span><span>26</span>
           <span>27</span><span>28</span><span>29</span><span>30</span><span>31</span>
+        </div>
+
+        <div class="event-poster-block">
+          <img src="assets/comedyatrekdi.jpg" alt="Komedi at Rekdi poster" class="event-poster-img">
+          <div class="event-poster-details">
+            <h3>Komedi at Rekdi</h3>
+            <p>July 5, 2026 &mdash; Sunday</p>
+            <p>1st show: doors open 5:30 PM<br>2nd show: doors open 8:30 PM</p>
+            <p>Door charge: ₱1,000 + ₱1,000 minimum consumable</p>
+            <p>For inquiries: Bianca Clemente<br>(+63) 9524669678</p>
+          </div>
         </div>
       </div>
 
@@ -3084,7 +3143,7 @@ nav{
 
 </section>
 
-  <section class="careers" id="careers">
+  <section class="careers" id="careers" style="display:none">
     <div class="haze"></div>
     <h2>Hiring<br>Now</h2>
 
