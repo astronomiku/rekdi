@@ -891,9 +891,6 @@ nav{
   overflow:hidden;
 }
 
-	.events-section .section-title{
-  line-height:0.82;
-}
 .events-wrap{
   position:relative;
   z-index:2;
@@ -909,6 +906,10 @@ nav{
   color:#111;
   margin-bottom:18px;
   font-size:clamp(2.5rem,5vw,4.5rem);
+}
+
+.events-section .events-heading{
+  line-height:0.82;
 }
 
 .events-section .section-title-tag{
@@ -1037,6 +1038,7 @@ nav{
 
 .events-heading-line + .events-heading-line{
   display:block;
+  margin-top:clamp(-34px,-2.2vw,-16px);
 }
 
 .events-heading-word{
@@ -1047,7 +1049,7 @@ nav{
   position:relative;
   width:clamp(74px,8vw,132px);
   flex:0 0 auto;
-  transform:translateY(-28%) rotate(5deg);
+  transform:translateY(-42%) rotate(5deg);
   pointer-events:none;
   z-index:2;
 }
@@ -1129,6 +1131,10 @@ nav{
   .events-brain-stamp{
     width:clamp(74px,22vw,108px);
     transform:translateY(-34%) rotate(5deg);
+  }
+
+  .events-heading-line + .events-heading-line{
+    margin-top:clamp(-26px,-6vw,-16px);
   }
 
   .events-right{
