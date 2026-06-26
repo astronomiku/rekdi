@@ -3073,53 +3073,10 @@ nav{
       <div class="event-calendar">
 
         <div class="month-tabs">
-          <button class="month-tab active" data-month="june">June</button>
-          <button class="month-tab" data-month="july">July</button>
-          <button class="month-tab" data-month="aug" hidden>Aug</button>
-          <button class="month-tab" data-month="sept" hidden>Sept</button>
-          <button class="month-tab" data-month="oct" hidden>Oct</button>
-          <button class="month-tab" data-month="nov" hidden>Nov</button>
-          <button class="month-tab" data-month="dec" hidden>Dec</button>
+          <span class="month-tab active">July</span>
         </div>
 
-        <div class="month-panel active" id="june">
-          <div class="calendar-days">
-            <span>MO</span><span>TU</span><span>WE</span><span>TH</span><span>FR</span><span>SA</span><span>SU</span>
-          </div>
-
-          <div class="calendar-grid">
-            <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span>
-            <span>8</span><span>9</span><span>10</span><span>11</span>
-
-            <button class="event-day past">
-              12
-              <div class="event-popover">
-                <strong>Film Viewing</strong>
-                <p>Ang Pagdadalaga ni Maximo Oliveros</p>
-                <p>6:00 PM and 9:00 PM</p>
-                <p>Tickets: ₱200</p>
-              </div>
-            </button>
-
-            <span>13</span><span>14</span>
-            <span>15</span><span>16</span><span>17</span><span>18</span><span>19</span><span>20</span><span>21</span>
-            <span>22</span><span>23</span><span>24</span><span>25</span><span>26</span><span>27</span>
-
-            <button class="event-day upcoming">
-              28
-              <div class="event-popover">
-                <strong>Tarot Thursday</strong>
-                <p>@tarotbyraf &amp; @theblessedbhie</p>
-                <p>8–11 PM</p>
-                <p>₱500 tarot + ₱500 consumable</p>
-              </div>
-            </button>
-
-            <span>29</span><span>30</span>
-          </div>
-        </div>
-
-        <div class="month-panel" id="july">
+        <div class="month-panel active" id="july">
           <div class="calendar-days">
             <span>MO</span><span>TU</span><span>WE</span><span>TH</span><span>FR</span><span>SA</span><span>SU</span>
           </div>
@@ -3150,10 +3107,7 @@ nav{
     </div>
 
     <div class="events-right">
-      <div class="featured-poster active" data-month="june">
-        <img src="assets/tarot.jpg" alt="Tarot Thursday" class="featured-poster-img">
-      </div>
-      <div class="featured-poster" data-month="july">
+      <div class="featured-poster active" data-month="july">
         <img src="assets/comedyatrekdi.jpg" alt="Komedi at Rekdi" class="featured-poster-img">
       </div>
     </div>
@@ -3511,26 +3465,7 @@ window.addEventListener("scroll", () => {
 </script>
 
   <script>
-const monthTabs = document.querySelectorAll(".month-tab");
-const monthPanels = document.querySelectorAll(".month-panel");
 const eventDays = document.querySelectorAll(".event-day");
-const featuredPosters = document.querySelectorAll(".featured-poster");
-
-monthTabs.forEach(tab => {
-  tab.addEventListener("click", function(){
-    const targetMonth = this.dataset.month;
-
-    monthTabs.forEach(item => item.classList.remove("active"));
-    monthPanels.forEach(panel => panel.classList.remove("active"));
-    eventDays.forEach(day => day.classList.remove("active"));
-    featuredPosters.forEach(p => p.classList.remove("active"));
-
-    this.classList.add("active");
-    document.getElementById(targetMonth).classList.add("active");
-    const poster = document.querySelector(`.featured-poster[data-month="${targetMonth}"]`);
-    if(poster) poster.classList.add("active");
-  });
-});
 
 eventDays.forEach(day => {
   day.addEventListener("click", function(e){
@@ -3584,54 +3519,6 @@ p.parentNode.insertBefore(m,p)
 }(document,"script","https://chimpstatic.com/mcjs-connected/js/users/41f88b58f9735ee8049dff43b/8e63a4e3a4e208b88ac12250f.js");
 </script>
 
-<script>
-const eventData = {
-  maximo: {
-    date: "June 12",
-    title: "Film Viewing",
-    copy: "Ang Pagdadalaga ni Maximo Oliveros. 6:00 PM and 9:00 PM.",
-    price: "Tickets: ₱200"
-  },
-  journaling: {
-    date: "June 28",
-    title: "Journaling",
-    copy: "6:00 PM – 8:00 PM.",
-    price: "Tickets: ₱300"
-  },
-  standup: {
-    date: "July 4",
-    title: "Stand-up Comedy feat. AC",
-    copy: "Stand-up comedy night at Rekdi.",
-    price: "₱1500 inclusive of food"
-  }
-};
-
-const eventButtons = document.querySelectorAll(".calendar-event");
-const eventInfo = document.getElementById("eventInfo");
-const eventInfoDate = document.getElementById("eventInfoDate");
-const eventInfoTitle = document.getElementById("eventInfoTitle");
-const eventInfoCopy = document.getElementById("eventInfoCopy");
-const eventInfoPrice = document.getElementById("eventInfoPrice");
-const closeEventInfo = document.getElementById("closeEventInfo");
-
-eventButtons.forEach(button => {
-  button.addEventListener("click", function(){
-    const eventKey = this.dataset.event;
-    const event = eventData[eventKey];
-
-    eventInfoDate.textContent = event.date;
-    eventInfoTitle.textContent = event.title;
-    eventInfoCopy.textContent = event.copy;
-    eventInfoPrice.textContent = event.price;
-
-    eventInfo.classList.add("show");
-  });
-});
-
-closeEventInfo.addEventListener("click", function(){
-  eventInfo.classList.remove("show");
-});
-</script>
 </body>
 </html>
 ```
