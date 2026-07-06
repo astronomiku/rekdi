@@ -1072,10 +1072,12 @@ nav{
 
 .featured-poster.active{
   display:block;
-  min-height:clamp(260px,52vw,680px);
+  width:min(100%,280px);
+  min-height:350px;
   aspect-ratio:4/5;
   border:3px solid #111;
   background:#f5eadb;
+  margin:0 auto;
 }
 
 .featured-poster-note{
@@ -1085,14 +1087,16 @@ nav{
   display:flex;
   align-items:center;
   justify-content:center;
-  padding:36px;
+  padding:clamp(26px,6vw,40px);
   text-align:center;
   font-family:"Archivo Black",sans-serif;
-  font-size:clamp(2.4rem,5vw,4.8rem);
-  line-height:0.95;
+  font-size:clamp(1.3rem,2.2vw,2rem);
+  line-height:1;
   text-transform:uppercase;
   color:#111;
   background:#ffe34d;
+  overflow-wrap:anywhere;
+  text-wrap:balance;
 }
 
 .featured-poster-img{
@@ -1116,14 +1120,14 @@ nav{
   }
   .featured-poster.active{
     min-height:0;
-    height:min(760px,calc(100vh - 120px));
+    height:350px;
   }
   .featured-poster-img{
-    height:min(760px,calc(100vh - 120px));
+    height:350px;
     min-height:0;
   }
   .featured-poster-note{
-    height:min(760px,calc(100vh - 120px));
+    height:350px;
     min-height:0;
   }
 }
@@ -1159,7 +1163,18 @@ nav{
   }
 
   .events-right{
-    max-width:420px;
+    max-width:min(100%,300px);
+    padding:0 18px;
+  }
+
+  .featured-poster.active{
+    width:100%;
+    min-height:340px;
+  }
+
+  .featured-poster-note{
+    font-size:clamp(1.2rem,6vw,1.8rem);
+    padding:30px;
   }
 }
 
@@ -1262,15 +1277,20 @@ nav{
 }
 
 .event-day.past{
-  color:#888;
+  color:#8a8a8a !important;
+  opacity:0.55;
 }
 
 .event-day.past::after{
-  background:#999;
+  background:#9a9a9a;
 }
 
 .event-day.active{
   color:#e8345b;
+}
+
+.event-day.past.active{
+  color:#8a8a8a !important;
 }
 
 .event-popover{
@@ -1313,6 +1333,17 @@ nav{
   font-size:0.85rem;
   line-height:1.35;
   margin-bottom:6px;
+}
+
+.event-day.past .event-popover,
+.event-day.past .event-popover strong,
+.event-day.past .event-popover p{
+  color:#8a8a8a !important;
+}
+
+.event-day.past .event-popover{
+  border-color:#9a9a9a;
+  background:#ece8df;
 }
 
 .event-day.active .event-popover{
@@ -3122,7 +3153,7 @@ nav{
             <span></span><span></span>
             <span>1</span><span>2</span><span>3</span><span>4</span>
 
-            <button class="event-day upcoming">
+            <button class="event-day past">
               5
               <div class="event-popover">
                 <strong>Komedi at Rekdi</strong>
@@ -3145,7 +3176,7 @@ nav{
 
     <div class="events-right">
       <div class="featured-poster active" data-month="july">
-        <div class="featured-poster-note">Stay tuned for announcements</div>
+        <div class="featured-poster-note">Stay tuned<br>for<br>announcements</div>
       </div>
     </div>
 
