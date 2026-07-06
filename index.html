@@ -1078,6 +1078,23 @@ nav{
   background:#f5eadb;
 }
 
+.featured-poster-note{
+  width:100%;
+  height:100%;
+  min-height:inherit;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:36px;
+  text-align:center;
+  font-family:"Archivo Black",sans-serif;
+  font-size:clamp(2.4rem,5vw,4.8rem);
+  line-height:0.95;
+  text-transform:uppercase;
+  color:#111;
+  background:#ffe34d;
+}
+
 .featured-poster-img{
   width:100%;
   height:100%;
@@ -1102,6 +1119,10 @@ nav{
     height:min(760px,calc(100vh - 120px));
   }
   .featured-poster-img{
+    height:min(760px,calc(100vh - 120px));
+    min-height:0;
+  }
+  .featured-poster-note{
     height:min(760px,calc(100vh - 120px));
     min-height:0;
   }
@@ -3124,7 +3145,7 @@ nav{
 
     <div class="events-right">
       <div class="featured-poster active" data-month="july">
-        <img src="assets/comedyatrekdi.jpg" alt="Komedi at Rekdi" class="featured-poster-img">
+        <div class="featured-poster-note">Stay tuned for announcements</div>
       </div>
     </div>
 
