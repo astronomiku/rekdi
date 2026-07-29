@@ -459,6 +459,77 @@ nav{
 .tsismis-close:hover{
   opacity:0.85;
 }
+
+.announcement-modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  z-index:100001;
+  padding:24px;
+  background:rgba(0,0,0,0.62);
+  align-items:center;
+  justify-content:center;
+}
+
+.announcement-modal.show{
+  display:flex;
+}
+
+.announcement-box{
+  position:relative;
+  width:min(92vw,520px);
+  max-height:min(86vh,720px);
+  background:#f5eadb;
+  border:3px solid #111;
+  overflow:hidden;
+}
+
+.announcement-img{
+  width:100%;
+  max-height:min(86vh,720px);
+  display:block;
+  object-fit:contain;
+  background:#f5eadb;
+}
+
+.announcement-close{
+  position:absolute;
+  top:12px;
+  right:12px;
+  z-index:2;
+  width:38px;
+  height:38px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#ffe34d;
+  border:2px solid #111;
+  border-radius:50%;
+  color:#111;
+  font-family:"Archivo Black",sans-serif;
+  font-size:1.1rem;
+  line-height:1;
+  cursor:pointer;
+}
+
+.announcement-close:hover{
+  opacity:0.85;
+}
+
+@media(max-width:600px){
+  .announcement-modal{
+    padding:16px;
+  }
+
+  .announcement-box{
+    width:100%;
+    max-height:82vh;
+  }
+
+  .announcement-img{
+    max-height:82vh;
+  }
+}
 .reserve-btn{
   position:fixed;
   right:16px;
@@ -3461,6 +3532,13 @@ nav{
 
   </div>
 </div>
+
+<div class="announcement-modal" id="announcementModal" aria-label="Announcement" role="dialog" aria-modal="true">
+  <div class="announcement-box">
+    <button class="announcement-close" id="closeAnnouncement" aria-label="Close announcement">×</button>
+    <img src="assets/rekdidiwal.jpg" alt="Rekdi announcement" class="announcement-img">
+  </div>
+</div>
  
 <script>
   if ("scrollRestoration" in history) {
@@ -3545,6 +3623,39 @@ closeTsismis.addEventListener("click", function(){
 tsismisModal.addEventListener("click", function(e){
   if(e.target === tsismisModal){
     tsismisModal.classList.remove("show");
+  }
+});
+</script>
+<script>
+const announcementModal = document.getElementById("announcementModal");
+const closeAnnouncement = document.getElementById("closeAnnouncement");
+const announcementImg = document.querySelector(".announcement-img");
+
+function hideAnnouncement(){
+  announcementModal.classList.remove("show");
+}
+
+window.addEventListener("load", function(){
+  if(announcementImg.complete && announcementImg.naturalWidth === 0){
+    return;
+  }
+
+  announcementModal.classList.add("show");
+});
+
+announcementImg.addEventListener("error", hideAnnouncement);
+
+closeAnnouncement.addEventListener("click", hideAnnouncement);
+
+announcementModal.addEventListener("click", function(e){
+  if(e.target === announcementModal){
+    hideAnnouncement();
+  }
+});
+
+document.addEventListener("keydown", function(e){
+  if(e.key === "Escape"){
+    hideAnnouncement();
   }
 });
 </script>
