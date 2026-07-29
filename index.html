@@ -3630,12 +3630,17 @@ tsismisModal.addEventListener("click", function(e){
 const announcementModal = document.getElementById("announcementModal");
 const closeAnnouncement = document.getElementById("closeAnnouncement");
 const announcementImg = document.querySelector(".announcement-img");
+const announcementEndsAt = new Date("2026-08-01T00:00:00+08:00");
 
 function hideAnnouncement(){
   announcementModal.classList.remove("show");
 }
 
 window.addEventListener("load", function(){
+  if(new Date() >= announcementEndsAt){
+    return;
+  }
+
   if(announcementImg.complete && announcementImg.naturalWidth === 0){
     return;
   }
