@@ -3190,33 +3190,15 @@ nav{
       <div class="event-calendar">
 
         <div class="month-tabs">
-          <span class="month-tab active">July</span>
+          <span class="month-tab active" id="currentMonthLabel"></span>
         </div>
 
-        <div class="month-panel active" id="july">
+        <div class="month-panel active" id="currentMonthPanel">
           <div class="calendar-days">
             <span>MO</span><span>TU</span><span>WE</span><span>TH</span><span>FR</span><span>SA</span><span>SU</span>
           </div>
 
-          <div class="calendar-grid">
-            <span></span><span></span>
-            <span>1</span><span>2</span><span>3</span><span>4</span>
-
-            <button class="event-day past">
-              5
-              <div class="event-popover">
-                <strong>Komedi at Rekdi</strong>
-                <p>Alex Calleja + guests</p>
-                <p>2 shows — 5:30 PM &amp; 8:30 PM</p>
-                <p>Door charge: ₱1,000 + ₱1,000 min. consumable</p>
-              </div>
-            </button>
-
-            <span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span>
-            <span>13</span><span>14</span><span>15</span><span>16</span><span>17</span><span>18</span><span>19</span>
-            <span>20</span><span>21</span><span>22</span><span>23</span><span>24</span><span>25</span><span>26</span>
-            <span>27</span><span>28</span><span>29</span><span>30</span><span>31</span>
-          </div>
+          <div class="calendar-grid" id="currentMonthGrid"></div>
         </div>
 
       </div>
@@ -3475,7 +3457,7 @@ nav{
     </a>
   </div>
 </footer>
-  <a href="sms:+639170000000" class="reserve-btn">
+  <a href="sms:+639524874653" class="reserve-btn">
   Reserve via Text
 </a>
   <button class="tsismis-btn" id="openTsismis">
@@ -3583,24 +3565,101 @@ window.addEventListener("scroll", () => {
 </script>
 
   <script>
-const eventDays = document.querySelectorAll(".event-day");
+const eventListings = [
+  {
+    date:"2026-07-05",
+    title:"Komedi at Rekdi",
+    details:[
+      "Alex Calleja + guests",
+      "2 shows — 5:30 PM & 8:30 PM",
+      "Door charge: ₱1,000 + ₱1,000 min. consumable"
+    ]
+  }
+];
 
-eventDays.forEach(day => {
-  day.addEventListener("click", function(e){
-    e.stopPropagation();
+function getDateKey(date){
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, "0");
+  const day = String(date.getDate()).padStart(2, "0");
+  return `${year}-${month}-${day}`;
+}
 
-    eventDays.forEach(item => {
-      if(item !== this){
-        item.classList.remove("active");
-      }
+function renderCurrentMonthCalendar(){
+  const monthLabel = document.getElementById("currentMonthLabel");
+  const calendarGrid = document.getElementById("currentMonthGrid");
+  const now = new Date();
+  const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+  const year = now.getFullYear();
+  const month = now.getMonth();
+  const monthName = now.toLocaleString("en", { month:"long" });
+  const firstDay = new Date(year, month, 1);
+  const daysInMonth = new Date(year, month + 1, 0).getDate();
+  const mondayOffset = (firstDay.getDay() + 6) % 7;
+  const eventsByDate = eventListings.reduce((events, event) => {
+    events[event.date] = event;
+    return events;
+  }, {});
+
+  monthLabel.textContent = monthName;
+  calendarGrid.innerHTML = "";
+
+  for(let i = 0; i < mondayOffset; i += 1){
+    calendarGrid.appendChild(document.createElement("span"));
+  }
+
+  for(let day = 1; day <= daysInMonth; day += 1){
+    const date = new Date(year, month, day);
+    const dateKey = getDateKey(date);
+    const event = eventsByDate[dateKey];
+
+    if(!event){
+      const dayCell = document.createElement("span");
+      dayCell.textContent = day;
+      calendarGrid.appendChild(dayCell);
+      continue;
+    }
+
+    const eventButton = document.createElement("button");
+    eventButton.className = date < today ? "event-day past" : "event-day upcoming";
+    eventButton.type = "button";
+    eventButton.textContent = day;
+
+    const popover = document.createElement("div");
+    popover.className = "event-popover";
+
+    const title = document.createElement("strong");
+    title.textContent = event.title;
+    popover.appendChild(title);
+
+    event.details.forEach(detail => {
+      const paragraph = document.createElement("p");
+      paragraph.textContent = detail;
+      popover.appendChild(paragraph);
     });
 
-    this.classList.toggle("active");
+    eventButton.appendChild(popover);
+    calendarGrid.appendChild(eventButton);
+  }
+
+  document.querySelectorAll(".event-day").forEach(day => {
+    day.addEventListener("click", function(e){
+      e.stopPropagation();
+
+      document.querySelectorAll(".event-day").forEach(item => {
+        if(item !== this){
+          item.classList.remove("active");
+        }
+      });
+
+      this.classList.toggle("active");
+    });
   });
-});
+}
+
+renderCurrentMonthCalendar();
 
 document.addEventListener("click", function(){
-  eventDays.forEach(day => day.classList.remove("active"));
+  document.querySelectorAll(".event-day").forEach(day => day.classList.remove("active"));
 });
 </script>
   <script>
